@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 网页标题，显示在浏览器标签页上 -->
+  <title>ShanDong He — Software Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts：Inter 字体，提供 300/400/500/600/700 五个字重 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       导航栏：固定在顶部，滚动后自动加阴影
+       ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <!-- 左侧 Logo / 姓名 -->
+      <span class="nav-logo">ShanDong He</span>
+
+      <!-- 导航链接，点击后平滑滚动到对应区块 -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- 移动端汉堡菜单按钮（三条横线），宽屏下隐藏 -->
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       Hero 区：全屏首屏，背景图 + 个人介绍
+       ═══════════════════════════════════════ -->
+  <header id="hero">
+    <!-- 半透明白色遮罩，让文字在背景图上更易读 -->
+    <div class="hero-bg-overlay"></div>
+
+    <div class="hero-content">
+      <!-- 圆形头像，文件放在 assets/photo.png -->
+      <img src="assets/photo.png" alt="ShanDong He" class="avatar" />
+
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name">ShanDong He</h1>
+      <p class="hero-title">Software Engineer · Backend &amp; AI/ML</p>
+      <p class="hero-bio">
+        M.S. student at Kyushu University, researching CFD &amp; LLMs.<br />
+        Passionate about building robust distributed systems and exploring the frontier of AI.
+      </p>
+
+      <!-- 两个 CTA 按钮 -->
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+
+      <!-- 社交图标：GitHub / 邮件 -->
+      <div class="hero-socials">
+        <a href="https://github.com/lorendw7" target="_blank" rel="noopener" title="GitHub">
+          <!-- GitHub SVG 图标 -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="mailto:lorendw7@gmail.com" title="Email">
+          <!-- 邮件信封 SVG 图标 -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 向下滚动提示，有上下弹跳动画 -->
+    <div class="hero-scroll-hint">
+      <span>Scroll down</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         About 区：个人简介 + 基本信息 + CV 下载
+         ═══════════════════════════════════════ -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+
+          <!-- 左侧：个人照片 -->
+          <div class="about-photo">
+            <img src="assets/photo.png" alt="ShanDong He" />
+          </div>
+
+          <!-- 右侧：文字介绍 + 元信息 + 按钮 -->
+          <div class="about-text">
+            <p>
+              I'm a software engineer and graduate student at <strong>Kyushu University</strong>, pursuing an M.S. in
+              Information Science and Electrical Engineering with a research focus on <strong>CFD and large language models</strong>.
+            </p>
+            <p>
+              I hold a B.S. in Software Engineering from <strong>Beijing Normal University, Zhuhai</strong> (GPA 3.5/4.0),
+              where I built a strong foundation in algorithms, distributed systems, and competitive programming.
+            </p>
+            <p>
+              I enjoy working across the full backend stack — from microservices and message queues to training neural
+              networks from scratch. I'm especially interested in the intersection of systems engineering and AI.
+            </p>
+
+            <!-- 四格基本信息卡片 -->
+            <div class="about-meta">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Fukuoka, Japan</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Education</span>
+                <span class="meta-value">Kyushu University</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">English</span>
+                <span class="meta-value">TOEFL 83 · CET-6</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value">Open to opportunities</span>
+              </div>
+            </div>
+
+            <div class="about-actions">
+              <!-- 下载 CV（需将 PDF 放到 assets/resume.pdf） -->
+              <a href="assets/resume.pdf" class="btn btn-primary" download>Download CV</a>
+              <a href="mailto:lorendw7@gmail.com" class="btn btn-outline">lorendw7@gmail.com</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Skills 区：六大技能卡片
+         如需添加/删除技能，修改 tag-list 里的 <li> 即可
+         ═══════════════════════════════════════ -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <div class="skill-icon">⟨/⟩</div>
+            <h3>Languages</h3>
+            <ul class="tag-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>C/C++</li>
+              <li>Shell</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">⚙</div>
+            <h3>Backend</h3>
+            <ul class="tag-list">
+              <li>Spring Boot</li>
+              <li>Spring Cloud</li>
+              <li>Node.js</li>
+              <li>gRPC</li>
+              <li>Kafka</li>
+              <li>WebSocket</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">◈</div>
+            <h3>Frontend</h3>
+            <ul class="tag-list">
+              <li>React</li>
+              <li>Vue</li>
+              <li>Next.js</li>
+              <li>Tailwind CSS</li>
+              <li>Bootstrap</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">▤</div>
+            <h3>Databases &amp; Middleware</h3>
+            <ul class="tag-list">
+              <li>MySQL</li>
+              <li>Redis</li>
+              <li>MongoDB</li>
+              <li>MyBatis</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">✦</div>
+            <h3>AI / ML</h3>
+            <ul class="tag-list">
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>scikit-learn</li>
+              <li>Matplotlib</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">☁</div>
+            <h3>DevOps &amp; Cloud</h3>
+            <ul class="tag-list">
+              <li>Docker</li>
+              <li>AWS ECS</li>
+              <li>CloudFormation</li>
+              <li>Linux</li>
+              <li>Git</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Education 区：时间线形式展示学历
+         如需添加学历，复制一个 timeline-item 块
+         ═══════════════════════════════════════ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+
+          <!-- 第一条：九州大学 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Apr 2026 – Present</span>
+              <h3 class="timeline-role">M.S. in Information Science and Electrical Engineering</h3>
+              <p class="timeline-org">Kyushu University · Fukuoka, Japan</p>
+              <ul class="timeline-bullets">
+                <li>Research Focus: Computational Fluid Dynamics (CFD) &amp; Large Language Models (LLM)</li>
+              </ul>
+              <div class="tag-list">
+                <li>CFD</li><li>LLM</li><li>Deep Learning</li>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二条：北师大珠海 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Sep 2020 – Jun 2024</span>
+              <h3 class="timeline-role">B.S. in Software Engineering</h3>
+              <p class="timeline-org">Beijing Normal University, Zhuhai · GPA: 3.5 / 4.0</p>
+              <ul class="timeline-bullets">
+                <li>Second-Class Scholarship (2021–2022) · Outstanding Student Union Cadre (Oct 2022)</li>
+                <li>Competitive programming: Lanqiao Cup 2nd Prize · CCPC Guangdong Bronze Prize</li>
+              </ul>
+              <div class="tag-list">
+                <li>Algorithms</li><li>Distributed Systems</li><li>Databases</li><li>OS</li>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Projects 区：卡片式展示五个项目
+         每张卡片顶部色带颜色在 CSS .band-* 中定义
+         如需添加项目，复制一个 article.project-card 块
+         ═══════════════════════════════════════ -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+          <!-- 项目 1：PatientFlow Cloud -->
+          <article class="project-card">
+            <div class="project-header-band band-blue"></div>
+            <div class="project-body">
+              <h3>PatientFlow Cloud</h3>
+              <p class="project-role">Backend Developer · Apr – May 2026</p>
+              <p>Production-grade healthcare management platform with microservices architecture, covering patient management, billing, analytics, and authentication.</p>
+              <ul class="project-bullets">
+                <li>gRPC for synchronous RPC + Kafka for event-driven async messaging</li>
+                <li>JWT auth with API Gateway for unified routing and access control</li>
+                <li>Docker + AWS ECS + CloudFormation for containerized cloud deployment</li>
+                <li>Unit/integration tests and OpenAPI documentation</li>
+              </ul>
+              <div class="tag-list">
+                <li>Spring Boot</li><li>Microservices</li><li>gRPC</li><li>Kafka</li><li>Docker</li><li>AWS ECS</li><li>JWT</li>
+              </div>
+            </div>
+          </article>
+
+          <!-- 项目 2：LLM Forge -->
+          <article class="project-card">
+            <div class="project-header-band band-purple"></div>
+            <div class="project-body">
+              <h3>LLM Forge</h3>
+              <p class="project-role">End-to-End Developer · Jan – Apr 2026</p>
+              <p>Built a GPT-like large language model from scratch, covering the full pipeline from data preprocessing to fine-tuning.</p>
+              <ul class="project-bullets">
+                <li>Decoder-only Transformer in PyTorch: attention, positional encoding, multi-layer blocks</li>
+                <li>Reusable data pipelines: text cleaning, tokenization, sequence sampling, batch processing</li>
+                <li>Autoregressive pretraining loop with perplexity evaluation</li>
+                <li>Fine-tuned for text classification and personal assistant tasks</li>
+              </ul>
+              <div class="tag-list">
+                <li>Python</li><li>PyTorch</li><li>Transformer</li><li>NLP</li><li>Fine-tuning</li>
+              </div>
+            </div>
+          </article>
+
+          <!-- 项目 3：Gitlet -->
+          <article class="project-card">
+            <div class="project-header-band band-green"></div>
+            <div class="project-body">
+              <h3>Gitlet</h3>
+              <p class="project-role">Core Developer · Nov – Dec 2025</p>
+              <p>A simplified Git version control system in Java, implementing core VCS concepts and remote workflows.</p>
+              <ul class="project-bullets">
+                <li>Core commands: init, add, commit, log, branch, merge</li>
+                <li>SHA-1 content-addressed object storage with file-system persistence</li>
+                <li>Branch switching, recursive merge, conflict detection</li>
+                <li>Remote operations: push, fetch, pull</li>
+              </ul>
+              <div class="tag-list">
+                <li>Java</li><li>Git Internals</li><li>SHA-1</li><li>File System</li>
+              </div>
+            </div>
+          </article>
+
+          <!-- 项目 4：LifeSelect -->
+          <article class="project-card">
+            <div class="project-header-band band-orange"></div>
+            <div class="project-body">
+              <h3>LifeSelect</h3>
+              <p class="project-role">Backend Developer · Oct – Nov 2025</p>
+              <p>A Spring Boot-based merchant review platform with social features, flash-sale coupons, and feed-stream delivery.</p>
+              <ul class="project-bullets">
+                <li>SMS login, merchant search, blogging, follow relationships</li>
+                <li>Redis: shared sessions, distributed locks, async message queues</li>
+                <li>Flash-sale ordering via Redis Stream; BitMap, HyperLogLog, GEO for analytics</li>
+              </ul>
+              <div class="tag-list">
+                <li>Spring Boot</li><li>Redis</li><li>MySQL</li><li>Redis Stream</li><li>GEO</li>
+              </div>
+            </div>
+          </article>
+
+          <!-- 项目 5：SkyEats -->
+          <article class="project-card">
+            <div class="project-header-band band-teal"></div>
+            <div class="project-body">
+              <h3>SkyEats</h3>
+              <p class="project-role">Backend Developer · Sep – Oct 2025</p>
+              <p>Full-featured food delivery platform covering user ordering, merchant management, and business analytics.</p>
+              <ul class="project-bullets">
+                <li>Spring Boot + MyBatis + Redis + MySQL; simulated WeChat Pay</li>
+                <li>Redis caching for dishes and set meals under high concurrency</li>
+                <li>WebSocket for real-time order alerts; ECharts + Apache POI for dashboards &amp; exports</li>
+              </ul>
+              <div class="tag-list">
+                <li>Spring Boot</li><li>MyBatis</li><li>Redis</li><li>MySQL</li><li>WebSocket</li><li>ECharts</li>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Awards 区：四个荣誉卡片
+         如需添加奖项，复制一个 award-card 块
+         ═══════════════════════════════════════ -->
+    <section id="awards" class="section">
+      <div class="container">
+        <h2 class="section-title">Honors &amp; Awards</h2>
+        <div class="awards-grid">
+
+          <div class="award-card">
+            <div class="award-icon">🏅</div>
+            <div class="award-body">
+              <span class="award-date">Apr 2023</span>
+              <h3>Second Prize — 14th Lanqiao Cup</h3>
+              <p>Guangdong Provincial C++ Programming Contest (University Group A)</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">🥉</div>
+            <div class="award-body">
+              <span class="award-date">May 2023</span>
+              <h3>Bronze Prize — CCPC Guangdong</h3>
+              <p>China Collegiate Programming Contest – Guangdong Provincial Contest</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">🎓</div>
+            <div class="award-body">
+              <span class="award-date">2021 – 2022</span>
+              <h3>Second-Class Scholarship</h3>
+              <p>Software Engineering Program, Beijing Normal University, Zhuhai</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">⭐</div>
+            <div class="award-body">
+              <span class="award-date">Oct 2022</span>
+              <h3>Outstanding Student Union Cadre</h3>
+              <p>School of Information Technology, Beijing Normal University, Zhuhai</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Contact 区：邮件联系入口
+         修改邮件地址：全局替换 lorendw7@gmail.com
+         ═══════════════════════════════════════ -->
+    <section id="contact" class="section section-alt">
+      <div class="container container-narrow">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="contact-intro">
+          I'm open to research collaborations, internship opportunities, and interesting projects.
+          Feel free to reach out — I'm always happy to chat!
+        </p>
+        <a href="mailto:lorendw7@gmail.com" class="btn btn-primary btn-large">Say Hello ✉</a>
+        <div class="contact-links">
+          <a href="https://github.com/lorendw7" target="_blank" rel="noopener">GitHub</a>
+          <a href="tel:+8618944743336">+(86) 189-4474-3336</a>
+          <!-- 如需提供 PDF 简历下载，将文件放到 assets/resume.pdf -->
+          <a href="assets/resume.pdf" download>Resume PDF</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚：自动显示当前年份 -->
+  <footer>
+    <p>Designed &amp; built by ShanDong He · <span id="year"></span></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
