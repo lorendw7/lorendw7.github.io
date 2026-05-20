@@ -178,8 +178,8 @@ img { max-width: 100%; display: block; }
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* 背景图：将 assets/hero-bg.jpg 替换为你喜欢的图片 */
-  background: url('assets/hero-bg.jpg') center/cover no-repeat;
+  /* 背景图：横屏/宽屏使用横版，移动端/竖屏通过 media query 切换为竖版 */
+  background: url('assets/hero-bg.png') center/cover no-repeat;
 }
 
 /* 半透明白色遮罩，让文字在图片上清晰可读 */
@@ -596,6 +596,13 @@ footer {
 /* ════════════════════════════════════════════
    响应式：平板及手机（宽度 ≤ 768px）
    ════════════════════════════════════════════ */
+/* 移动端或竖屏方向：切换为竖版背景图 */
+@media (max-width: 768px), (orientation: portrait) {
+  #hero {
+    background-image: url('assets/hero-bg-portrait.png');
+  }
+}
+
 @media (max-width: 768px) {
   /* 导航链接折叠，点击汉堡菜单展开 */
   .nav-links {
