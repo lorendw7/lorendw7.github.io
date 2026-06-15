@@ -483,12 +483,13 @@ img { max-width: 100%; display: block; }
 
 /* 卡片顶部彩色色带，高度 6px */
 .project-header-band { height: 6px; }
-/* 五种颜色，对应五个项目，修改渐变色可调整风格 */
+/* 六种颜色，对应六个项目，修改渐变色可调整风格 */
 .band-blue   { background: linear-gradient(90deg, #4f8ef7, #7fb3ff); }
 .band-purple { background: linear-gradient(90deg, #8b5cf6, #b491f7); }
 .band-green  { background: linear-gradient(90deg, #10b981, #34d399); }
 .band-orange { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
 .band-teal   { background: linear-gradient(90deg, #06b6d4, #38bdf8); }
+.band-rose   { background: linear-gradient(90deg, #ec4899, #f472b6); }
 
 .project-body {
   padding: 20px;

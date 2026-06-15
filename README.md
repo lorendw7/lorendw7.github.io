@@ -1,6 +1,6 @@
 # lorendw7.github.io
 
-Personal portfolio / resume website for **ShanDong He** — Software Engineer (Backend & AI/ML).
+Personal portfolio / resume website for **ShanDong He** — Software Engineer (Backend & AI/ML), M.S. student at Kyushu University researching CFD, HPC & LLMs.
 
 Live site: https://lorendw7.github.io
 
