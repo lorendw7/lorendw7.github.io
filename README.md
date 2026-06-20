@@ -12,7 +12,7 @@ Live site: https://lorendw7.github.io
 | `styles.css` | All styling (layout, timeline, cards, responsive design) |
 | `main.js` | Navbar scroll behavior, mobile menu toggle, smooth scrolling, footer year |
 | `assets/cv.pdf` | Downloadable CV / resume (linked from About and Contact sections) |
-| `assets/photo.png` | Profile photo / avatar |
+| `assets/cv.png` | Profile portrait / avatar (illustrated, comic-style) |
 | `assets/hero-bg.png`, `assets/hero-bg-portrait.png` | Hero background images (desktop / mobile) |
 
 ## Editing
