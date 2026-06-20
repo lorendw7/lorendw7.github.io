@@ -7,12 +7,14 @@
   padding: 0;
 }
 
-/* CSS 变量：修改颜色/尺寸只需改这里 */
+/* CSS 变量：修改颜色/尺寸只需改这里。
+   下方 prefers-color-scheme: dark 媒体查询会重定义这些变量实现深色模式 */
 :root {
   --accent:       #4f8ef7;   /* 主题蓝色，用于链接、按钮、高亮 */
   --accent-dark:  #3a74e0;   /* 深一点的蓝，用于 hover 状态 */
   --bg:           #ffffff;   /* 页面主背景色 */
   --bg-alt:       #f8f9fb;   /* 交替区块背景（偏灰白） */
+  --surface:      #ffffff;   /* 卡片表面色（深色模式下略亮于背景） */
   --text:         #1a1a2e;   /* 主文字颜色 */
   --text-muted:   #6b7280;   /* 次要文字（说明、标签等） */
   --border:       #e5e7eb;   /* 边框、分割线颜色 */
@@ -21,10 +23,26 @@
   --nav-h:        64px;      /* 导航栏高度 */
   --font:         'Inter', system-ui, -apple-system, sans-serif;
   --max-w:        1100px;    /* 内容区最大宽度 */
+
+  /* 可主题化的表面 / 玻璃 / 标签色，便于深色模式统一覆盖 */
+  --nav-bg:         rgba(255,255,255,.88);  /* 导航栏毛玻璃底色 */
+  --glass-bg:       rgba(255,255,255,.7);   /* 社交图标按钮底色 */
+  --glass-bg-hover: #ffffff;
+  --avatar-ring:    #ffffff;                /* 头像描边 */
+  --tag-bg:         #eff4ff;                /* 技能标签底色 */
+  --tag-border:     #d6e4ff;
+  --tag-text:       var(--accent-dark);
+  /* Hero 背景图上方的遮罩渐变 */
+  --hero-overlay: linear-gradient(160deg,
+    rgba(240,246,255,.92) 0%,
+    rgba(255,255,255,.88) 55%,
+    rgba(240,246,255,.85) 100%);
 }
 
 html {
   scroll-behavior: smooth; /* 点击锚点链接时平滑滚动 */
+  /* 锚点跳转时为固定导航栏预留空间，避免标题被遮住 */
+  scroll-padding-top: calc(var(--nav-h) + 12px);
   font-size: 16px;
 }
 
@@ -34,12 +52,34 @@ body {
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased; /* macOS 字体渲染优化 */
+  transition: background .3s, color .3s; /* 深浅色切换时平滑过渡 */
 }
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-dark); }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
+
+/* 文本选中高亮 */
+::selection { background: rgba(79,142,247,.22); }
+
+/* 键盘聚焦时显示清晰轮廓（无障碍），鼠标点击则不显示 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* 自定义滚动条（WebKit 内核），跟随主题色 */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--bg-alt); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+  border: 3px solid var(--bg-alt);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 
 /* ════════════════════════════════════════════
@@ -49,7 +89,7 @@ img { max-width: 100%; display: block; }
   position: fixed;       /* 固定在视口顶部 */
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  background: rgba(255,255,255,.88);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px);          /* 毛玻璃效果 */
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent; /* 初始透明，滚动后显示 */
@@ -179,25 +219,34 @@ img { max-width: 100%; display: block; }
   position: relative;
   overflow: hidden;
   /* 背景图：横屏/宽屏使用横版，移动端/竖屏通过 media query 切换为竖版 */
-  background: url('assets/hero-bg.png') center/cover no-repeat;
+  background: url('assets/hero-bg.jpg') center/cover no-repeat;
 }
 
-/* 半透明白色遮罩，让文字在图片上清晰可读 */
+/* 半透明遮罩，让文字在背景图上清晰可读（深色模式下自动切换为深色渐变） */
 #hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(240,246,255,.92) 0%,
-    rgba(255,255,255,.88) 55%,
-    rgba(240,246,255,.85) 100%
-  );
+  background: var(--hero-overlay);
   z-index: 0;
 }
 
 /* 内容层需高于遮罩层 */
 .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+/* 首屏内容载入时依次淡入上浮 */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-content > * { animation: hero-in .6s ease both; }
+.hero-content > .avatar        { animation-delay: .05s; }
+.hero-content > .hero-greeting { animation-delay: .12s; }
+.hero-content > .hero-name     { animation-delay: .18s; }
+.hero-content > .hero-title    { animation-delay: .24s; }
+.hero-content > .hero-bio      { animation-delay: .30s; }
+.hero-content > .hero-cta      { animation-delay: .36s; }
+.hero-content > .hero-socials  { animation-delay: .42s; }
 
 /* 圆形头像 */
 .avatar {
@@ -206,7 +255,7 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
   object-position: top; /* 照片以顶部为基准裁剪，保留脸部 */
   margin: 0 auto 20px;
-  border: 3px solid #fff;
+  border: 3px solid var(--avatar-ring);
   box-shadow: 0 4px 20px rgba(0,0,0,.15);
 }
 
@@ -226,6 +275,16 @@ img { max-width: 100%; display: block; }
   letter-spacing: -1.5px;
   line-height: 1.1;
   margin-bottom: 12px;
+}
+/* 姓名加一抹由文字色渐变到主题蓝的细节（仅在支持时启用，保证降级安全） */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-name {
+    background: linear-gradient(120deg, var(--text) 35%, var(--accent) 110%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 .hero-title {
@@ -260,14 +319,14 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
   color: var(--text-muted);
   border: 1.5px solid var(--border);
-  background: rgba(255,255,255,.7);
+  background: var(--glass-bg);
   transition: color .2s, border-color .2s, transform .2s, background .2s;
 }
 .hero-socials a:hover {
   color: var(--accent);
   border-color: var(--accent);
   transform: translateY(-2px); /* 悬浮时上移 */
-  background: #fff;
+  background: var(--glass-bg-hover);
 }
 .hero-socials svg { width: 18px; height: 18px; }
 
@@ -377,7 +436,7 @@ img { max-width: 100%; display: block; }
 }
 
 .skill-card {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
@@ -400,13 +459,13 @@ img { max-width: 100%; display: block; }
   list-style: none;
 }
 .tag-list li {
-  background: #eff4ff;
-  color: var(--accent-dark);
+  background: var(--tag-bg);
+  color: var(--tag-text);
   font-size: .75rem;
   font-weight: 500;
   padding: 3px 10px;
   border-radius: 20px;
-  border: 1px solid #d6e4ff;
+  border: 1px solid var(--tag-border);
 }
 
 
@@ -444,7 +503,7 @@ img { max-width: 100%; display: block; }
 }
 
 .timeline-card {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px 24px;
@@ -467,7 +526,7 @@ img { max-width: 100%; display: block; }
 }
 
 .project-card {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -526,7 +585,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
@@ -600,7 +659,7 @@ footer {
 /* 移动端或竖屏方向：切换为竖版背景图 */
 @media (max-width: 768px), (orientation: portrait) {
   #hero {
-    background-image: url('assets/hero-bg-portrait.png');
+    background-image: url('assets/hero-bg-portrait.jpg');
   }
 }
 
@@ -634,4 +693,54 @@ footer {
   .hero-name { font-size: 2rem; }
   .skills-grid { grid-template-columns: 1fr 1fr; } /* 技能两列 */
   .awards-grid { grid-template-columns: 1fr; }     /* 奖项单列 */
+}
+
+
+/* ════════════════════════════════════════════
+   深色模式：跟随系统 prefers-color-scheme 设置
+   仅重定义 CSS 变量 + 极少量表面色覆盖即可整站生效
+   ════════════════════════════════════════════ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent:       #6ea8ff;
+    --accent-dark:  #4f8ef7;
+    --bg:           #0f1117;
+    --bg-alt:       #161922;
+    --surface:      #1a1e29;
+    --text:         #e8eaed;
+    --text-muted:   #9aa3b2;
+    --border:       #272d3a;
+    --card-shadow:  0 2px 14px rgba(0,0,0,.45);
+
+    --nav-bg:         rgba(15,17,23,.85);
+    --glass-bg:       rgba(255,255,255,.06);
+    --glass-bg-hover: rgba(255,255,255,.12);
+    --avatar-ring:    rgba(255,255,255,.14);
+    --tag-bg:         rgba(110,168,255,.12);
+    --tag-border:     rgba(110,168,255,.28);
+    --tag-text:       #9cc1ff;
+    --hero-overlay: linear-gradient(160deg,
+      rgba(15,17,23,.82) 0%,
+      rgba(15,17,23,.74) 50%,
+      rgba(20,24,34,.9) 100%);
+  }
+
+  /* 深色下选中高亮稍微提亮 */
+  ::selection { background: rgba(110,168,255,.3); }
+}
+
+
+/* ════════════════════════════════════════════
+   无障碍：尊重系统"减少动态效果"设置
+   关闭进场动画 / 视差，避免引起不适
+   ════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* 滚动进场元素直接显示，不做位移动画 */
+  .reveal { opacity: 1 !important; transform: none !important; }
 }

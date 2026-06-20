@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- 网页标题，显示在浏览器标签页上 -->
   <title>ShanDong He — Software Engineer</title>
+
+  <!-- SEO：搜索引擎结果摘要 -->
+  <meta name="description" content="ShanDong He — Software Engineer (Backend & AI/ML) and M.S. student at Kyushu University researching CFD, HPC & LLMs. Building robust distributed systems and exploring the frontier of AI." />
+  <meta name="author" content="ShanDong He" />
+  <meta name="keywords" content="ShanDong He, Software Engineer, Backend, AI, Machine Learning, Kyushu University, CFD, HPC, LLM" />
+  <link rel="canonical" href="https://lorendw7.github.io/" />
+
+  <!-- 浏览器地址栏 / 系统 UI 主题色（深浅模式各一） -->
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)" />
+
+  <!-- 社交平台分享预览（Open Graph / Twitter 卡片） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ShanDong He — Software Engineer" />
+  <meta property="og:description" content="Backend & AI/ML engineer · M.S. student at Kyushu University researching CFD, HPC & LLMs." />
+  <meta property="og:url" content="https://lorendw7.github.io/" />
+  <meta property="og:image" content="https://lorendw7.github.io/assets/cv.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ShanDong He — Software Engineer" />
+  <meta name="twitter:description" content="Backend & AI/ML engineer · M.S. student at Kyushu University researching CFD, HPC & LLMs." />
+  <meta name="twitter:image" content="https://lorendw7.github.io/assets/cv.png" />
+
+  <!-- 内联 SVG emoji 作为站点图标，无需额外图片文件 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Fonts：Inter 字体，提供 300/400/500/600/700 五个字重 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,12 +69,11 @@
        Hero 区：全屏首屏，背景图 + 个人介绍
        ═══════════════════════════════════════ -->
   <header id="hero">
-    <!-- 半透明白色遮罩，让文字在背景图上更易读 -->
-    <div class="hero-bg-overlay"></div>
-
+    <!-- 遮罩由 CSS #hero::before 实现，无需额外元素 -->
     <div class="hero-content">
       <!-- 圆形头像（漫画风格肖像），文件放在 assets/cv.png -->
-      <img src="assets/cv.png" alt="ShanDong He" class="avatar" />
+      <img src="assets/cv.png" alt="Illustrated portrait of ShanDong He" class="avatar"
+           width="100" height="100" fetchpriority="high" decoding="async" />
 
       <p class="hero-greeting">Hi, I'm</p>
       <h1 class="hero-name">ShanDong He</h1>
@@ -96,7 +121,9 @@
 
           <!-- 左侧：个人照片（漫画风格肖像） -->
           <div class="about-photo">
-            <img src="assets/cv.png" alt="ShanDong He" />
+            <!-- 尺寸由 CSS aspect-ratio 控制（桌面 3/4、手机 1/1），故不写死 width/height -->
+            <img src="assets/cv.png" alt="Illustrated portrait of ShanDong He"
+                 loading="lazy" decoding="async" />
           </div>
 
           <!-- 右侧：文字介绍 + 元信息 + 按钮 -->
