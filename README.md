@@ -11,7 +11,6 @@ Live site: https://lorendw7.github.io
 | `index.html` | Single-page site: Hero, About, Skills, Education, Work Experience, Projects, Awards, Contact. Also holds SEO / Open Graph meta and an inline SVG favicon. |
 | `styles.css` | All styling (layout, timeline, cards, responsive design, dark mode, accessibility). |
 | `main.js` | Navbar scroll behavior, mobile menu toggle, scroll-spy nav highlight, on-scroll reveal animations, footer year. |
-| `assets/cv.pdf` | Downloadable CV / resume (linked from About and Contact sections) |
 | `assets/cv.png` | Profile portrait / avatar (illustrated, comic-style) |
 | `assets/hero-bg.jpg`, `assets/hero-bg-portrait.jpg` | Hero background images (desktop / mobile), compressed JPEG |
 
@@ -27,9 +26,8 @@ Live site: https://lorendw7.github.io
 
 - **Content** lives directly in `index.html`; each section is marked with a commented header.
 - **Theme:** edit the CSS variables in `:root` at the top of `styles.css`; the dark palette is the `@media (prefers-color-scheme: dark)` block at the bottom.
-- **Resume:** replace `assets/cv.pdf` to update the downloadable CV — links in About and Contact point to it.
 - **Portrait:** replace `assets/cv.png` (used for both the hero avatar and the About photo).
-- **Contact:** the Contact section deliberately carries no email address — visitors reach out via GitHub. The phone number is the `tel:` link in `index.html`.
+- **Contact:** the site deliberately publishes no email address, phone number, or CV download — visitors reach out via GitHub, and the CV goes out on request.
 
 ## Deploy
 
