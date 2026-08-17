@@ -29,7 +29,7 @@ Live site: https://lorendw7.github.io
 - **Theme:** edit the CSS variables in `:root` at the top of `styles.css`; the dark palette is the `@media (prefers-color-scheme: dark)` block at the bottom.
 - **Resume:** replace `assets/cv.pdf` to update the downloadable CV — links in About and Contact point to it.
 - **Portrait:** replace `assets/cv.png` (used for both the hero avatar and the About photo).
-- **Contact email/phone:** search-and-replace `lorendw7@gmail.com` in `index.html`.
+- **Contact:** the Contact section deliberately carries no email address — visitors reach out via GitHub. The phone number is the `tel:` link in `index.html`.
 
 ## Deploy
 
