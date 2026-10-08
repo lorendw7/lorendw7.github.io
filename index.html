@@ -1,527 +1,302 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-design="academic">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- 网页标题，显示在浏览器标签页上 -->
-  <title>ShanDong He — Software Engineer</title>
-
-  <!-- SEO：搜索引擎结果摘要 -->
-  <meta name="description" content="ShanDong He — Software Engineer (Backend & AI/ML) and M.S. student at Kyushu University researching CFD, HPC & LLMs. Building robust distributed systems and exploring the frontier of AI." />
-  <meta name="author" content="ShanDong He" />
-  <meta name="keywords" content="ShanDong He, Software Engineer, Backend, AI, Machine Learning, Kyushu University, CFD, HPC, LLM" />
-  <link rel="canonical" href="https://lorendw7.github.io/" />
-
-  <!-- 浏览器地址栏 / 系统 UI 主题色（深浅模式各一） -->
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)" />
-
-  <!-- 社交平台分享预览（Open Graph / Twitter 卡片） -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="ShanDong He — Software Engineer" />
-  <meta property="og:description" content="Backend & AI/ML engineer · M.S. student at Kyushu University researching CFD, HPC & LLMs." />
-  <meta property="og:url" content="https://lorendw7.github.io/" />
-  <meta property="og:image" content="https://lorendw7.github.io/assets/cv.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="ShanDong He — Software Engineer" />
-  <meta name="twitter:description" content="Backend & AI/ML engineer · M.S. student at Kyushu University researching CFD, HPC & LLMs." />
-  <meta name="twitter:image" content="https://lorendw7.github.io/assets/cv.png" />
-
-  <!-- 内联 SVG emoji 作为站点图标，无需额外图片文件 -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts：Inter 字体，提供 300/400/500/600/700 五个字重 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shandong He — Research & Engineering</title>
+<meta name="description" content="Shandong He, master's student at Kyushu University. Reliable LLM extraction, embodied learning, scientific computing, and software engineering.">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="canonical" href="https://lorendw7.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shandong He — Research & Engineering">
+<meta property="og:description" content="Reliable AI, embodied learning, and the systems that make them work.">
+<meta property="og:url" content="https://lorendw7.github.io/">
+<meta property="og:image" content="https://lorendw7.github.io/assets/hero-bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shandong He — Research & Engineering">
+<meta name="twitter:description" content="Reliable AI, embodied learning, and scientific computing.">
+<meta name="twitter:image" content="https://lorendw7.github.io/assets/hero-bg.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer>
+</script>
 </head>
 <body>
-
-  <!-- ═══════════════════════════════════════
-       导航栏：固定在顶部，滚动后自动加阴影
-       ═══════════════════════════════════════ -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <!-- 左侧 Logo / 姓名 -->
-      <span class="nav-logo">ShanDong He</span>
-
-      <!-- 导航链接，点击后平滑滚动到对应区块 -->
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Education</a></li>
-        <li><a href="#work">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <!-- 移动端汉堡菜单按钮（三条横线），宽屏下隐藏 -->
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ═══════════════════════════════════════
-       Hero 区：全屏首屏，背景图 + 个人介绍
-       ═══════════════════════════════════════ -->
-  <header id="hero">
-    <!-- 遮罩由 CSS #hero::before 实现，无需额外元素 -->
-    <div class="hero-content">
-      <!-- 圆形头像（漫画风格肖像），文件放在 assets/cv.png -->
-      <img src="assets/cv.png" alt="Illustrated portrait of ShanDong He" class="avatar"
-           width="100" height="100" fetchpriority="high" decoding="async" />
-
-      <p class="hero-greeting">Hi, I'm</p>
-      <h1 class="hero-name">ShanDong He</h1>
-      <p class="hero-title">Software Engineer · Backend &amp; AI/ML</p>
-      <p class="hero-bio">
-        M.S. student at Kyushu University, researching CFD, HPC &amp; LLMs.<br />
-        Passionate about building robust distributed systems and exploring the frontier of AI.
-      </p>
-
-      <!-- 两个 CTA 按钮 -->
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
-      </div>
-
-      <!-- 社交图标：GitHub -->
-      <div class="hero-socials">
-        <a href="https://github.com/lorendw7" target="_blank" rel="noopener" title="GitHub">
-          <!-- GitHub SVG 图标 -->
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- 向下滚动提示，有上下弹跳动画 -->
-    <div class="hero-scroll-hint">
-      <span>Scroll down</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ═══════════════════════════════════════
-         About 区：个人简介 + 基本信息 + CV 下载
-         ═══════════════════════════════════════ -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-
-          <!-- 左侧：个人照片（漫画风格肖像） -->
-          <div class="about-photo">
-            <!-- 尺寸由 CSS aspect-ratio 控制（桌面 3/4、手机 1/1），故不写死 width/height -->
-            <img src="assets/cv.png" alt="Illustrated portrait of ShanDong He"
-                 loading="lazy" decoding="async" />
-          </div>
-
-          <!-- 右侧：文字介绍 + 元信息 + 按钮 -->
-          <div class="about-text">
-            <p>
-              I'm a software engineer and graduate student at <strong>Kyushu University</strong>, pursuing an M.S. in
-              Information Science and Electrical Engineering with a research focus on <strong>CFD, HPC, and large language models</strong>.
-            </p>
-            <p>
-              I hold a B.S. in Software Engineering from <strong>Beijing Normal University, Zhuhai</strong> (GPA 3.5/4.0).
-            </p>
-            <p>
-              I enjoy working across the full backend stack — from microservices and message queues to training neural
-              networks from scratch. I'm especially interested in the intersection of systems engineering and AI.
-            </p>
-
-            <!-- 四格基本信息卡片 -->
-            <div class="about-meta">
-              <div class="meta-item">
-                <span class="meta-label">Location</span>
-                <span class="meta-value">Fukuoka, Japan</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Education</span>
-                <span class="meta-value">Kyushu University</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">English</span>
-                <span class="meta-value">TOEFL 83 · CET-6</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Status</span>
-                <span class="meta-value">Open to opportunities</span>
-              </div>
-            </div>
-
-            <div class="about-actions">
-              <a href="https://github.com/lorendw7" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         Skills 区：六大技能卡片
-         如需添加/删除技能，修改 tag-list 里的 <li> 即可
-         ═══════════════════════════════════════ -->
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-
-          <div class="skill-card">
-            <div class="skill-icon">⟨/⟩</div>
-            <h3>Languages</h3>
-            <ul class="tag-list">
-              <li>Java</li>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>C/C++</li>
-              <li>Shell</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">⚙</div>
-            <h3>Backend</h3>
-            <ul class="tag-list">
-              <li>Spring Boot</li>
-              <li>Spring Cloud</li>
-              <li>Node.js</li>
-              <li>gRPC</li>
-              <li>Kafka</li>
-              <li>WebSocket</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">◈</div>
-            <h3>Frontend</h3>
-            <ul class="tag-list">
-              <li>React</li>
-              <li>Vue</li>
-              <li>Next.js</li>
-              <li>Tailwind CSS</li>
-              <li>Bootstrap</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">▤</div>
-            <h3>Databases &amp; Middleware</h3>
-            <ul class="tag-list">
-              <li>MySQL</li>
-              <li>Redis</li>
-              <li>MongoDB</li>
-              <li>MyBatis</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">✦</div>
-            <h3>AI / ML</h3>
-            <ul class="tag-list">
-              <li>PyTorch</li>
-              <li>TensorFlow</li>
-              <li>NumPy</li>
-              <li>Pandas</li>
-              <li>scikit-learn</li>
-              <li>Matplotlib</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">☁</div>
-            <h3>DevOps &amp; Cloud</h3>
-            <ul class="tag-list">
-              <li>Docker</li>
-              <li>AWS ECS</li>
-              <li>CloudFormation</li>
-              <li>Linux</li>
-              <li>Git</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         Education 区：时间线形式展示学历
-         如需添加学历，复制一个 timeline-item 块
-         ═══════════════════════════════════════ -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-
-          <!-- 第一条：九州大学 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-date">Apr 2026 – Present</span>
-              <h3 class="timeline-role">M.S. in Information Science and Electrical Engineering</h3>
-              <p class="timeline-org">Kyushu University · Fukuoka, Japan</p>
-              <ul class="timeline-bullets">
-                <li>Research Focus: Computational Fluid Dynamics (CFD), High-Performance Computing (HPC) &amp; Large Language Models (LLM)</li>
-              </ul>
-              <div class="tag-list">
-                <li>CFD</li><li>HPC</li><li>LLM</li><li>Deep Learning</li>
-              </div>
-            </div>
-          </div>
-
-          <!-- 第二条：北师大珠海 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-date">Sep 2020 – Jun 2024</span>
-              <h3 class="timeline-role">B.S. in Software Engineering</h3>
-              <p class="timeline-org">Beijing Normal University, Zhuhai · GPA: 3.5 / 4.0</p>
-              <ul class="timeline-bullets">
-                <li>Second-Class Scholarship (2021–2022) · Outstanding Student Union Cadre (Oct 2022)</li>
-                <li>Competitive programming: Lanqiao Cup 2nd Prize · CCPC Guangdong Bronze Prize</li>
-              </ul>
-              <div class="tag-list">
-                <li>Algorithms</li><li>Distributed Systems</li><li>Databases</li><li>OS</li>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         Work Experience 区：时间线形式展示工作经历
-         ═══════════════════════════════════════ -->
-    <section id="work" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <h3 class="timeline-role">Full Stack Developer</h3>
-              <p class="timeline-org">GADE UNION · Singapore</p>
-              <ul class="timeline-bullets">
-                <li>Developed and maintained full-stack web applications using modern frontend and backend technologies</li>
-                <li>Collaborated with cross-functional teams in an international environment</li>
-              </ul>
-              <div class="tag-list">
-                <li>Full Stack</li><li>React</li><li>Node.js</li><li>Spring Boot</li>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         Projects 区：卡片式展示五个项目
-         每张卡片顶部色带颜色在 CSS .band-* 中定义
-         如需添加项目，复制一个 article.project-card 块
-         ═══════════════════════════════════════ -->
-    <section id="projects" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-
-          <!-- 项目 1：Starry-Eyes -->
-          <article class="project-card">
-            <div class="project-header-band band-rose"></div>
-            <div class="project-body">
-              <h3>Starry-Eyes</h3>
-              <p class="project-role">Creative Front-End Developer · May – Jun 2026</p>
-              <p>An interactive 3D art piece that recreates an oil painting in WebGL, with a full PBR texture set, audio-reactive visuals, and a cinematic camera system.</p>
-              <ul class="project-bullets">
-                <li>Three.js + Vite: full PBR textures (albedo, normal, roughness, metalness, emissive, displacement) on a 256×256 subdivided plane so brush strokes physically displace geometry</li>
-                <li>Real-time post-processing (bloom, vignette, film grain, ACES tone mapping) + audio-reactive starfield driven by a live Web Audio FFT spectrum</li>
-                <li>Cinematic camera: Catmull-Rom fly-in, model-trailing motion, and a state machine for timed glTF fade-in and idle-breathing orbit</li>
-                <li>Server-side riddle gate via Vercel serverless function + Edge Middleware with stateless HMAC-SHA256 signed session cookies</li>
-              </ul>
-              <div class="tag-list">
-                <li>Three.js</li><li>WebGL</li><li>Vite</li><li>Web Audio</li><li>Vercel</li><li>Edge Middleware</li>
-              </div>
-            </div>
-          </article>
-
-          <!-- 项目 2：PatientFlow Cloud -->
-          <article class="project-card">
-            <div class="project-header-band band-blue"></div>
-            <div class="project-body">
-              <h3>PatientFlow Cloud</h3>
-              <p class="project-role">Backend Developer · Apr – May 2026</p>
-              <p>Production-grade healthcare management platform with microservices architecture, covering patient management, billing, analytics, and authentication.</p>
-              <ul class="project-bullets">
-                <li>gRPC for synchronous RPC + Kafka for event-driven async messaging</li>
-                <li>JWT auth with API Gateway for unified routing and access control</li>
-                <li>Docker + AWS ECS + CloudFormation for containerized cloud deployment</li>
-                <li>Unit/integration tests and OpenAPI documentation</li>
-              </ul>
-              <div class="tag-list">
-                <li>Spring Boot</li><li>Microservices</li><li>gRPC</li><li>Kafka</li><li>Docker</li><li>AWS ECS</li><li>JWT</li>
-              </div>
-            </div>
-          </article>
-
-          <!-- 项目 3：LLM Forge -->
-          <article class="project-card">
-            <div class="project-header-band band-purple"></div>
-            <div class="project-body">
-              <h3>LLM Forge</h3>
-              <p class="project-role">End-to-End Developer · Jan – Apr 2026</p>
-              <p>Built a GPT-like large language model from scratch, covering the full pipeline from data preprocessing to fine-tuning.</p>
-              <ul class="project-bullets">
-                <li>Decoder-only Transformer in PyTorch: attention, positional encoding, multi-layer blocks</li>
-                <li>Reusable data pipelines: text cleaning, tokenization, sequence sampling, batch processing</li>
-                <li>Autoregressive pretraining loop with perplexity evaluation</li>
-                <li>Fine-tuned for text classification and personal assistant tasks</li>
-              </ul>
-              <div class="tag-list">
-                <li>Python</li><li>PyTorch</li><li>Transformer</li><li>NLP</li><li>Fine-tuning</li>
-              </div>
-            </div>
-          </article>
-
-          <!-- 项目 4：Gitlet -->
-          <article class="project-card">
-            <div class="project-header-band band-green"></div>
-            <div class="project-body">
-              <h3>Gitlet</h3>
-              <p class="project-role">Core Developer · Nov – Dec 2025</p>
-              <p>A simplified Git version control system in Java, implementing core VCS concepts and remote workflows.</p>
-              <ul class="project-bullets">
-                <li>Core commands: init, add, commit, log, branch, merge</li>
-                <li>SHA-1 content-addressed object storage with file-system persistence</li>
-                <li>Branch switching, recursive merge, conflict detection</li>
-                <li>Remote operations: push, fetch, pull</li>
-              </ul>
-              <div class="tag-list">
-                <li>Java</li><li>Git Internals</li><li>SHA-1</li><li>File System</li>
-              </div>
-            </div>
-          </article>
-
-          <!-- 项目 5：LifeSelect -->
-          <article class="project-card">
-            <div class="project-header-band band-orange"></div>
-            <div class="project-body">
-              <h3>LifeSelect</h3>
-              <p class="project-role">Backend Developer · Oct – Nov 2025</p>
-              <p>A Spring Boot-based merchant review platform with social features, flash-sale coupons, and feed-stream delivery.</p>
-              <ul class="project-bullets">
-                <li>SMS login, merchant search, blogging, follow relationships</li>
-                <li>Redis: shared sessions, distributed locks, async message queues</li>
-                <li>Flash-sale ordering via Redis Stream; BitMap, HyperLogLog, GEO for analytics</li>
-              </ul>
-              <div class="tag-list">
-                <li>Spring Boot</li><li>Redis</li><li>MySQL</li><li>Redis Stream</li><li>GEO</li>
-              </div>
-            </div>
-          </article>
-
-          <!-- 项目 6：SkyEats -->
-          <article class="project-card">
-            <div class="project-header-band band-teal"></div>
-            <div class="project-body">
-              <h3>SkyEats</h3>
-              <p class="project-role">Backend Developer · Sep – Oct 2025</p>
-              <p>Full-featured food delivery platform covering user ordering, merchant management, and business analytics.</p>
-              <ul class="project-bullets">
-                <li>Spring Boot + MyBatis + Redis + MySQL; simulated WeChat Pay</li>
-                <li>Redis caching for dishes and set meals under high concurrency</li>
-                <li>WebSocket for real-time order alerts; ECharts + Apache POI for dashboards &amp; exports</li>
-              </ul>
-              <div class="tag-list">
-                <li>Spring Boot</li><li>MyBatis</li><li>Redis</li><li>MySQL</li><li>WebSocket</li><li>ECharts</li>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         Awards 区：四个荣誉卡片
-         如需添加奖项，复制一个 award-card 块
-         ═══════════════════════════════════════ -->
-    <section id="awards" class="section">
-      <div class="container">
-        <h2 class="section-title">Honors &amp; Awards</h2>
-        <div class="awards-grid">
-
-          <div class="award-card">
-            <div class="award-icon">🏅</div>
-            <div class="award-body">
-              <span class="award-date">Apr 2023</span>
-              <h3>Second Prize — 14th Lanqiao Cup</h3>
-              <p>Guangdong Provincial C++ Programming Contest (University Group A)</p>
-            </div>
-          </div>
-
-          <div class="award-card">
-            <div class="award-icon">🥉</div>
-            <div class="award-body">
-              <span class="award-date">May 2023</span>
-              <h3>Bronze Prize — CCPC Guangdong</h3>
-              <p>China Collegiate Programming Contest – Guangdong Provincial Contest</p>
-            </div>
-          </div>
-
-          <div class="award-card">
-            <div class="award-icon">🎓</div>
-            <div class="award-body">
-              <span class="award-date">2021 – 2022</span>
-              <h3>Second-Class Scholarship</h3>
-              <p>Software Engineering Program, Beijing Normal University, Zhuhai</p>
-            </div>
-          </div>
-
-          <div class="award-card">
-            <div class="award-icon">⭐</div>
-            <div class="award-body">
-              <span class="award-date">Oct 2022</span>
-              <h3>Outstanding Student Union Cadre</h3>
-              <p>School of Information Technology, Beijing Normal University, Zhuhai</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         Contact 区：联系入口
-         不放邮箱：访客通过 GitHub 联系
-         ═══════════════════════════════════════ -->
-    <section id="contact" class="section section-alt">
-      <div class="container container-narrow">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="contact-intro">
-          I'm open to research collaborations, internship opportunities, and interesting projects.
-          Feel free to reach out — I'm always happy to chat!
-        </p>
-        <a href="https://github.com/lorendw7" class="btn btn-primary btn-large" target="_blank" rel="noopener">Say Hello on GitHub</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- 页脚：自动显示当前年份 -->
-  <footer>
-    <p>Designed &amp; built by ShanDong He · <span id="year"></span></p>
-  </footer>
-
-  <script src="main.js"></script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<a class="wordmark" href="#home">SH<span> / </span>
+<span data-zh="何单东" >Shandong He</span>
+</a>
+<nav aria-label="Main navigation" id="navigation">
+<a href="#research">
+<span data-zh="研究" >Research</span>
+</a>
+<a href="#projects">
+<span data-zh="项目" >Projects</span>
+</a>
+<a href="#about">
+<span data-zh="关于" >About</span>
+</a>
+<a href="#contact">
+<span data-zh="联系" >Contact</span>
+</a>
+</nav>
+<div class="header-actions">
+<button id="language" type="button" aria-label="切换至中文">中文</button>
+<button id="menu" type="button" aria-controls="navigation" aria-expanded="false">
+<span data-zh="菜单" >Menu</span>
+</button>
+</div>
+</header>
+<main id="main">
+<section class="hero" id="home" aria-labelledby="hero-title">
+<div class="hero-copy">
+<p class="eyebrow">
+<span class="status-dot">
+</span>
+<span data-zh="九州大学 · 日本福冈" >Kyushu University · Fukuoka, Japan</span>
+</p>
+<h1 id="hero-title">
+<span data-zh="探索智能，" >Exploring intelligence.</span>
+<br>
+<em data-zh="构建可能。" >Building possibilities.</em>
+</h1>
+<p data-zh="我是何单东，研究生与软件工程师。关注大语言模型的可靠性、具身学习与科学计算，也热爱把想法做成可用的软件。" class="hero-intro">I&#x27;m Shandong He, a graduate student and software engineer working on reliable language models, embodied learning, and scientific computing.</p>
+<div class="hero-links">
+<a class="button primary" href="#research">
+<span data-zh="阅读研究" >Explore my research</span> ↗</a>
+<a class="text-link" href="https://github.com/lorendw7" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</div>
+<div class="hero-note">
+<span data-zh="研究与实践" class="small-label">RESEARCH &amp; PRACTICE</span>
+<span data-zh="从验证想法，到实现系统。" >From testing an idea to building a system.</span>
+</div>
+</div>
+<figure class="hero-image">
+<picture>
+<source media="(max-width:600px)" srcset="assets/hero-bg-portrait.jpg">
+<img src="assets/hero-bg.jpg" alt="Coffee and fluid mechanics books on a warmly lit desk" width="1600" height="900" fetchpriority="high">
+</picture>
+<figcaption>
+<span>01 / FIELD NOTES</span>
+<span data-zh="保持好奇，持续构建。" >Stay curious. Keep building.</span>
+</figcaption>
+</figure>
+</section>
+<div class="focus-strip">
+<span data-zh="可靠 AI" >Reliable AI</span>
+<span aria-hidden="true">✳</span>
+<span data-zh="具身学习" >Embodied learning</span>
+<span aria-hidden="true">✳</span>
+<span data-zh="科学计算" >Scientific computing</span>
+<span aria-hidden="true">✳</span>
+<span data-zh="软件系统" >Software systems</span>
+</div>
+<section class="section" id="research" aria-labelledby="research-title">
+<div class="section-heading">
+<div>
+<p data-zh="01 / 研究" class="eyebrow">01 / RESEARCH</p>
+<h2 data-zh="论文与研究" id="research-title">Questions worth testing.</h2>
+</div>
+<p data-zh="以可复现实验检验直觉，认真区分结果与假设。" >Reproducible experiments. Carefully bounded claims.</p>
+</div>
+<article class="publication">
+<div class="publication-meta">
+<span data-zh="已录用 · 短文" class="badge accepted">Accepted · Short paper</span>
+<span>CANDAR 2026 / WANC</span>
+<span class="pub-year">2026</span>
+</div>
+<div class="publication-body">
+<h3>Per-Relation Reliability of LLM-Based Knowledge Graph Extraction: A Verification-First Study on Scientific Abstracts</h3>
+<p class="authors">
+<strong>Shandong He</strong>, Kenji Ono</p>
+<p data-zh="在 200 篇科学摘要上研究不同关系类型的抽取可靠性；结合 360 条人工判定、双 LLM 评审与自一致性分析，检验模型输出的可信程度。" >A relation-level study of extraction reliability across 200 scientific abstracts, combining 360 human judgments, two LLM judges, and self-consistency analysis.</p>
+<div class="publication-footer">
+<a class="text-link" href="https://github.com/lorendw7/not-all-relations-are-equally-reliable" target="_blank" rel="noopener noreferrer">
+<span data-zh="数据与复现代码 ↗" >Data &amp; reproduction code ↗</span>
+</a>
+<span data-zh="已录用，正式论文集待出版" >Accepted; proceedings forthcoming</span>
+</div>
+</div>
+</article>
+<article class="publication">
+<div class="publication-meta">
+<span data-zh="在投" class="badge review">Under review</span>
+<span>CoRL 2026 Workshop / Pretrain to Adapt</span>
+<span class="pub-year">2026</span>
+</div>
+<div class="publication-body">
+<h3>Task-Dependent Benefits of Cross-Embodiment Pretraining: A Controlled Study of Geometric Demonstration Selection</h3>
+<p class="authors">
+<span data-zh="具身学习 · 跨机器人迁移" >Embodied learning · Cross-robot transfer</span>
+</p>
+<p data-zh="使用 Diffusion Policy，在 ManiSkill 中进行 XArm6 → Panda 的受控迁移实验，比较两项任务、七种条件与三个训练种子。预训练收益因任务而异；所测几何选择方法未稳定优于随机选择。" >Controlled XArm6 → Panda transfer with Diffusion Policy in ManiSkill: two tasks, seven conditions, and three training seeds. Pretraining benefits depend on the task; tested geometric selectors do not consistently outperform random selection.</p>
+<div class="publication-footer">
+<span data-zh="投稿论文" >Submitted manuscript</span>
+<span data-zh="在投状态不代表已录用" >Under review; not an accepted publication</span>
+</div>
+</div>
+</article>
+</section>
+<section class="section" id="projects" aria-labelledby="projects-title">
+<div class="section-heading">
+<div>
+<p data-zh="02 / 项目" class="eyebrow">02 / SELECTED WORK</p>
+<h2 data-zh="把想法写成代码。" id="projects-title">Ideas, made tangible.</h2>
+</div>
+<a class="text-link" href="https://github.com/lorendw7?tab=repositories" target="_blank" rel="noopener noreferrer">
+<span data-zh="所有公开仓库 ↗" >All public repositories ↗</span>
+</a>
+</div>
+<div class="filters" role="group" aria-label="Filter projects">
+<button type="button" data-filter="all" aria-pressed="true">
+<span data-zh="全部" >All</span>
+</button>
+<button type="button" data-filter="ai" aria-pressed="false">
+<span data-zh="AI / 研究" >AI / Research</span>
+</button>
+<button type="button" data-filter="systems" aria-pressed="false">
+<span data-zh="后端系统" >Systems</span>
+</button>
+<button type="button" data-filter="creative" aria-pressed="false">
+<span data-zh="创意开发" >Creative</span>
+</button>
+</div>
+<p id="project-count" class="sr-only" aria-live="polite">
+</p>
+<div class="project-grid">
+<article class="project-card ai-card" data-category="ai">
+<div class="project-top">
+<span>01 / MACHINE LEARNING</span>
+<span>↗</span>
+</div>
+<div class="project-mark" aria-hidden="true">[ attention ]</div>
+<h3>
+<a class="project-link" href="https://github.com/lorendw7/LLM-Forge" target="_blank" rel="noopener noreferrer">LLM Forge</a>
+</h3>
+<p data-zh="从注意力机制与 decoder-only Transformer，到预训练、文本分类与指令微调的学习实践。" >A from-scratch language-model learning project: attention, decoder-only Transformers, pretraining, classification, and instruction fine-tuning.</p>
+<div class="tags">
+<span>Python</span>
+<span>PyTorch</span>
+<span>Transformers</span>
+</div>
+</article>
+<article class="project-card systems-card" data-category="systems">
+<div class="project-top">
+<span>02 / DISTRIBUTED SYSTEMS</span>
+<span>↗</span>
+</div>
+<div class="project-mark" aria-hidden="true">api → services</div>
+<h3>
+<a class="project-link" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">PatientFlow Cloud</a>
+</h3>
+<p data-zh="医疗管理微服务项目，涵盖患者、账单、分析与认证，结合 gRPC 同步通信和 Kafka 事件流。" >Healthcare microservices covering patients, billing, analytics, and authentication, with gRPC communication and Kafka event streams.</p>
+<div class="tags">
+<span>Java</span>
+<span>Spring Boot</span>
+<span>Kafka</span>
+<span>AWS</span>
+</div>
+</article>
+<article class="project-card creative-card" data-category="creative">
+<div class="project-top">
+<span>03 / CREATIVE CODING</span>
+<span>↗</span>
+</div>
+<div class="project-mark" aria-hidden="true">✦ · ✧ · ✦</div>
+<h3>
+<a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer">Starry-Eyes</a>
+</h3>
+<p data-zh="一幅在三维空间中浮起的油画：PBR 笔触、随音乐呼吸的星场，以及电影式镜头运动。" >An oil painting brought into 3D through PBR brush strokes, an audio-reactive starfield, and cinematic camera movement.</p>
+<div class="tags">
+<span>Three.js</span>
+<span>WebGL</span>
+<span>Web Audio</span>
+</div>
+</article>
+<article class="project-card ai-card" data-category="ai">
+<div class="project-top">
+<span>04 / EARLY DEVELOPMENT</span>
+<span>↗</span>
+</div>
+<div class="project-mark" aria-hidden="true">∂ / ∂t</div>
+<h3>
+<a class="project-link" href="https://github.com/lorendw7/PerfusionUDE.jl" target="_blank" rel="noopener noreferrer">PerfusionUDE.jl</a>
+</h3>
+<p data-zh="面向生理药代动力学逆问题的 Julia 研究软件。已完成设计文档与参考生理层，GPU 求解和推断仍在规划中。" >Julia research software for PBPK inverse problems. Design documentation and a reference-physiology layer are in place; GPU solving and inference remain planned.</p>
+<div class="tags">
+<span>Julia</span>
+<span>Scientific ML</span>
+<span>In progress</span>
+</div>
+</article>
+</div>
+<div class="learning-row">
+<span data-zh="持续学习" class="small-label">ON THE WORKBENCH</span>
+<p data-zh="深入存储引擎、科学计算与 Agent 系统。以下是持续学习与开发中的项目。" >Continuing explorations in storage engines, scientific computing, and agent systems.</p>
+<div>
+<a class="text-link" href="https://github.com/lorendw7/MiniKV" target="_blank" rel="noopener noreferrer">MiniKV ↗</a>
+<a class="text-link" href="https://github.com/lorendw7/CFD_12_Step" target="_blank" rel="noopener noreferrer">CFD 12 Step ↗</a>
+<a class="text-link" href="https://github.com/lorendw7/trippilot" target="_blank" rel="noopener noreferrer">TripPilot ↗</a>
+</div>
+</div>
+</section>
+<section class="section about-section" id="about" aria-labelledby="about-title">
+<div class="about-intro">
+<p data-zh="03 / 关于" class="eyebrow">03 / ABOUT</p>
+<h2 data-zh="研究与工程之间。" id="about-title">Between research and engineering.</h2>
+<p data-zh="我在九州大学攻读信息科学与电气工程硕士，研究兴趣横跨 CFD、HPC 与大语言模型。做实验、读论文、开发软件，是我理解问题的不同方式。" >I&#x27;m pursuing an M.S. in Information Science and Electrical Engineering at Kyushu University, with interests spanning CFD, HPC, and large language models. I learn through experiments, papers, and working software.</p>
+<img class="portrait" src="assets/cv.png" alt="Illustrated portrait of Shandong He" width="96" height="96" loading="lazy">
+</div>
+<div class="experience-list">
+<article>
+<span data-zh="2026.04 — 至今" class=small-label>2026.04 — PRESENT</span>
+<h3 data-zh="九州大学" >Kyushu University</h3>
+<p data-zh="信息科学与电气工程 · 硕士" >M.S. · Information Science and Electrical Engineering</p>
+</article>
+<article>
+<span data-zh="2020.09 — 2024.06" class=small-label>2020.09 — 2024.06</span>
+<h3 data-zh="北京师范大学珠海分校" >Beijing Normal University, Zhuhai</h3>
+<p data-zh="软件工程 · 工学学士 · GPA 3.5 / 4.0" >B.S. · Software Engineering · GPA 3.5 / 4.0</p>
+</article>
+<article>
+<span data-zh="行业经历 · 新加坡" class=small-label>INDUSTRY EXPERIENCE · SINGAPORE</span>
+<h3 data-zh="GADE UNION" >GADE UNION</h3>
+<p data-zh="全栈开发工程师 · 参与前后端系统开发" >Full Stack Developer · Frontend and backend development</p>
+</article>
+</div>
+</section>
+<section class="skills-section" aria-label="Technical skills">
+<div>
+<span data-zh="语言" class=small-label>LANGUAGES</span>
+<p>Python · Java · C/C++ · JavaScript / TypeScript</p>
+</div>
+<div>
+<span data-zh="模型与实验" class=small-label>MODELS &amp; EXPERIMENTS</span>
+<p>PyTorch · NumPy · Pandas · scikit-learn</p>
+</div>
+<div>
+<span data-zh="应用与系统" class=small-label>APPLICATIONS &amp; SYSTEMS</span>
+<p>Spring Boot · React · Vue · Redis · Docker · Linux</p>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<p data-zh="04 / 联系" class="eyebrow">04 / SAY HELLO</p>
+<h2 data-zh="从一个好问题开始。" >Good work starts with a conversation.</h2>
+<div>
+<p data-zh="欢迎交流 AI 研究、软件工程与合作机会。简历可联系索取。" >Let&#x27;s talk about AI research, software engineering, or a possible collaboration. CV available on request.</p>
+<a class="button primary" href="https://github.com/lorendw7" target="_blank" rel="noopener noreferrer">
+<span data-zh="在 GitHub 找到我 ↗" >Find me on GitHub ↗</span>
+</a>
+</div>
+</section>
+</main>
+<footer>
+<span>© <span id="year">2026</span> Shandong He</span>
+<span data-zh="保持好奇，认真求证。" >Curiosity, with evidence.</span>
+<a href="#home">
+<span data-zh="返回顶部 ↑" >Back to top ↑</span>
+</a>
+</footer>
 </body>
 </html>

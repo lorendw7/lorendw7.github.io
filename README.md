@@ -1,34 +1,34 @@
-# lorendw7.github.io
+# Shandong He — personal website
 
-Personal portfolio / resume website for **ShanDong He** — Software Engineer (Backend & AI/ML), M.S. student at Kyushu University researching CFD, HPC & LLMs.
+A dependency-free bilingual research and engineering portfolio for GitHub Pages.
 
-Live site: https://lorendw7.github.io
+## Design
 
-## Structure
+The selected default is **A: academic editorial** — warm paper colors, serif headings, original coffee/CFD photography, and publications before projects. The original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged.
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Single-page site: Hero, About, Skills, Education, Work Experience, Projects, Awards, Contact. Also holds SEO / Open Graph meta and an inline SVG favicon. |
-| `styles.css` | All styling (layout, timeline, cards, responsive design, dark mode, accessibility). |
-| `main.js` | Navbar scroll behavior, mobile menu toggle, scroll-spy nav highlight, on-scroll reveal animations, footer year. |
-| `assets/cv.png` | Profile portrait / avatar (illustrated, comic-style) |
-| `assets/hero-bg.jpg`, `assets/hero-bg-portrait.jpg` | Hero background images (desktop / mobile), compressed JPEG |
+- `index.html`: complete English content with Chinese translations on individual text elements.
+- `styles.css`: responsive layouts, focus states, print styles, reduced-motion support.
+- `main.js`: language toggle, mobile navigation, project filters, active-section tracking.
+- `design-preview.html`: three interactive design previews. Alternative layouts use `?design=editorial` and `?design=bento`; `?lang=zh` opens Chinese.
+- `assets/favicon.svg`: site monogram.
 
-## Features
+No dependencies, external fonts, analytics, or build step. All essential content is readable without JavaScript. Run a static file server in this folder for local preview.
 
-- **Zero dependencies / no build step** — plain HTML, CSS, and vanilla JS; deploys as-is on GitHub Pages.
-- **Responsive** — adapts from desktop to mobile; hero swaps to a portrait background on narrow / portrait screens.
-- **Dark mode** — follows the OS `prefers-color-scheme`; the whole theme is driven by CSS variables in `:root`.
-- **Accessible** — keyboard `:focus-visible` rings, honors `prefers-reduced-motion`, semantic landmarks.
-- **Themeable** — all colors/sizes live as CSS variables at the top of `styles.css`.
+## Content maintenance
 
-## Editing
+Paper 1 is an **accepted CANDAR 2026 / WANC short paper**, not an already-published proceedings article. The embodied-learning manuscript is **under review at the CoRL 2026 Pretrain to Adapt workshop**, not accepted. Keep these statuses distinct.
 
-- **Content** lives directly in `index.html`; each section is marked with a commented header.
-- **Theme:** edit the CSS variables in `:root` at the top of `styles.css`; the dark palette is the `@media (prefers-color-scheme: dark)` block at the bottom.
-- **Portrait:** replace `assets/cv.png` (used for both the hero avatar and the About photo).
-- **Contact:** the site deliberately publishes no email address, phone number, or CV download — visitors reach out via GitHub, and the CV goes out on request.
+Sources checked on 2026-10-08:
 
-## Deploy
+- Public `lorendw7/not-all-relations-are-equally-reliable` README: title, author order, acceptance and reproducibility scope.
+- Local `embodied-intelligence-data-assessment`: manuscript title/results, submission confirmation, and workshop-fit note.
+- Public/local LLM-Forge, PatientFlow-Cloud, Starry-Eyes, PerfusionUDE.jl and learning-project documentation.
+- Supplied Chinese/English resumes: education, GPA, work experience, dates and language scores.
 
-Hosted via GitHub Pages off the `main` branch — pushing to `main` publishes automatically.
+PerfusionUDE.jl and the workbench projects include ongoing/planned work. Do not upgrade planned features into achievements based on a roadmap alone. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
+
+The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated private resume sources are delivered separately.
+
+## Publishing
+
+GitHub Pages serves the `main` branch. Push changes only after checking both languages, desktop/mobile layouts, filters, navigation, local links, and factual statuses. `.preview/` is ignored and contains only local backups, tooling, and inspection output.
