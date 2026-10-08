@@ -11,6 +11,7 @@ The selected default is **C: bento cards** — project-first content, a direct e
 - `main.js`: language toggle, mobile navigation, project filters, active-section tracking.
 - `design-preview.html`: three interactive design previews. Alternative layouts use `?design=academic` and `?design=editorial`; `?lang=zh` opens Chinese.
 - Hero photography keeps its original landscape and portrait aspect ratios. The three design previews preserve the full image; the default layout has no image caption or dark overlay. The header remains accessible while scrolling, and project filters show a visible result count.
+- The default hero states the expected March 2028 graduation and 2027 internship focus. The featured Inkline card links to a working demo and engineering notes, and names its documented PDF limitations.
 - `assets/favicon.svg`: site monogram.
 
 No dependencies, external fonts, analytics, or build step. All essential content is readable without JavaScript. Run a static file server in this folder for local preview.

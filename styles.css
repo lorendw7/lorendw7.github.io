@@ -270,6 +270,12 @@ h1 em {
   color:var(--muted);
   max-width:240px
 }
+.section-intro {
+  margin-top:12px;
+  max-width:540px;
+  color:var(--muted);
+  font-size:12px
+}
 h2 {
   font-size:clamp(32px,3.1vw,43px);
   line-height:1.2;
@@ -392,7 +398,10 @@ h2 {
   outline:none
 }
 .project-actions {
-  margin-top:18px
+  margin-top:18px;
+  display:flex;
+  gap:10px 20px;
+  flex-wrap:wrap
 }
 .project-demo {
   position:relative;
@@ -406,6 +415,13 @@ h2 {
 }
 .project-demo:hover {
   color:var(--accent)
+}
+.project-demo.secondary {
+  color:var(--muted);
+  font-weight:500
+}
+.project-demo.secondary:hover {
+  color:var(--ink)
 }
 .project-top {
   display:flex;
@@ -444,6 +460,13 @@ h2 {
   color:var(--muted);
   margin-top:12px;
   max-width:470px
+}
+.project-card .project-evidence {
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid #d4dcd1;
+  font-size:11px;
+  line-height:1.65
 }
 .tags {
   display:flex;
