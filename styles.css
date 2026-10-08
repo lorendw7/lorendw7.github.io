@@ -494,6 +494,32 @@ h2 {
 .creative-card .tags span {
   border-color:#5b6c64
 }
+.awards-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px
+}
+.award-card {
+  min-width:0;
+  padding:25px 28px;
+  border:1px solid var(--line);
+  background:#f1efe8
+}
+.award-card .small-label {
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:.08em
+}
+.award-card h3 {
+  margin-top:12px;
+  font-size:18px;
+  line-height:1.25
+}
+.award-card p {
+  margin-top:9px;
+  color:var(--muted);
+  font-size:12px
+}
 .learning-row {
   margin-top:24px;
   padding:24px 0;
@@ -932,6 +958,9 @@ html[data-design=bento] .contact-section {
   .project-grid {
     grid-template-columns:1fr
   }
+  .awards-grid {
+    grid-template-columns:1fr
+  }
   .project-card {
     padding:24px
   }
@@ -1110,7 +1139,7 @@ html[data-design=bento] .hero-image:after {
   .hero-note {
     display:none
   }
-  .publication,.project-card {
+  .publication,.project-card,.award-card {
     break-inside:avoid
   }
   body {

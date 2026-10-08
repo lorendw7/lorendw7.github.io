@@ -46,7 +46,7 @@
       if (!entry.isIntersecting) return;
       nav.querySelectorAll('a').forEach(link => { if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     }), { rootMargin: '-15% 0px -60% 0px' });
-    document.querySelectorAll('#research, #projects, #about, #contact').forEach(section => observer.observe(section));
+    document.querySelectorAll('#research, #projects, #awards, #about, #contact').forEach(section => observer.observe(section));
   }
   document.querySelector('#year').textContent = String(new Date().getFullYear());
 })();
