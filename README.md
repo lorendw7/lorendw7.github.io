@@ -22,10 +22,10 @@ Sources checked on 2026-10-08:
 
 - Public `lorendw7/not-all-relations-are-equally-reliable` README: title, author order, acceptance and reproducibility scope.
 - Local `embodied-intelligence-data-assessment`: manuscript title/results, submission confirmation, and workshop-fit note.
-- Public/local LLM-Forge, PatientFlow-Cloud, Starry-Eyes, PerfusionUDE.jl and learning-project documentation.
+- Public/local LLM-Forge, PatientFlow-Cloud, Starry-Eyes and Inkline implementation and completion documentation.
 - Supplied Chinese/English resumes: education, GPA, work experience, dates and language scores.
 
-PerfusionUDE.jl and the workbench projects include ongoing/planned work. Do not upgrade planned features into achievements based on a roadmap alone. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
+Only completed project scopes are featured: LLM Forge, PatientFlow Cloud, Starry-Eyes, and Inkline's shipped PDF-signing MVP. Ongoing and documentation-only projects are excluded. Inkline's future signature-library/date-stamp additions are not claimed as completed. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
 
 The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated private resume sources are delivered separately.
 
