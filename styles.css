@@ -991,6 +991,24 @@ html[data-design=bento] .contact-section {
     animation:none!important
   }
 }
+/* Show every pixel of the original hero photographs at their native ratios. */
+html[data-design=academic] .hero-image {
+  height:auto;
+  aspect-ratio:16/9;
+  border-radius:0
+}
+html[data-design=academic] .hero-image picture,html[data-design=academic] .hero-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center
+}
+@media(max-width:600px) {
+  html[data-design=academic] .hero-image {
+    aspect-ratio:9/16
+  }
+}
 @media print {
   .site-header,.hero-image,.hero-links,.focus-strip,.filters,.contact-section,footer {
     display:none!important
