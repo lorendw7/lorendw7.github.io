@@ -153,7 +153,7 @@
 <span data-zh="全部" >All</span>
 </button>
 <button type="button" data-filter="ai" aria-pressed="false">
-<span data-zh="AI / 研究" >AI / Research</span>
+<span data-zh="AI 应用" >AI Applications</span>
 </button>
 <button type="button" data-filter="systems" aria-pressed="false">
 <span data-zh="后端系统" >Systems</span>
@@ -166,61 +166,47 @@
 <p id="project-count" class="sr-only" aria-live="polite">
 </p>
 <div class="project-grid">
+<article class="project-card systems-card" data-category="systems">
+<div class="project-top"><span>01 / DISTRIBUTED SYSTEMS</span><span>↗</span></div>
+<div class="project-mark" aria-hidden="true">api → services</div>
+<h3><a class="project-link" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">PatientFlow Cloud</a></h3>
+<p data-zh="实现患者、账单、分析与认证服务，结合 gRPC 通信、Kafka 事件处理、网关路由与容器部署配置。">Healthcare management services for patients, billing, analytics, and authentication, with gRPC communication, Kafka events, gateway routing, and container deployment configuration.</p>
+<div class="tags"><span>Java</span><span>Spring Boot</span><span>gRPC / Kafka</span></div>
+</article>
+<article class="project-card apps-card" data-category="apps">
+<div class="project-top"><span>02 / FULL-STACK APPLICATION</span><span>↗</span></div>
+<div class="project-mark" aria-hidden="true">create → share</div>
+<h3><a class="project-link" href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer">Agent Skills Manager</a></h3>
+<p data-zh="面向 Agent 技能的全栈管理应用，支持 Markdown 技能创建、编辑与分享，包含用户认证、个人管理页和公开展示。">A full-stack application for creating, editing, and sharing Markdown-based agent skills, with user authentication, a management dashboard, and a public gallery.</p>
+<div class="tags"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div>
+</article>
 <article class="project-card ai-card" data-category="ai">
-<div class="project-top">
-<span>01 / MACHINE LEARNING</span>
-<span>↗</span>
-</div>
-<div class="project-mark" aria-hidden="true">[ attention ]</div>
-<h3>
-<a class="project-link" href="https://github.com/lorendw7/LLM-Forge" target="_blank" rel="noopener noreferrer">LLM Forge</a>
-</h3>
-<p data-zh="从注意力机制与 decoder-only Transformer，到预训练、文本分类与指令微调的学习实践。" >A from-scratch language-model learning project: attention, decoder-only Transformers, pretraining, classification, and instruction fine-tuning.</p>
-<div class="tags">
-<span>Python</span>
-<span>PyTorch</span>
-<span>Transformers</span>
-</div>
+<div class="project-top"><span>03 / AI APPLICATION</span><span>↗</span></div>
+<div class="project-mark" aria-hidden="true">notes ↔ answers</div>
+<h3><a class="project-link" href="https://github.com/lorendw7/Goat-Notes" target="_blank" rel="noopener noreferrer">Goat Notes</a></h3>
+<p data-zh="实现账号认证、笔记持久化管理与 AI 问答，结合 Supabase、Prisma 和 DeepSeek，围绕用户笔记内容生成回答。">A note-taking application with account authentication, persistent note management, and DeepSeek-powered questions and answers grounded in the user’s notes.</p>
+<div class="tags"><span>Next.js</span><span>Supabase</span><span>DeepSeek</span></div>
 </article>
 <article class="project-card systems-card" data-category="systems">
-<div class="project-top">
-<span>02 / DISTRIBUTED SYSTEMS</span>
-<span>↗</span>
-</div>
-<div class="project-mark" aria-hidden="true">api → services</div>
-<h3>
-<a class="project-link" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">PatientFlow Cloud</a>
-</h3>
-<p data-zh="医疗管理微服务项目，涵盖患者、账单、分析与认证，结合 gRPC 同步通信和 Kafka 事件流。" >Healthcare microservices covering patients, billing, analytics, and authentication, with gRPC communication and Kafka event streams.</p>
-<div class="tags">
-<span>Java</span>
-<span>Spring Boot</span>
-<span>Kafka</span>
-<span>AWS</span>
-</div>
+<div class="project-top"><span>04 / BACKEND APPLICATION</span><span>↗</span></div>
+<div class="project-mark" aria-hidden="true">cache → queue</div>
+<h3><a class="project-link" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Life Preference</a></h3>
+<p data-zh="商户点评后端项目，已实现登录、商户缓存查询、优惠券秒杀与关注动态，并结合 Redis Lua 脚本和 Stream 处理订单。">A merchant-review backend implementing login, cached merchant queries, coupon flash sales, and follow feeds, with Redis Lua scripts and streams for order processing.</p>
+<div class="tags"><span>Spring Boot</span><span>Redis</span><span>MySQL</span></div>
 </article>
-<article class="project-card creative-card" data-category="creative">
-<div class="project-top">
-<span>03 / CREATIVE CODING</span>
-<span>↗</span>
-</div>
-<div class="project-mark" aria-hidden="true">✦ · ✧ · ✦</div>
-<h3>
-<a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer">Starry-Eyes</a>
-</h3>
-<p data-zh="一幅在三维空间中浮起的油画：PBR 笔触、随音乐呼吸的星场，以及电影式镜头运动。" >An oil painting brought into 3D through PBR brush strokes, an audio-reactive starfield, and cinematic camera movement.</p>
-<div class="tags">
-<span>Three.js</span>
-<span>WebGL</span>
-<span>Web Audio</span>
-</div>
-</article>
-<article class="project-card app-card" data-category="apps">
-<div class="project-top"><span>04 / WEB APPLICATION</span><span>↗</span></div>
+<article class="project-card apps-card" data-category="apps">
+<div class="project-top"><span>05 / WEB APPLICATION</span><span>↗</span></div>
 <div class="project-mark" aria-hidden="true">sign → export</div>
 <h3><a class="project-link" href="https://github.com/lorendw7/inkline" target="_blank" rel="noopener noreferrer">Inkline</a></h3>
-<p data-zh="已完成并上线的浏览器端 PDF 签名工具：打开文档、绘制签名、拖放缩放、导出签名 PDF，全程在本机处理。">A completed, deployed browser-based PDF signing tool: open a document, draw and position a signature, then export the signed PDF. Processing stays on the device.</p>
+<p data-zh="已上线的浏览器端 PDF 签名工具：打开文档、绘制签名、拖放缩放、导出签名 PDF，全程在本机处理。">A deployed browser-based PDF signing tool: open a document, draw and position a signature, then export the signed PDF. Processing stays on the device.</p>
 <div class="tags"><span>React</span><span>TypeScript</span><span>PDF.js / pdf-lib</span></div>
+</article>
+<article class="project-card creative-card" data-category="creative">
+<div class="project-top"><span>06 / CREATIVE CODING</span><span>↗</span></div>
+<div class="project-mark" aria-hidden="true">✦ · ✧ · ✦</div>
+<h3><a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer">Starry-Eyes</a></h3>
+<p data-zh="已完成并上线的交互式三维作品，结合 PBR 油画笔触、随音乐变化的星场、电影式运镜与响应式渲染。">An interactive 3D artwork with PBR brush strokes, an audio-reactive starfield, cinematic camera movement, and responsive rendering. View the deployed experience.</p>
+<div class="tags"><span>Three.js</span><span>WebGL</span><span>Web Audio</span></div>
 </article>
 </div>
 </section>

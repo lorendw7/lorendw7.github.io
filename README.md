@@ -18,14 +18,14 @@ No dependencies, external fonts, analytics, or build step. All essential content
 
 Paper 1 is an **accepted CANDAR 2026 / WANC short paper**, not an already-published proceedings article. The embodied-learning manuscript is **under review at the CoRL 2026 Pretrain to Adapt workshop**, not accepted. Keep these statuses distinct.
 
-Sources checked on 2026-10-08:
+Sources checked on 2026-10-09:
 
 - Public `lorendw7/not-all-relations-are-equally-reliable` README: title, author order, acceptance and reproducibility scope.
 - Local `embodied-intelligence-data-assessment`: manuscript title/results, submission confirmation, and workshop-fit note.
-- Public/local LLM-Forge, PatientFlow-Cloud, Starry-Eyes and Inkline implementation and completion documentation.
+- Public/local PatientFlow-Cloud, Agent-Skills-Manager, Goat-Notes, Life-Preference, Starry-Eyes, and Inkline implementation and completion documentation.
 - Supplied Chinese/English resumes: education, GPA, work experience, dates and language scores.
 
-Only completed project scopes are featured: LLM Forge, PatientFlow Cloud, Starry-Eyes, and Inkline's shipped PDF-signing MVP. Ongoing and documentation-only projects are excluded. Inkline's future signature-library/date-stamp additions are not claimed as completed. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
+Only completed project scopes are featured: PatientFlow Cloud, Agent Skills Manager, Goat Notes, Life Preference, Starry-Eyes, and Inkline's shipped PDF-signing MVP. Repository visibility is not a selection criterion; a deployed experience may be linked when source code is not public. Ongoing and documentation-only projects are excluded. Inkline's future signature-library/date-stamp additions are not claimed as completed. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
 
 The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated private resume sources are delivered separately.
 
