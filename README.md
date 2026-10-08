@@ -4,12 +4,12 @@ A dependency-free bilingual research and engineering portfolio for GitHub Pages.
 
 ## Design
 
-The selected default is **A: academic editorial** — warm paper colors, serif headings, original coffee/CFD photography, and publications before projects. The original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged.
+The selected default is **C: bento cards** — project-first content, a direct engineering introduction, sage and warm paper colors, and the original coffee/CFD photography. A and B remain available as previews. The original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged.
 
 - `index.html`: complete English content with Chinese translations on individual text elements.
 - `styles.css`: responsive layouts, focus states, print styles, reduced-motion support.
 - `main.js`: language toggle, mobile navigation, project filters, active-section tracking.
-- `design-preview.html`: three interactive design previews. Alternative layouts use `?design=editorial` and `?design=bento`; `?lang=zh` opens Chinese.
+- `design-preview.html`: three interactive design previews. Alternative layouts use `?design=academic` and `?design=editorial`; `?lang=zh` opens Chinese.
 - Hero photography keeps its original landscape and portrait aspect ratios. The three design previews preserve the full image; the default layout has no image caption or dark overlay. The header remains accessible while scrolling, and project filters show a visible result count.
 - `assets/favicon.svg`: site monogram.
 

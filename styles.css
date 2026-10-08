@@ -391,6 +391,22 @@ h2 {
 .project-card h3 a:focus-visible {
   outline:none
 }
+.project-actions {
+  margin-top:18px
+}
+.project-demo {
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  border-bottom:1px solid currentColor;
+  font-size:11px;
+  font-weight:650
+}
+.project-demo:hover {
+  color:var(--accent)
+}
 .project-top {
   display:flex;
   gap:16px;
@@ -650,8 +666,8 @@ html[data-design=bento] .hero {
   padding-top:32px;
   gap:16px;
   grid-template-columns:1.15fr 1fr;
-  min-height:590px;
-  align-items:stretch
+  min-height:0;
+  align-items:center
 }
 html[data-design=bento] .hero-copy {
   background:#fffefa;
@@ -673,7 +689,8 @@ html[data-design=bento] .hero-note {
   margin-top:28px
 }
 html[data-design=bento] .project-card {
-  border-radius:18px
+  border-radius:18px;
+  padding:25px
 }
 html[data-design=bento] .publication {
   background:#fffefa;
@@ -684,6 +701,11 @@ html[data-design=bento] .publication {
 }
 html[data-design=bento] .contact-section {
   border-radius:20px
+}
+@media(min-width:1100px) {
+  html[data-design=bento] .project-grid {
+    grid-template-columns:repeat(3,minmax(0,1fr))
+  }
 }
 @media(min-width:1500px) {
   :root {
