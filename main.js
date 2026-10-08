@@ -27,6 +27,10 @@
   setLanguage();
   const menu = document.querySelector('#menu');
   const nav = document.querySelector('#navigation');
+  const header = document.querySelector('.site-header');
+  const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
   function closeMenu() { nav.classList.remove('is-open'); menu.setAttribute('aria-expanded', 'false'); }
   menu.addEventListener('click', () => { menu.setAttribute('aria-expanded', String(nav.classList.toggle('is-open'))); });
   nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });

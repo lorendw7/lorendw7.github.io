@@ -10,6 +10,7 @@ The selected default is **A: academic editorial** — warm paper colors, serif h
 - `styles.css`: responsive layouts, focus states, print styles, reduced-motion support.
 - `main.js`: language toggle, mobile navigation, project filters, active-section tracking.
 - `design-preview.html`: three interactive design previews. Alternative layouts use `?design=editorial` and `?design=bento`; `?lang=zh` opens Chinese.
+- Hero photography keeps its original landscape and portrait aspect ratios. The three design previews preserve the full image; the default layout has no image caption or dark overlay. The header remains accessible while scrolling, and project filters show a visible result count.
 - `assets/favicon.svg`: site monogram.
 
 No dependencies, external fonts, analytics, or build step. All essential content is readable without JavaScript. Run a static file server in this folder for local preview.

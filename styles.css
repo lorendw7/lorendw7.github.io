@@ -63,6 +63,11 @@ h3 {
 .site-header {
   max-width:var(--max);
   margin:auto;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(246,243,237,.95);
+  backdrop-filter:blur(14px);
   height:92px;
   display:flex;
   align-items:center;
@@ -70,6 +75,9 @@ h3 {
   padding:0 36px;
   border-bottom:1px solid var(--line);
   gap:24px
+}
+.site-header.is-scrolled {
+  box-shadow:0 8px 22px -20px #24292399
 }
 .wordmark {
   font-weight:650;
@@ -109,6 +117,10 @@ nav a:hover,nav a[aria-current] {
   padding:8px 12px;
   font-size:12px;
   border-radius:4px
+}
+.header-actions button:hover,.filters button:hover:not([aria-pressed=true]) {
+  border-color:var(--accent);
+  background:#ebe7dd
 }
 #menu {
   display:none
@@ -225,21 +237,6 @@ h1 em {
   background:linear-gradient(transparent,#111b1bd9);
   pointer-events:none
 }
-figcaption {
-  position:absolute;
-  bottom:24px;
-  left:24px;
-  right:24px;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  font-size:9px;
-  z-index:1
-}
-figcaption span:first-child {
-  letter-spacing:.12em
-}
 .focus-strip {
   margin:0 36px;
   border-top:1px solid var(--line);
@@ -355,12 +352,20 @@ h2 {
   border-radius:30px;
   padding:8px 15px;
   background:transparent;
-  font-size:11px
+  font-size:11px;
+  min-height:40px;
+  transition:background-color .18s,border-color .18s,color .18s
 }
 .filters button[aria-pressed=true] {
   background:var(--ink);
   color:var(--white);
   border-color:var(--ink)
+}
+#project-count {
+  margin:-14px 0 18px;
+  color:var(--muted);
+  font-size:11px;
+  text-align:right
 }
 .project-grid {
   display:grid;
@@ -377,6 +382,14 @@ h2 {
 .project-card:hover {
   border-color:#a8aa9c;
   transform:translateY(-3px)
+}
+.project-card:focus-within {
+  border-color:var(--accent);
+  outline:2px solid var(--accent);
+  outline-offset:3px
+}
+.project-card h3 a:focus-visible {
+  outline:none
 }
 .project-top {
   display:flex;
@@ -614,13 +627,6 @@ html[data-design=editorial] .hero .primary {
   color:#242923;
   background:#f2e8d6
 }
-html[data-design=editorial] .hero figcaption {
-  left:auto;
-  right:22px;
-  bottom:20px;
-  flex-direction:column;
-  text-align:right
-}
 html[data-design=editorial] .focus-strip {
   margin-top:26px
 }
@@ -631,6 +637,9 @@ html[data-design=bento] {
   --accent:#4d7360;
   --line:#d4dcd1;
   --muted:#58665d
+}
+html[data-design=bento] .site-header {
+  background:rgba(239,241,237,.95)
 }
 html[data-design=bento] h1,html[data-design=bento] h2 {
   font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif;
@@ -753,12 +762,12 @@ html[data-design=bento] .contact-section {
 }
 @media(max-width:650px) {
   html {
-    scroll-padding-top:30px
+    scroll-padding-top:82px
   }
   .site-header {
     height:72px;
     padding:0 20px;
-    position:relative;
+    position:sticky;
     gap:12px
   }
   .wordmark>span:first-child {
@@ -950,12 +959,6 @@ html[data-design=bento] .contact-section {
   html[data-design=editorial] .hero-image:after {
     background:linear-gradient(90deg,#101c1deb,#101c1d88)
   }
-  html[data-design=editorial] .hero figcaption {
-    left:24px;
-    right:auto;
-    text-align:left;
-    bottom:20px
-  }
   html[data-design=bento] .hero {
     grid-template-columns:1fr;
     padding:24px 16px;
@@ -992,10 +995,20 @@ html[data-design=bento] .contact-section {
   }
 }
 /* Show every pixel of the original hero photographs at their native ratios. */
+html[data-design=academic] .hero {
+  min-height:0;
+  padding-top:56px;
+  padding-bottom:56px;
+  gap:50px
+}
 html[data-design=academic] .hero-image {
   height:auto;
   aspect-ratio:16/9;
-  border-radius:0
+  border-radius:0;
+  box-shadow:0 20px 36px -28px #1b2422a6
+}
+html[data-design=academic] .hero-image:after {
+  display:none
 }
 html[data-design=academic] .hero-image picture,html[data-design=academic] .hero-image img {
   display:block;
@@ -1004,8 +1017,37 @@ html[data-design=academic] .hero-image picture,html[data-design=academic] .hero-
   object-fit:contain;
   object-position:center
 }
-@media(max-width:600px) {
+@media(max-width:650px) {
   html[data-design=academic] .hero-image {
+    aspect-ratio:9/16
+  }
+}
+@media(max-width:650px) {
+  html[data-design=academic] .hero {
+    padding:40px 20px 34px;
+    gap:24px
+  }
+}
+/* The two optional previews use the same complete photographs. */
+html[data-design=editorial] .hero {
+  min-height:0;
+  aspect-ratio:16/9
+}
+html[data-design=editorial] .hero-image img,html[data-design=bento] .hero-image img {
+  object-fit:contain;
+  object-position:center
+}
+html[data-design=bento] .hero-image {
+  height:auto;
+  min-height:0;
+  aspect-ratio:16/9;
+  align-self:center
+}
+html[data-design=bento] .hero-image:after {
+  display:none
+}
+@media(max-width:650px) {
+  html[data-design=editorial] .hero,html[data-design=bento] .hero-image {
     aspect-ratio:9/16
   }
 }
