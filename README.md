@@ -4,7 +4,7 @@ A dependency-free bilingual research and engineering portfolio for GitHub Pages.
 
 ## Design
 
-The selected default is **C: bento cards** — project-first content, a direct engineering introduction, a blue knowledge-graph palette, and the original coffee/CFD photography. Thin connecting lines and nodes appear in the focus strip, cards, research metadata, and a subdued vector motif; A and B remain available as previews. The original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and shown without cropping.
+The selected default is **C: bento cards** — project-first content, a direct engineering introduction, a restrained black-and-white palette, and the original coffee/CFD photography. Simple borders and generous whitespace keep the focus on completed work; A and B remain available as previews. The original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and shown without cropping.
 
 - `index.html`: complete English content with Chinese translations on individual text elements.
 - `styles.css`: responsive layouts, focus states, print styles, reduced-motion support.
@@ -13,7 +13,7 @@ The selected default is **C: bento cards** — project-first content, a direct e
 - `design-preview.html`: three interactive design previews. Alternative layouts use `?design=academic` and `?design=editorial`; `?lang=zh` opens Chinese.
 - Hero photography keeps its original landscape and portrait aspect ratios. The three design previews preserve the full image; the default layout has no image caption or dark overlay. The header remains accessible while scrolling, and project filters show a visible result count.
 - The default hero states the expected March 2028 graduation and full-time software/AI engineering focus. Inkline, Agent Skills Manager, and PatientFlow Cloud appear first; six other completed projects remain available in an expandable group and through category filters. The three featured cards link to implementation evidence and their known limits.
-- `assets/graph-network.svg`: decorative node-and-edge motif; `assets/favicon.svg`: blue site monogram.
+- `assets/favicon.svg`: monochrome site monogram.
 
 No dependencies, external fonts, analytics, or build step. All essential content is readable without JavaScript. Run a static file server in this folder for local preview.
 
