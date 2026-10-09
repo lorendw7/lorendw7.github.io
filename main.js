@@ -2,7 +2,7 @@
   'use strict';
   const root = document.documentElement;
   const params = new URLSearchParams(location.search);
-  if (['academic', 'editorial', 'bento'].includes(params.get('design'))) root.dataset.design = params.get('design');
+  if (['academic', 'editorial', 'bento', 'simplefolio'].includes(params.get('design'))) root.dataset.design = params.get('design');
   const languageButton = document.querySelector('#language');
   const translated = [...document.querySelectorAll('[data-zh]')];
   translated.forEach(element => { element.dataset.en = element.textContent; });

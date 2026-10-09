@@ -4,18 +4,18 @@ A dependency-free bilingual research and engineering portfolio for GitHub Pages.
 
 ## Design
 
-The selected default is **C: bento cards** — project-first content, a direct engineering introduction, a restrained black-and-white palette, and the original coffee/CFD photography. Simple borders and generous whitespace keep the focus on completed work; A and B remain available as previews. The original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and shown without cropping.
+The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with typographic flow illustrations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: complete English content with Chinese translations on individual text elements.
-- `styles.css`: responsive layouts, focus states, print styles, reduced-motion support.
-- `main.js`: language toggle, mobile navigation, project filters, active-section tracking.
-- `project-notes.html` and `project-notes.js`: bilingual implementation notes and source links for the three featured projects.
-- `design-preview.html`: three interactive design previews. Alternative layouts use `?design=academic` and `?design=editorial`; `?lang=zh` opens Chinese.
-- Hero photography keeps its original landscape and portrait aspect ratios. The three design previews preserve the full image; the default layout has no image caption or dark overlay. The header remains accessible while scrolling, and project filters show a visible result count.
-- The default hero states the expected March 2028 graduation and full-time software/AI engineering focus. Inkline, Agent Skills Manager, and PatientFlow Cloud appear first; six other completed projects and the BalloonShooter prototype remain available in an expandable group and through category filters. The three featured cards link to implementation evidence and their known limits.
-- `assets/favicon.svg`: monochrome site monogram.
+- `index.html`: English-first content with Chinese translations; backend microservices, full-stack applications, then a shipped browser product.
+- `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
+- `main.js`: bilingual toggle, mobile navigation, project filters, active-section tracking.
+- `project-notes.html` and `project-notes.js`: bilingual implementation evidence and limitations for the three featured projects.
+- Original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and displayed in full at their native aspect ratios.
+- `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; `?lang=zh` opens Chinese.
+- Career focus remains full-time engineering opportunities in Japan, expected graduation March 2028. Employer-specific interview preparation is private and outside this repository.
+- GitHub profile source is maintained in the separate `lorendw7/lorendw7` repository.
 
-No dependencies, external fonts, analytics, or build step. All essential content is readable without JavaScript. Run a static file server in this folder for local preview.
+No dependencies, external fonts, analytics, or build step. Essential content remains readable without JavaScript. Run a static file server for local preview.
 
 ## Content maintenance
 
