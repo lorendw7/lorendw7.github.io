@@ -731,16 +731,18 @@ html[data-design=editorial] .hero .primary {
 html[data-design=editorial] .focus-strip {
   margin-top:26px
 }
-/* C: modular bento cards. */
+/* C: blue knowledge-graph bento cards. */
 html[data-design=bento] {
-  --paper:#eff1ed;
-  --ink:#22372f;
-  --accent:#4d7360;
-  --line:#d4dcd1;
-  --muted:#58665d
+  --paper:#f3f7fb;
+  --ink:#173650;
+  --accent:#236fa8;
+  --line:#c9d9e7;
+  --muted:#526b7f;
+  --green:#155884;
+  --white:#fff
 }
 html[data-design=bento] .site-header {
-  background:rgba(239,241,237,.95)
+  background:rgba(243,247,251,.95)
 }
 html[data-design=bento] h1,html[data-design=bento] h2 {
   font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif;
@@ -755,7 +757,11 @@ html[data-design=bento] .hero {
   align-items:center
 }
 html[data-design=bento] .hero-copy {
-  background:#fffefa;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #d9e6f0;
   border-radius:20px;
   padding:38px;
   display:flex;
@@ -775,17 +781,196 @@ html[data-design=bento] .hero-note {
 }
 html[data-design=bento] .project-card {
   border-radius:18px;
-  padding:25px
+  padding:25px;
+  border:1px solid var(--line);
+  background:#fafdff
 }
 html[data-design=bento] .publication {
-  background:#fffefa;
+  background:#fff;
   border:0;
   border-radius:16px;
   padding:28px;
   margin-bottom:14px
 }
 html[data-design=bento] .contact-section {
-  border-radius:20px
+  border-radius:20px;
+  background:#e3eff8
+}
+html[data-design=bento] ::selection {
+  background:#c6e0f1
+}
+html[data-design=bento] .hero-copy::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("assets/graph-network.svg") no-repeat right -82px top -58px / 440px auto;
+  opacity:.24;
+  pointer-events:none;
+  z-index:0
+}
+html[data-design=bento] .hero-copy>* {
+  position:relative;
+  z-index:1
+}
+html[data-design=bento] .status-dot {
+  background:#3089c5;
+  box-shadow:0 0 0 4px #dbeefa
+}
+html[data-design=bento] .primary {
+  background:#185f92
+}
+html[data-design=bento] .primary:hover {
+  background:#124a73
+}
+html[data-design=bento] .header-actions button:hover,
+html[data-design=bento] .filters button:hover:not([aria-pressed=true]) {
+  background:#e2f0f9
+}
+html[data-design=bento] .focus-strip>span:not([aria-hidden]) {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap
+}
+html[data-design=bento] .focus-strip>span:not([aria-hidden])::before {
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  flex:none;
+  border:2px solid #4a96c6;
+  border-radius:50%;
+  background:#f7fbff
+}
+html[data-design=bento] .focus-strip [aria-hidden] {
+  flex:1;
+  min-width:16px;
+  height:1px;
+  background:linear-gradient(90deg,#8fb9d3,#d0e1ed);
+  font-size:0
+}
+html[data-design=bento] .section-heading .eyebrow::before,
+html[data-design=bento] .case-hero .eyebrow::before {
+  content:"";
+  width:8px;
+  height:8px;
+  flex:none;
+  border-radius:50%;
+  border:2px solid #4a96c6;
+  background:#f7fbff
+}
+html[data-design=bento] .section-heading .eyebrow::after {
+  content:"";
+  width:37px;
+  height:1px;
+  background:#a7c7db
+}
+html[data-design=bento] .project-card {
+  box-shadow:0 12px 28px -28px #15466e8f
+}
+html[data-design=bento] .project-card::before {
+  content:"";
+  position:absolute;
+  top:-5px;
+  left:24px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#3f92c9;
+  box-shadow:0 0 0 4px var(--paper)
+}
+html[data-design=bento] .ai-card {
+  background:#f0f7fc
+}
+html[data-design=bento] .systems-card {
+  background:#eaf3f9
+}
+html[data-design=bento] .project-mark,
+html[data-design=bento] .systems-card .project-mark {
+  color:#568eb5
+}
+html[data-design=bento] .project-card .project-evidence {
+  border-color:#c7dce9
+}
+html[data-design=bento] .tags span {
+  border-color:#bfd4e3
+}
+html[data-design=bento] .creative-card {
+  background:#173b5f;
+  border-color:#2b628c;
+  color:#f7fbff
+}
+html[data-design=bento] .creative-card p,
+html[data-design=bento] .creative-card .project-top,
+html[data-design=bento] .creative-card .tags {
+  color:#d7e9f6
+}
+html[data-design=bento] .creative-card .project-mark {
+  color:#b9ddf2
+}
+html[data-design=bento] .creative-card .tags span {
+  border-color:#6799b9
+}
+html[data-design=bento] .more-projects summary {
+  background:#e8f3fa;
+  border-color:#bed6e6
+}
+html[data-design=bento] .publication-meta {
+  position:relative;
+  padding-left:16px;
+  border-left:1px solid #a8cadf
+}
+html[data-design=bento] .publication-meta::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-5px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#3f92c9
+}
+html[data-design=bento] .accepted {
+  color:#185f92;
+  background:#e1f0fa
+}
+html[data-design=bento] .review {
+  color:#526f85;
+  background:#e9f1f7
+}
+html[data-design=bento] .pub-year {
+  color:#5783a3
+}
+html[data-design=bento] .award-card {
+  background:#eaf3f9;
+  border-color:#c3d9e8
+}
+html[data-design=bento] .case-hero {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden
+}
+html[data-design=bento] .case-hero::before {
+  content:"";
+  position:absolute;
+  inset:-60px -30px -80px auto;
+  width:530px;
+  background:url("assets/graph-network.svg") no-repeat center / contain;
+  opacity:.18;
+  pointer-events:none;
+  z-index:-1
+}
+@media(min-width:1100px) {
+  html[data-design=bento] .featured-grid .project-card:not(:last-child)::after {
+    content:"";
+    position:absolute;
+    right:-19px;
+    top:31px;
+    width:18px;
+    height:1px;
+    background:#9ec5de;
+    z-index:1
+  }
 }
 @media(min-width:1100px) {
   html[data-design=bento] .project-grid {
