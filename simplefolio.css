@@ -27,7 +27,8 @@ html[data-design=simplefolio] .featured-grid .project-top { margin-bottom:15px; 
 html[data-design=simplefolio] .featured-grid h3 { font-size:29px; }
 html[data-design=simplefolio] .featured-grid .project-mark { grid-column:2; grid-row:1 / span 6; align-self:center; justify-content:center; width:100%; height:280px; background:#eeede7; border:1px solid #deddd4; font:500 clamp(23px,2.5vw,34px) "Consolas",monospace; color:#50614e; box-shadow:8px 8px 0 #f1f0eb; }
 html[data-design=simplefolio] .featured-grid .systems-card .project-mark { background:#e9eeeb; color:#3e594b; }
-html[data-design=simplefolio] .featured-grid .flow-panel { flex-direction:column; gap:8px; padding:22px; height:300px; font:500 13px "Consolas",monospace; letter-spacing:0; }
+html[data-design=simplefolio] .featured-grid .flow-panel { flex-direction:column; gap:8px; padding:24px; height:auto; min-height:300px; font:500 13px "Consolas",monospace; letter-spacing:0; }
+.flow-panel>* { flex-shrink:0; }
 .flow-label { font:600 9px "Segoe UI",sans-serif; letter-spacing:.13em; margin-bottom:12px; color:#62685d; }
 .flow-node { padding:10px 18px; text-align:center; width:78%; border:1px solid #cbd2c7; background:#fafbf8; border-radius:3px; }
 .flow-node small { display:block; font:10px "Segoe UI",sans-serif; margin-top:5px; color:#62685d; }
@@ -45,7 +46,21 @@ html[data-design=simplefolio] .archive-grid .creative-card,html[data-design=simp
 html[data-design=simplefolio] .more-projects summary { background:transparent; border-radius:3px; }
 html[data-design=simplefolio] .publication { padding:30px 0; }
 html[data-design=simplefolio] .award-card { border-radius:4px; background:#fff; }
-html[data-design=simplefolio] .skills-section { border-radius:3px; background:#eeede7; }
+html[data-design=simplefolio] .skills-section {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:#eeede7;
+}
+html[data-design=simplefolio] .skills-section>div { min-width:0; padding:0 28px; }
+html[data-design=simplefolio] .skills-section>div:first-child { padding-left:0; }
+html[data-design=simplefolio] .skills-section>div:last-child { padding-right:0; }
+html[data-design=simplefolio] .skills-section>div+div { border-left:1px solid #d6d8cf; }
+html[data-design=simplefolio] .skills-section .small-label { display:block; font-size:10px; line-height:1.6; letter-spacing:.12em; }
+.skill-list { display:flex; flex-wrap:wrap; gap:8px 16px; list-style:none; padding:0; margin:16px 0 0; font-size:13px; line-height:1.6; }
+.skill-list li { max-width:100%; overflow-wrap:anywhere; }
 html[data-design=simplefolio] .contact-section { background:#e9eeeb; border-radius:3px; color:var(--ink); }
 html[data-design=simplefolio] .contact-section p { color:var(--muted); }
 /* Simplefolio's expanding CTA, converted from Sass and reduced-motion aware. */
@@ -57,20 +72,31 @@ html[data-design=simplefolio] .cta-btn--hero:hover::after,html[data-design=simpl
 @media(max-width:1000px) {
   html[data-design=simplefolio] .hero { gap:30px; padding-top:50px; padding-bottom:60px; min-height:560px; }
   html[data-design=simplefolio] .featured-grid .project-card { column-gap:35px; }
-  html[data-design=simplefolio] .featured-grid .project-mark { height:230px; }
+  html[data-design=simplefolio] .skills-section { padding:26px 24px; }
+  html[data-design=simplefolio] .skills-section>div { padding:0 20px; }
 }
 @media(max-width:650px) {
-  html[data-design=simplefolio] .site-header { height:70px; }
+  html[data-design=simplefolio] .site-header { height:70px; padding-inline:24px; }
   html[data-design=simplefolio] .hero { display:flex; flex-direction:column; align-items:stretch; gap:35px; padding:40px 24px 50px; }
   html[data-design=simplefolio] h1 { font-size:clamp(40px,10vw,58px); }
   html[data-design=simplefolio] .hero-image { aspect-ratio:9/16; width:100%; max-width:320px; align-self:center; }
   html[data-design=simplefolio] .section { padding:54px 24px; }
   html[data-design=simplefolio] .featured-grid .project-card { display:flex; flex-direction:column; padding:25px 0 35px; }
   html[data-design=simplefolio] .featured-grid .project-mark { order:0; height:165px; margin:8px 0 22px; font-size:25px; }
-  html[data-design=simplefolio] .featured-grid .flow-panel { height:300px; font-size:13px; }
+  html[data-design=simplefolio] .featured-grid .flow-panel { height:auto; font-size:13px; }
   html[data-design=simplefolio] .featured-grid .project-top { order:-1; }
   html[data-design=simplefolio] .focus-strip { font-size:9px; gap:12px; flex-wrap:wrap; padding:22px; }
   html[data-design=simplefolio] .hero-role { font-size:12px; }
+  html[data-design=simplefolio] .hero-note { display:flex; line-height:1.6; }
+  html[data-design=simplefolio] .skills-section { grid-template-columns:1fr; margin-inline:24px; padding:24px; }
+  html[data-design=simplefolio] .skills-section>div { padding:20px 0; }
+  html[data-design=simplefolio] .skills-section>div:first-child { padding-top:0; }
+  html[data-design=simplefolio] .skills-section>div:last-child { padding-bottom:0; }
+  html[data-design=simplefolio] .skills-section>div+div { border-left:0; border-top:1px solid #d6d8cf; }
+  html[data-design=simplefolio] .skill-list { margin-top:12px; }
+  html[data-design=simplefolio] .contact-section { margin-inline:24px; padding:24px; }
+  html[data-design=simplefolio] .focus-strip { margin-inline:24px; padding-inline:0; }
+  html[data-design=simplefolio] footer { padding-inline:24px; }
 }
 @media(prefers-reduced-motion:reduce) { html[data-design=simplefolio] .cta-btn,html[data-design=simplefolio] .cta-btn::after { transition:none; } }
 @media print { html[data-design=simplefolio] .hero { min-height:0; padding:20px 0; } html[data-design=simplefolio] .featured-grid .project-card { display:block; padding:20px 0; } html[data-design=simplefolio] .featured-grid .project-mark { display:none; } }
