@@ -9,9 +9,10 @@ The selected default is **C: bento cards** — project-first content, a direct e
 - `index.html`: complete English content with Chinese translations on individual text elements.
 - `styles.css`: responsive layouts, focus states, print styles, reduced-motion support.
 - `main.js`: language toggle, mobile navigation, project filters, active-section tracking.
+- `project-notes.html` and `project-notes.js`: bilingual implementation notes and source links for the three featured projects.
 - `design-preview.html`: three interactive design previews. Alternative layouts use `?design=academic` and `?design=editorial`; `?lang=zh` opens Chinese.
 - Hero photography keeps its original landscape and portrait aspect ratios. The three design previews preserve the full image; the default layout has no image caption or dark overlay. The header remains accessible while scrolling, and project filters show a visible result count.
-- The default hero states the expected March 2028 graduation and full-time software/AI engineering focus. The featured Inkline card links to a working demo and engineering notes, and names its documented PDF limitations.
+- The default hero states the expected March 2028 graduation and full-time software/AI engineering focus. Inkline, Agent Skills Manager, and PatientFlow Cloud appear first; six other completed projects remain available in an expandable group and through category filters. The three featured cards link to implementation evidence and their known limits.
 - `assets/favicon.svg`: site monogram.
 
 No dependencies, external fonts, analytics, or build step. All essential content is readable without JavaScript. Run a static file server in this folder for local preview.
