@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Project evidence — Shandong He</title>
-<meta name="description" content="Implementation notes and source evidence for three selected software projects by Shandong He.">
+<meta name="description" content="Implementation notes and source evidence for four selected software projects by Shandong He.">
 <meta name="theme-color" content="#f8f8f7">
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css?v=monochrome-20261009">
@@ -17,31 +17,41 @@
 <a class="wordmark" href="index.html#projects">SH<span> / </span><span data-zh="何单东">Shandong He</span></a>
 <nav aria-label="Project evidence navigation">
 <a href="index.html#projects" id="back-to-projects"><span data-zh="返回项目">Back to projects</span></a>
-<a href="#inkline">Inkline</a>
-<a href="#agent-skills">Agent Skills</a>
+<a href="#gitlet">Gitlet</a>
 <a href="#patientflow">PatientFlow</a>
+<a href="#agent-skills">Agent Skills</a>
+<a href="#inkline">Inkline</a>
 </nav>
 <div class="header-actions"><button id="language" type="button" aria-label="切换至中文">中文</button></div>
 </header>
 <main id="main" class="case-main">
 <section class="case-hero">
-<p class="eyebrow" data-zh="项目证据 / 01—03">PROJECT EVIDENCE / 01—03</p>
+<p class="eyebrow" data-zh="项目证据 / 01—04">PROJECT EVIDENCE / 01—04</p>
 <h1 data-zh="看得见的实现。">Show the work.</h1>
-<p data-zh="三个重点项目的实现、可检查的代码与适用边界。描述以仓库和在线作品为依据，不把练习项目包装成有真实生产流量的系统。">Implementation, inspectable code, and honest limits for three selected projects. These notes point to repositories and a live product; they do not imply production usage where none is shown.</p>
+<p data-zh="四个重点项目的实现、可检查的代码与适用边界。描述以仓库和在线作品为依据，不把练习项目包装成有真实生产流量的系统。">Implementation, inspectable code, and honest limits for four selected projects. These notes point to repositories and a live product; they do not imply production usage where none is shown.</p>
 </section>
 
-<section class="case-study" id="inkline" aria-labelledby="inkline-title">
-<div class="case-heading"><span class="eyebrow" data-zh="01 / 浏览器产品">01 / BROWSER PRODUCT</span><h2 id="inkline-title">Inkline</h2><p data-zh="打开 PDF、绘制并放置签名，再直接在浏览器导出文档。">Open a PDF, draw and place a signature, then export the document in the browser.</p></div>
+<section class="case-study" id="gitlet" aria-labelledby="gitlet-title">
+<div class="case-heading"><span class="eyebrow" data-zh="01 / 版本控制系统">01 / VERSION CONTROL</span><h2 id="gitlet-title">Gitlet</h2><p data-zh="基于 CS61B 的 Java 学习项目：通过实现版本控制，理解对象持久化、提交图和分支状态。">A CS61B-based Java learning project exploring object persistence, commit graphs, and branch state through version control.</p></div>
 <div class="case-facts">
-<article><span class="small-label" data-zh="实现">IMPLEMENTATION</span><p data-zh="PDF.js 在 Canvas 上预览页面；pdf-lib 按 PDF 页面坐标嵌入签名。放置坐标在视口尺寸变化后仍可使用。">PDF.js renders pages to canvas; pdf-lib embeds signatures in PDF page coordinates. Placement survives viewport resizing.</p></article>
-<article><span class="small-label" data-zh="工程选择">ENGINEERING CHOICE</span><p data-zh="文件只在本机标签页处理。构建后的 CSP 使用 connect-src 'none' 禁止脚本发起网络请求。">Files stay in the browser tab. The production Content Security Policy uses connect-src 'none' to block script-initiated network requests.</p></article>
-<article><span class="small-label" data-zh="验证与边界">PROOF &amp; LIMITS</span><p data-zh="可使用在线应用走完导入到导出的流程，并阅读架构说明。旋转或加密 PDF 不在已支持范围内。">The live app demonstrates the import-to-export flow and the architecture notes explain it. Rotated and encrypted PDFs are outside the supported scope.</p></article>
+<article><span class="small-label" data-zh="快照与存储">SNAPSHOTS &amp; STORAGE</span><p data-zh="Blob 保存文件内容，Commit 保存文件名到 Blob 标识的映射与父提交引用。序列化对象以 SHA-1 标识持久化，暂存区分别记录新增与删除。">Blobs hold file contents; commits map file names to blob IDs and store parent references. Serialized objects are persisted under SHA-1 IDs, with separate addition and removal staging areas.</p></article>
+<article><span class="small-label" data-zh="图与状态管理">GRAPHS &amp; STATE</span><p data-zh="通过分支引用定位提交；使用图遍历收集共同祖先，比较文件快照并生成冲突标记。push / fetch / pull 面向另一处本地仓库目录，不涉及 Git 的网络协议。">Branch references locate commits. Graph traversal collects common ancestors; snapshot comparisons identify changes and produce conflict markers. Push, fetch, and pull work with another local repository directory, not Git network protocols.</p></article>
+<article><span class="small-label" data-zh="核对与范围">VERIFICATION &amp; SCOPE</span><p data-zh="已核对本地设计文档和源码，并在隔离目录编译、检查基础提交与分支流程。已知待完善项包括合并时的分支引用更新与快进行为。">Local design notes and source were reviewed, then compiled in an isolated directory to check basic commit and branch flows. Known follow-up work includes branch-reference updates during merging and fast-forward behavior.</p></article>
 </div>
-<div class="case-links"><a href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" data-zh="在线体验 ↗">Live app ↗</a><a href="https://github.com/lorendw7/inkline" target="_blank" rel="noopener noreferrer" data-zh="查看代码 ↗">Source code ↗</a><a href="https://github.com/lorendw7/inkline/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" data-zh="架构笔记 ↗">Architecture notes ↗</a></div>
+</section>
+
+<section class="case-study" id="patientflow" aria-labelledby="patient-title">
+<div class="case-heading"><span class="eyebrow" data-zh="02 / 后端系统">02 / BACKEND SYSTEM</span><h2 id="patient-title">PatientFlow Cloud</h2><p data-zh="围绕患者、计费、分析与认证拆分的 Spring Boot 微服务项目。">A Spring Boot microservices project spanning patient records, billing, analytics, and authentication.</p></div>
+<div class="case-facts">
+<article><span class="small-label" data-zh="实现">IMPLEMENTATION</span><p data-zh="API Gateway 统一路由并校验 JWT；患者与计费服务通过 gRPC 通信，分析服务通过 Kafka 事件解耦。">An API gateway routes requests and validates JWTs; patient and billing services use gRPC, while analytics consumes Kafka events.</p></article>
+<article><span class="small-label" data-zh="工程选择">ENGINEERING CHOICE</span><p data-zh="仓库按服务拆分，并提供 Docker 与 AWS 基础设施配置；同步调用和异步事件分别服务于不同流程。">The repository separates services and includes Docker and AWS infrastructure configuration. Synchronous calls and asynchronous events serve different workflow needs.</p></article>
+<article><span class="small-label" data-zh="验证与边界">PROOF &amp; LIMITS</span><p data-zh="可检查服务模块和集成测试目录。公开材料不足以证明实际生产部署、稳定性或吞吐量，故不将其写成已验证成果。">Service modules and an integration-test directory are inspectable. Public materials do not independently establish production traffic, uptime, or throughput.</p></article>
+</div>
+<div class="case-links"><a href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer" data-zh="查看仓库 ↗">Repository ↗</a><a href="https://github.com/lorendw7/PatientFlow-Cloud/tree/main/integration-tests" target="_blank" rel="noopener noreferrer" data-zh="集成测试目录 ↗">Integration tests ↗</a><a href="https://github.com/lorendw7/PatientFlow-Cloud/tree/main/infrastructure" target="_blank" rel="noopener noreferrer" data-zh="基础设施配置 ↗">Infrastructure config ↗</a></div>
 </section>
 
 <section class="case-study" id="agent-skills" aria-labelledby="agent-title">
-<div class="case-heading"><span class="eyebrow" data-zh="02 / 全栈应用">02 / FULL-STACK APPLICATION</span><h2 id="agent-title">Agent Skills Manager</h2><p data-zh="管理并公开分享 Markdown 格式的 Agent 技能。">Create, manage, and publicly share Markdown-based agent skills.</p></div>
+<div class="case-heading"><span class="eyebrow" data-zh="03 / 全栈应用">03 / FULL-STACK APPLICATION</span><h2 id="agent-title">Agent Skills Manager</h2><p data-zh="管理并公开分享 Markdown 格式的 Agent 技能。">Create, manage, and publicly share Markdown-based agent skills.</p></div>
 <div class="case-facts">
 <article><span class="small-label" data-zh="实现">IMPLEMENTATION</span><p data-zh="Next.js 页面与路由承担技能创建、编辑、个人管理和公开展示；Prisma 将数据保存到 PostgreSQL。">Next.js pages and routes handle skill creation, editing, account management, and public display; Prisma persists data in PostgreSQL.</p></article>
 <article><span class="small-label" data-zh="工程选择">ENGINEERING CHOICE</span><p data-zh="仓库文档列出 bcrypt 密码哈希、httpOnly Cookie 认证及公开技能画廊的 ISR 方案。">The repository documents bcrypt password hashing, httpOnly-cookie authentication, and ISR for the public skills gallery.</p></article>
@@ -50,14 +60,14 @@
 <div class="case-links"><a href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer" data-zh="查看仓库 ↗">Repository ↗</a><a href="https://github.com/lorendw7/Agent-Skills-Manager/tree/main/app" target="_blank" rel="noopener noreferrer" data-zh="页面与路由 ↗">App routes ↗</a><a href="https://github.com/lorendw7/Agent-Skills-Manager/tree/main/prisma" target="_blank" rel="noopener noreferrer" data-zh="数据模型 ↗">Data model ↗</a></div>
 </section>
 
-<section class="case-study" id="patientflow" aria-labelledby="patient-title">
-<div class="case-heading"><span class="eyebrow" data-zh="03 / 后端系统">03 / BACKEND SYSTEM</span><h2 id="patient-title">PatientFlow Cloud</h2><p data-zh="围绕患者、计费、分析与认证拆分的 Spring Boot 微服务项目。">A Spring Boot microservices project spanning patient records, billing, analytics, and authentication.</p></div>
+<section class="case-study" id="inkline" aria-labelledby="inkline-title">
+<div class="case-heading"><span class="eyebrow" data-zh="04 / 浏览器产品">04 / BROWSER PRODUCT</span><h2 id="inkline-title">Inkline</h2><p data-zh="打开 PDF、绘制并放置签名，再直接在浏览器导出文档。">Open a PDF, draw and place a signature, then export the document in the browser.</p></div>
 <div class="case-facts">
-<article><span class="small-label" data-zh="实现">IMPLEMENTATION</span><p data-zh="API Gateway 统一路由并校验 JWT；患者与计费服务通过 gRPC 通信，分析服务通过 Kafka 事件解耦。">An API gateway routes requests and validates JWTs; patient and billing services use gRPC, while analytics consumes Kafka events.</p></article>
-<article><span class="small-label" data-zh="工程选择">ENGINEERING CHOICE</span><p data-zh="仓库按服务拆分，并提供 Docker 与 AWS 基础设施配置；同步调用和异步事件分别服务于不同流程。">The repository separates services and includes Docker and AWS infrastructure configuration. Synchronous calls and asynchronous events serve different workflow needs.</p></article>
-<article><span class="small-label" data-zh="验证与边界">PROOF &amp; LIMITS</span><p data-zh="可检查服务模块和集成测试目录。公开材料不足以证明实际生产部署、稳定性或吞吐量，故不将其写成已验证成果。">Service modules and an integration-test directory are inspectable. Public materials do not independently establish production traffic, uptime, or throughput.</p></article>
+<article><span class="small-label" data-zh="实现">IMPLEMENTATION</span><p data-zh="PDF.js 在 Canvas 上预览页面；pdf-lib 按 PDF 页面坐标嵌入签名。放置坐标在视口尺寸变化后仍可使用。">PDF.js renders pages to canvas; pdf-lib embeds signatures in PDF page coordinates. Placement survives viewport resizing.</p></article>
+<article><span class="small-label" data-zh="工程选择">ENGINEERING CHOICE</span><p data-zh="文件只在本机标签页处理。构建后的 CSP 使用 connect-src 'none' 禁止脚本发起网络请求。">Files stay in the browser tab. The production Content Security Policy uses connect-src 'none' to block script-initiated network requests.</p></article>
+<article><span class="small-label" data-zh="验证与边界">PROOF &amp; LIMITS</span><p data-zh="可使用在线应用走完导入到导出的流程，并阅读架构说明。旋转或加密 PDF 不在已支持范围内。">The live app demonstrates the import-to-export flow and the architecture notes explain it. Rotated and encrypted PDFs are outside the supported scope.</p></article>
 </div>
-<div class="case-links"><a href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer" data-zh="查看仓库 ↗">Repository ↗</a><a href="https://github.com/lorendw7/PatientFlow-Cloud/tree/main/integration-tests" target="_blank" rel="noopener noreferrer" data-zh="集成测试目录 ↗">Integration tests ↗</a><a href="https://github.com/lorendw7/PatientFlow-Cloud/tree/main/infrastructure" target="_blank" rel="noopener noreferrer" data-zh="基础设施配置 ↗">Infrastructure config ↗</a></div>
+<div class="case-links"><a href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" data-zh="在线体验 ↗">Live app ↗</a><a href="https://github.com/lorendw7/inkline" target="_blank" rel="noopener noreferrer" data-zh="查看代码 ↗">Source code ↗</a><a href="https://github.com/lorendw7/inkline/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" data-zh="架构笔记 ↗">Architecture notes ↗</a></div>
 </section>
 <p class="case-return"><a class="button primary" href="index.html#projects" id="return-bottom"><span data-zh="返回所有项目">Back to all projects</span> ↗</a></p>
 </main>

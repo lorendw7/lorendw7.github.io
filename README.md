@@ -6,10 +6,10 @@ A dependency-free bilingual research and engineering portfolio for GitHub Pages.
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with typographic flow illustrations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-first content with Chinese translations; backend microservices, full-stack applications, then a shipped browser product.
+- `index.html`: English-first content with Chinese translations; Gitlet version control, backend microservices, full-stack applications, then a shipped browser product.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
 - `main.js`: bilingual toggle, mobile navigation, project filters, active-section tracking.
-- `project-notes.html` and `project-notes.js`: bilingual implementation evidence and limitations for the three featured projects.
+- `project-notes.html` and `project-notes.js`: bilingual implementation evidence and limitations for the four featured projects.
 - Original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and displayed in full at their native aspect ratios.
 - `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; `?lang=zh` opens Chinese.
 - Career focus remains full-time engineering opportunities in Japan, expected graduation March 2028. Employer-specific interview preparation is private and outside this repository.
@@ -39,3 +39,7 @@ The site retains the previous contact policy: GitHub contact and CV on request, 
 ## Publishing
 
 GitHub Pages serves the `main` branch. Push changes only after checking both languages, desktop/mobile layouts, filters, navigation, local links, and factual statuses. `.preview/` is ignored and contains only local backups, tooling, and inspection output.
+
+## Gitlet evidence review (2026-10-09)
+
+Gitlet is now the first featured project. Its description is based on the local CS61B project source and design document, not inferred from Git's capabilities. Basic initialization, staging, committing, branching and checkout were exercised in an isolated copy. Ordinary merge currently advances the source branch as well as the target; fast-forward currently switches branches without advancing the original target. These remain project limitations, not claimed successes. Remote commands use local filesystem paths. Course helper code is not represented as original work. No private source, resume, contact details, or local filesystem paths are published.
