@@ -15,7 +15,7 @@ The default is a customized **Simplefolio** layout: a direct introduction, origi
 - Career focus remains full-time engineering opportunities in Japan, expected graduation March 2028. Employer-specific interview preparation is private and outside this repository.
 - GitHub profile source is maintained in the separate `lorendw7/lorendw7` repository.
 
-No dependencies, external fonts, analytics, or build step. Essential content remains readable without JavaScript. Run a static file server for local preview.
+No runtime dependencies, external fonts, analytics, or build step. Essential content and mobile navigation remain usable without JavaScript. Run a static file server for local preview.
 
 ## Content maintenance
 
@@ -51,3 +51,11 @@ PatientFlow Cloud leads with microservice architecture, followed by Life Prefere
 ## English-only release (2026-10-10)
 
 Chinese translations and language-switching controls have been removed from all public HTML pages and scripts. Featured-project shortcuts connect the homepage and implementation notes, including on mobile. The design-preview page uses English and identifies Simplefolio as the active layout. Old language query parameters no longer change page content.
+
+## Interaction fixes (2026-10-10)
+
+Project filters use the `filter` query parameter and restore through browser history. Each category retains its own archive expansion state; selecting the current category leaves that state intact. Archive labels and visible counts reflect the matching projects. Fragment navigation reveals hidden projects, focuses the destination heading, and respects reduced-motion preferences. Navigation highlighting tracks section positions and explicitly handles the page bottom.
+
+The mobile menu closes on outside clicks, focus leaving the menu, Escape, section selection, and switching to a desktop viewport. Opening moves focus to the first navigation link; Escape restores focus to the menu button. JavaScript-dependent controls are hidden when scripting is unavailable, while mobile navigation and the native project disclosure remain usable.
+
+Browser regression checks are in `tests/interactions.cjs`. With Playwright available and a local static server running, execute `node tests/interactions.cjs http://127.0.0.1:8765/`. Optional `PLAYWRIGHT_MODULE` and `PLAYWRIGHT_CHANNEL` environment variables select an existing development installation and browser. Checks cover four viewport widths, all design variants, browser history, deep links, disclosure state, keyboard focus, and navigation without JavaScript.

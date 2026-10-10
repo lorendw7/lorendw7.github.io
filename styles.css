@@ -1425,3 +1425,19 @@ html[data-design=bento] .case-facts article {
   .project-shortcuts { gap:4px 16px; }
 }
 @media print { .project-shortcuts { display:none; } }
+
+.project-card[id],.case-study { scroll-margin-top:12px; }
+
+/* Only present controls when their behavior is available. */
+html:not(.js) .filters,html:not(.js) #project-count,html:not(.js) #menu { display:none; }
+#menu,.filters button { min-height:44px; }
+#navigation a,.project-shortcuts a,.project-demo,.case-links a,.case-back {
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+}
+@media(max-width:650px) {
+  #navigation { top:100%; max-height:calc(100dvh - 70px); overflow-y:auto; }
+  html:not(.js) .site-header { height:auto; min-height:70px; flex-wrap:wrap; padding-block:12px; }
+  html:not(.js) #navigation { display:flex; position:static; width:100%; flex-direction:row; flex-wrap:wrap; padding:0; gap:4px 16px; border:0; }
+}
