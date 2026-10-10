@@ -1,17 +1,17 @@
 # Shandong He — personal website
 
-A dependency-free bilingual research and engineering portfolio for GitHub Pages.
+A dependency-free English-only research and engineering portfolio for GitHub Pages.
 
 ## Design
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with typographic flow illustrations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-first content with Chinese translations; Gitlet version control, backend microservices, full-stack applications, then a shipped browser product.
+- `index.html`: English-only content; five featured projects ordered for backend/software engineering roles: PatientFlow Cloud, Life Preference, Gitlet, Agent Skills Manager, and Inkline. More projects follow in the archive: SkyEats, LLM Forge, Goat Notes, Starry-Eyes, and the BalloonBarrage prototype.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
-- `main.js`: bilingual toggle, mobile navigation, project filters, active-section tracking.
-- `project-notes.html` and `project-notes.js`: bilingual implementation evidence and limitations for the four featured projects.
+- `main.js`: mobile navigation, project filters, featured-project shortcuts, and active-section tracking.
+- `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the five featured projects.
 - Original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and displayed in full at their native aspect ratios.
-- `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; `?lang=zh` opens Chinese.
+- `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; all variants use English-only content.
 - Career focus remains full-time engineering opportunities in Japan, expected graduation March 2028. Employer-specific interview preparation is private and outside this repository.
 - GitHub profile source is maintained in the separate `lorendw7/lorendw7` repository.
 
@@ -38,8 +38,16 @@ The site retains the previous contact policy: GitHub contact and CV on request, 
 
 ## Publishing
 
-GitHub Pages serves the `main` branch. Push changes only after checking both languages, desktop/mobile layouts, filters, navigation, local links, and factual statuses. `.preview/` is ignored and contains only local backups, tooling, and inspection output.
+GitHub Pages serves the `main` branch. Push changes only after checking English-only content, desktop/mobile layouts, filters, navigation, local links, and factual statuses. `.preview/` is ignored and contains only local backups, tooling, and inspection output.
 
 ## Gitlet evidence review (2026-10-09)
 
-Gitlet is now the first featured project. Its description is based on the local CS61B project source and design document, not inferred from Git's capabilities. Basic initialization, staging, committing, branching and checkout were exercised in an isolated copy. Ordinary merge currently advances the source branch as well as the target; fast-forward currently switches branches without advancing the original target. These remain project limitations, not claimed successes. Remote commands use local filesystem paths. Course helper code is not represented as original work. No private source, resume, contact details, or local filesystem paths are published.
+Gitlet is a featured project. Its description is based on the local CS61B project source and design document, not inferred from Git's capabilities. Basic initialization, staging, committing, branching and checkout were exercised in an isolated copy. Ordinary merge currently advances the source branch as well as the target; fast-forward currently switches branches without advancing the original target. These remain project limitations, not claimed successes. Remote commands use local filesystem paths. Course helper code is not represented as original work. No private source, resume, contact details, or local filesystem paths are published.
+
+## Project order (2026-10-10)
+
+PatientFlow Cloud leads with microservice architecture, followed by Life Preference for Redis caching and asynchronous coupon orders, Gitlet for Java data structures and persistence, Agent Skills Manager for full-stack development, and Inkline for a shipped browser application. Life Preference is explicitly described as a Heima Dianping course-based practice project, with a matching implementation-notes section based on its README and order-service source. Project numbering, English-only introductions, and evidence navigation follow the same order.
+
+## English-only release (2026-10-10)
+
+Chinese translations and language-switching controls have been removed from all public HTML pages and scripts. Featured-project shortcuts connect the homepage and implementation notes, including on mobile. The design-preview page uses English and identifies Simplefolio as the active layout. Old language query parameters no longer change page content.

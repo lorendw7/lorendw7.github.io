@@ -3,38 +3,14 @@
   const root = document.documentElement;
   const params = new URLSearchParams(location.search);
   if (['academic', 'editorial', 'bento', 'simplefolio'].includes(params.get('design'))) root.dataset.design = params.get('design');
-  const languageButton = document.querySelector('#language');
-  const translated = [...document.querySelectorAll('[data-zh]')];
-  translated.forEach(element => { element.dataset.en = element.textContent; });
-  let language = params.get('lang') === 'zh' ? 'zh' : 'en';
   const cards = [...document.querySelectorAll('[data-category]')];
   const moreProjects = document.querySelector('#more-projects');
   const archiveCards = [...moreProjects.querySelectorAll('[data-category]')];
   const updateCount = () => {
     const n = cards.filter(card => !card.hidden && (!moreProjects.contains(card) || (!moreProjects.hidden && moreProjects.open))).length;
-    document.querySelector('#project-count').textContent = language === 'zh' ? `当前显示 ${n} 个项目` : `${n} projects currently shown`;
+    document.querySelector('#project-count').textContent = `Showing ${n} of ${cards.length} projects`;
   };
-  function setLanguage() {
-    root.lang = language === 'zh' ? 'zh-CN' : 'en';
-    translated.forEach(element => { element.textContent = element.dataset[language]; });
-    languageButton.textContent = language === 'zh' ? 'EN' : '中文';
-    languageButton.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换至中文');
-    document.title = language === 'zh' ? '何单东 — 研究与工程' : 'Shandong He — Research & Engineering';
-    document.querySelectorAll('a[href^="project-notes.html"]').forEach(link => {
-      const url = new URL(link.href);
-      if (language === 'zh') url.searchParams.set('lang', 'zh'); else url.searchParams.delete('lang');
-      link.href = `project-notes.html${url.search}${url.hash}`;
-    });
-    updateCount();
-  }
-  languageButton.addEventListener('click', () => {
-    language = language === 'en' ? 'zh' : 'en';
-    const url = new URL(location.href);
-    if (language === 'zh') url.searchParams.set('lang', 'zh'); else url.searchParams.delete('lang');
-    history.replaceState(null, '', url);
-    setLanguage();
-  });
-  setLanguage();
+  updateCount();
   const menu = document.querySelector('#menu');
   const nav = document.querySelector('#navigation');
   const header = document.querySelector('.site-header');
@@ -60,6 +36,9 @@
     updateCount();
   }));
   moreProjects.addEventListener('toggle', updateCount);
+  document.querySelectorAll('.project-shortcuts a').forEach(link => link.addEventListener('click', () => {
+    if (document.querySelector(link.hash).hidden) document.querySelector('[data-filter="all"]').click();
+  }));
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;

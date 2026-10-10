@@ -1176,13 +1176,6 @@ html[data-design=bento] a:focus-visible {
   html[data-design=bento] .publication {
     padding:23px
   }
-  html[lang=zh-CN] h1 {
-    font-size:43px;
-    letter-spacing:.01em
-  }
-  html[lang=zh-CN] h2 {
-    font-size:32px
-  }
 }
 @media(prefers-reduced-motion:reduce) {
   html {
@@ -1404,3 +1397,31 @@ html[data-design=bento] .case-facts article {
     margin-bottom:18px
   }
 }
+
+/* Shortcuts keep featured projects and their notes easy to browse. */
+.project-shortcuts {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 20px;
+  list-style:none;
+  padding:0;
+  margin:0 0 24px;
+  font-size:12px;
+  line-height:1.6;
+}
+.project-shortcuts a {
+  display:inline-block;
+  padding:6px 0;
+  color:var(--muted);
+  text-underline-offset:4px;
+}
+.project-shortcuts a:hover { color:var(--accent); text-decoration:underline; }
+.project-card[id] { scroll-margin-top:100px; }
+.case-hero>p { max-width:680px; color:var(--muted); }
+.case-hero .project-shortcuts { margin:24px 0 0; }
+.case-back { white-space:nowrap; font-size:12px; }
+@media(max-width:650px) {
+  .case-header .wordmark>span:last-child { display:none; }
+  .project-shortcuts { gap:4px 16px; }
+}
+@media print { .project-shortcuts { display:none; } }

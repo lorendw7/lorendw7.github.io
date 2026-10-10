@@ -7,7 +7,7 @@ Checked on 2026-10-09. Star counts are snapshots, not a quality guarantee.
 - Source: https://github.com/cobiwave/simplefolio (14,226 stars)
 - Author: Jacobo Martínez
 - Source files: `src/index.html`, `src/sass/sections/_hero.scss`, `src/sass/sections/_projects.scss`, `src/sass/components/_buttons.scss`
-- Adaptation: introductory hero, paired project description/visual rows, and expanding call-to-action button. Sass converted to plain scoped CSS. Original site photography, bilingual content, accessible navigation, filtering, and implementation notes retained. No Bootstrap, Parcel or animation dependency is required.
+- Adaptation: introductory hero, paired project description/visual rows, and expanding call-to-action button. Sass converted to plain scoped CSS. Original site photography, English-language content, accessible navigation, filtering, and implementation notes retained. No Bootstrap, Parcel or animation dependency is required.
 - Original source remains under its MIT license below. New content describes Shandong He's own work.
 - Alternative reviewed: https://github.com/saadpasta/developerFolio (6,639 stars; GPL-3.0; README says no active maintenance). Not incorporated.
 
