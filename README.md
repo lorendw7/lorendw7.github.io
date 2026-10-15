@@ -6,13 +6,13 @@ A dependency-free English-only research and engineering portfolio for GitHub Pag
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with flow illustrations or real deployed-website screenshots. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-only content; five featured projects ordered for backend/software engineering roles: PatientFlow Cloud, Life Preference, Gitlet, Agent Skills Manager, and Inkline. More projects follow in the archive: SkyEats, LLM Forge, Goat Notes, Starry-Eyes, and the BalloonBarrage prototype.
+- `index.html`: English-only content; five featured software projects: PatientFlow Cloud, Life Preference, Gitlet, Agent Skills Manager, and Inkline. More projects follow in the archive: SkyEats, LLM Forge, Goat Notes, Starry-Eyes, and the BalloonBarrage prototype.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
 - `main.js`: mobile navigation, project filters, featured-project shortcuts, and active-section tracking.
 - `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the five featured projects.
 - Original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and displayed in full at their native aspect ratios.
 - `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; all variants use English-only content.
-- Career focus remains full-time engineering opportunities in Japan, expected graduation March 2028. Employer-specific interview preparation is private and outside this repository.
+- Current focus is PhD opportunities in reliable AI and AI for Science, with expected M.S. completion in March 2028. The hero, research CTA, contact section, and sharing metadata reflect this direction. Employer-specific interview preparation is private and outside this repository.
 - GitHub profile source is maintained in the separate `lorendw7/lorendw7` repository.
 
 No runtime dependencies, external fonts, analytics, or build step. Essential content and mobile navigation remain usable without JavaScript. Run a static file server for local preview.
@@ -71,3 +71,7 @@ Supporting browsers use a short native cross-document view transition between th
 ## Website screenshots (2026-10-15)
 
 The three deployed projects now use real local WebP captures with browser-style address bars and linked captions. Two image sizes, intrinsic dimensions, and lazy decoding/loading keep the previews lightweight and stable on mobile. See `assets/projects/README.md` for capture sources and states. Inkline uses a synthetic demo document; Starry-Eyes explicitly identifies its access check; BalloonBarrage opens the English project homepage. Portfolio text remains English while screenshots preserve the original interfaces. Navigation tests also verify image decoding, aspect ratio, frame containment, and clickable previews across the design variants.
+
+## PhD focus and artwork preview (2026-10-15)
+
+At the user’s request, the portfolio now states that Shandong He is seeking PhD opportunities. The primary introduction links to research; software projects remain accessible as implementation evidence. No doctoral admission, enrollment, supervisor, location restriction, or start date is claimed. Starry-Eyes now shows the actual artwork rendered from the local project source in an isolated preview, without publishing the access answer or personal closing message. The deployed site still requires its existing access check.
