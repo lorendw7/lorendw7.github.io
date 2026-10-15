@@ -5,7 +5,7 @@ const base = process.argv[2] || 'http://127.0.0.1:8765/';
 const destinations = {
   inkline: 'https://lorendw7.github.io/inkline/',
   'starry-eyes': 'https://starry-eyes.vercel.app/',
-  balloonshooter: 'https://lorendw7.github.io/BalloonBarrage/'
+  balloonshooter: 'https://lorendw7.github.io/BalloonBarrage/en/'
 };
 
 (async () => {
@@ -24,6 +24,12 @@ const destinations = {
       assert.equal(await page.locator('#project-count').innerText(), 'Showing 3 of 10 projects');
       assert.match(await page.locator('#more-projects summary').innerText(), /Hide additional projects \(2\)/);
       for (const [id,url] of Object.entries(destinations)) {
+        const preview = page.locator(`#${id} .website-preview img`);
+        await preview.scrollIntoViewIfNeeded();
+        await preview.evaluate(img => img.decode());
+        assert.equal(await preview.evaluate(img => img.naturalWidth > 0 && Math.abs(img.getBoundingClientRect().width / img.getBoundingClientRect().height - 1.6) < 0.01), true);
+        assert.ok(await preview.getAttribute('alt'));
+        assert.equal(await page.locator(`#${id} .website-preview`).evaluate(el => el.scrollWidth <= el.clientWidth), true);
         // Visual panels, titles, and CTAs must all lead to the actual website, with no overlay intercepting them.
         for (const selector of ['.live-preview', 'h3 a', '.live-cta']) {
           const link = page.locator(`#${id} ${selector}`);
@@ -71,6 +77,16 @@ const destinations = {
       assert.equal(await page.locator('#gitlet').isVisible(), true);
       assert.equal(await page.locator('[data-filter=all]').getAttribute('aria-pressed'), 'true');
       await page.locator('[data-filter=live]').click();
+      for (const id of Object.keys(destinations)) {
+        const preview = page.locator(`#${id} .website-preview img`);
+        await preview.scrollIntoViewIfNeeded();
+        await preview.evaluate(img => img.decode());
+        assert.equal(await preview.evaluate(img => {
+          const box = img.getBoundingClientRect();
+          const frame = img.closest('.website-preview').getBoundingClientRect();
+          return box.width > 0 && box.top >= frame.top && box.bottom <= frame.bottom;
+        }), true, `${design}: preview must fit its frame`);
+      }
       // A non-link description must remain selectable, rather than being covered by a stretched title link.
       assert.equal(await page.locator('#inkline > p').first().evaluate(el => {
         el.scrollIntoView();

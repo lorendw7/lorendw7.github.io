@@ -100,3 +100,31 @@ html[data-design=simplefolio] .cta-btn--hero:hover::after,html[data-design=simpl
 }
 @media(prefers-reduced-motion:reduce) { html[data-design=simplefolio] .cta-btn,html[data-design=simplefolio] .cta-btn::after { transition:none; } }
 @media print { html[data-design=simplefolio] .hero { min-height:0; padding:20px 0; } html[data-design=simplefolio] .featured-grid .project-card { display:block; padding:20px 0; } html[data-design=simplefolio] .featured-grid .project-mark { display:none; } }
+
+/* Real website captures keep their full aspect ratio across every layout. */
+html[data-design] .project-card .project-mark.website-preview {
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  width:100%;
+  min-width:0;
+  height:auto;
+  min-height:0;
+  padding:0;
+  gap:0;
+  overflow:hidden;
+  border:1px solid #d6ddd6;
+  border-radius:8px;
+  background:#f8faf7;
+  color:#344a3b;
+  font:400 11px/1.5 "Segoe UI",sans-serif;
+  letter-spacing:0;
+  text-align:left;
+}
+.website-preview img { display:block; width:100%; height:auto; aspect-ratio:8/5; background:#eef1ed; }
+.preview-address { display:flex; align-items:center; gap:10px; min-width:0; padding:10px 12px; border-bottom:1px solid #d6ddd6; font-size:10px; }
+.preview-address>span:nth-child(2) { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.preview-dots { flex-shrink:0; color:#a2afa3; font-size:7px; letter-spacing:2px; }
+.preview-caption { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 14px; padding:12px; border-top:1px solid #d6ddd6; }
+.preview-caption>.preview-cta { margin-left:auto; white-space:nowrap; }
+@media print { html[data-design] .project-card .project-mark.website-preview { display:none; } }

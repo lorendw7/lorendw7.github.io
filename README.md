@@ -4,7 +4,7 @@ A dependency-free English-only research and engineering portfolio for GitHub Pag
 
 ## Design
 
-The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with typographic flow illustrations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
+The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with flow illustrations or real deployed-website screenshots. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
 - `index.html`: English-only content; five featured projects ordered for backend/software engineering roles: PatientFlow Cloud, Life Preference, Gitlet, Agent Skills Manager, and Inkline. More projects follow in the archive: SkyEats, LLM Forge, Goat Notes, Starry-Eyes, and the BalloonBarrage prototype.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
@@ -19,7 +19,7 @@ No runtime dependencies, external fonts, analytics, or build step. Essential con
 
 ## Content maintenance
 
-BalloonShooter is included at the user's request as an **in-development prototype**, publicly named BalloonBarrage. Its local README and gameplay scripts confirm mouse aiming, moving projectiles with swept collision, single-hit scoring, audio/particle feedback and randomized single-target spawning. Waves, upgrades and local co-op remain planned. The project archive therefore includes completed projects and this explicitly labeled prototype.
+BalloonShooter is included at the user's request as an **in-development prototype**, publicly named BalloonBarrage. The earlier local source review confirmed mouse aiming, moving projectiles with swept collision, single-hit scoring, and audio/particle feedback. The English project website checked on 2026-10-15 now describes a rhythm-shooter direction, chart-driven spawning, and rhythm judgement still in progress. No public Windows demo is available; do not present development targets as released features. The project archive therefore includes completed projects and this explicitly labeled prototype.
 
 The RA appointment at Kyushu University's Research Institute for Information Technology is **selected, appointment processing**. The planned theme is knowledge graph construction and utilization under an AI for Science research training initiative. Do not claim an active appointment, start date, completed RA duties, or SRA classification until confirmed. This status was confirmed by the user on 2026-10-09.
 
@@ -67,3 +67,7 @@ The Live websites filter gathers Inkline, Starry-Eyes, and the BalloonBarrage pr
 `navigation.js` preserves supported design and filter parameters between the portfolio and implementation notes. Return links point to the selected project. All links use native browser navigation, including modifier clicks and opening in new tabs. The old stretched title overlay was removed so card descriptions can be selected without accidentally opening a link.
 
 Supporting browsers use a short native cross-document view transition between the portfolio and notes. Other browsers navigate normally. Reduced-motion preferences disable transitions. Website previews and buttons provide hover, focus, and pressed feedback without delaying navigation. Additional regression checks are in `tests/project-navigation.cjs` and use the same browser/server configuration as the existing interaction suite.
+
+## Website screenshots (2026-10-15)
+
+The three deployed projects now use real local WebP captures with browser-style address bars and linked captions. Two image sizes, intrinsic dimensions, and lazy decoding/loading keep the previews lightweight and stable on mobile. See `assets/projects/README.md` for capture sources and states. Inkline uses a synthetic demo document; Starry-Eyes explicitly identifies its access check; BalloonBarrage opens the English project homepage. Portfolio text remains English while screenshots preserve the original interfaces. Navigation tests also verify image decoding, aspect ratio, frame containment, and clickable previews across the design variants.
