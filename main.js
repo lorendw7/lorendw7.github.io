@@ -32,7 +32,7 @@
     if (activeFilter) expandedByFilter.set(activeFilter, moreProjects.open);
     activeFilter = next;
     filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === next)));
-    cards.forEach(card => { card.hidden = next !== 'all' && card.dataset.category !== next; });
+    cards.forEach(card => { card.hidden = next === 'live' ? !card.hasAttribute('data-live') : next !== 'all' && card.dataset.category !== next; });
     moreProjects.hidden = !archiveCards.some(card => !card.hidden);
     moreProjects.open = expandedByFilter.has(next) ? expandedByFilter.get(next) : next !== 'all';
     updateProjects();
@@ -106,6 +106,7 @@
     const url = writeFilter(new URL(location.href));
     if (targetFor(url.hash)?.closest('.project-card')?.hidden) url.hash = 'projects';
     history.pushState(null, '', url);
+    window.dispatchEvent(new Event('portfolio:navigation'));
   }));
   moreProjects.addEventListener('toggle', () => {
     expandedByFilter.set(activeFilter, moreProjects.open);
@@ -121,6 +122,7 @@
     const url = writeFilter(new URL(location.href));
     url.hash = link.hash;
     if (url.href !== location.href) history.pushState(null, '', url);
+    window.dispatchEvent(new Event('portfolio:navigation'));
     setMenu(false);
     target.scrollIntoView({block:'start', behavior:reducedMotion.matches ? 'instant' : 'smooth'});
     focusTarget(target);
@@ -141,6 +143,7 @@
     }
     setMenu(false);
     scheduleScrollUpdate();
+    window.dispatchEvent(new Event('portfolio:navigation'));
   }
   window.addEventListener('popstate', restoreNavigation);
   window.addEventListener('hashchange', restoreNavigation);

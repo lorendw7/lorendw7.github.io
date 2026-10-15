@@ -59,3 +59,11 @@ Project filters use the `filter` query parameter and restore through browser his
 The mobile menu closes on outside clicks, focus leaving the menu, Escape, section selection, and switching to a desktop viewport. Opening moves focus to the first navigation link; Escape restores focus to the menu button. JavaScript-dependent controls are hidden when scripting is unavailable, while mobile navigation and the native project disclosure remain usable.
 
 Browser regression checks are in `tests/interactions.cjs`. With Playwright available and a local static server running, execute `node tests/interactions.cjs http://127.0.0.1:8765/`. Optional `PLAYWRIGHT_MODULE` and `PLAYWRIGHT_CHANNEL` environment variables select an existing development installation and browser. Checks cover four viewport widths, all design variants, browser history, deep links, disclosure state, keyboard focus, and navigation without JavaScript.
+
+## Live project navigation (2026-10-15)
+
+The Live websites filter gathers Inkline, Starry-Eyes, and the BalloonBarrage project website. Each has a linked visual panel, title, explicit website button, and visible destination/new-tab hint. BalloonBarrage remains an in-development game; its link opens the project website. Known website URLs were checked for successful HTTP responses and page titles. Source and implementation links remain separate actions.
+
+`navigation.js` preserves supported design and filter parameters between the portfolio and implementation notes. Return links point to the selected project. All links use native browser navigation, including modifier clicks and opening in new tabs. The old stretched title overlay was removed so card descriptions can be selected without accidentally opening a link.
+
+Supporting browsers use a short native cross-document view transition between the portfolio and notes. Other browsers navigate normally. Reduced-motion preferences disable transitions. Website previews and buttons provide hover, focus, and pressed feedback without delaying navigation. Additional regression checks are in `tests/project-navigation.cjs` and use the same browser/server configuration as the existing interaction suite.

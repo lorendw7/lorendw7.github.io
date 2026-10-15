@@ -17,9 +17,10 @@
 <meta name="twitter:description" content="Completed software projects and research in reliable AI.">
 <meta name="twitter:image" content="https://lorendw7.github.io/assets/hero-bg.jpg">
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=20261010-interactions">
-<link rel="stylesheet" href="simplefolio.css?v=20261010-interactions">
-<script src="main.js?v=20261010-interactions" defer>
+<link rel="stylesheet" href="styles.css?v=20261015-navigation">
+<link rel="stylesheet" href="simplefolio.css?v=20261015-navigation">
+<script src="navigation.js?v=20261015-navigation" defer></script>
+<script src="main.js?v=20261015-navigation" defer>
 </script>
 </head>
 <body>
@@ -112,6 +113,7 @@
 </ul>
 <div class="filters" role="group" aria-label="Filter projects">
 <button type="button" data-filter="all" aria-pressed="true">All</button>
+<button type="button" data-filter="live" aria-pressed="false">Live websites (3)</button>
 <button type="button" data-filter="systems" aria-pressed="false">Backend &amp; Systems</button>
 <button type="button" data-filter="apps" aria-pressed="false">Applications</button>
 <button type="button" data-filter="ai" aria-pressed="false">AI Applications</button>
@@ -155,14 +157,15 @@
 <div class="tags"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div>
 <div class="project-actions"><a class="project-demo" href="project-notes.html#agent-skills"><span>Explore the implementation ↗</span></a></div>
 </article>
-<article class="project-card apps-card" data-category="apps" id="inkline">
-<div class="project-top"><span>05 / SHIPPED WEB APPLICATION</span><span>↗</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">INKLINE / BROWSER WORKFLOW</span><span class="flow-node">Open a PDF <small>processed on your device</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Draw signature</span><span>Position &amp; resize</span></span><span class="flow-arrow">↓</span><span class="flow-node">Export signed PDF <small>no upload required</small></span></div>
-<h3><a class="project-link" href="https://github.com/lorendw7/inkline" target="_blank" rel="noopener noreferrer">Inkline</a></h3>
+<article class="project-card apps-card" data-category="apps" data-live id="inkline">
+<div class="project-top"><span>05 / SHIPPED WEB APPLICATION</span><span class="live-badge">Live website</span></div>
+<a class="project-mark flow-panel live-preview" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Open Inkline live app (opens in a new tab)"><span class="flow-label">INKLINE / BROWSER WORKFLOW</span><span class="flow-node">Open a PDF <small>processed on your device</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Draw signature</span><span>Position &amp; resize</span></span><span class="flow-arrow">↓</span><span class="flow-node">Export signed PDF <small>no upload required</small></span><span class="preview-cta">Open live app <span aria-hidden="true">↗</span></span></a>
+<h3><a class="project-link" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Inkline live app (opens in a new tab)">Inkline</a></h3>
 <p>A deployed browser-based PDF signing tool: open a document, draw and position a signature, then export the signed PDF. Processing stays on the device.</p>
 <p class="project-evidence">Engineering focus: PDF coordinate mapping, browser-only export, and a no-network CSP. Known limits: rotated and encrypted PDFs.</p>
 <div class="tags"><span>React</span><span>TypeScript</span><span>PDF.js / pdf-lib</span></div>
-<div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer"><span>Try the live app ↗</span></a><a class="project-demo secondary" href="project-notes.html#inkline"><span>Explore the implementation ↗</span></a></div>
+<div class="project-actions"><a class="project-demo live-cta" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Try Inkline (opens in a new tab)"><span>Try the live app</span><span class="link-arrow" aria-hidden="true">↗</span></a><a class="project-demo secondary" href="project-notes.html#inkline"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/inkline" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
+<p class="live-destination">lorendw7.github.io/inkline · Opens in a new tab</p>
 </article>
 </div>
 <details class="more-projects" id="more-projects">
@@ -189,21 +192,24 @@
 <p>A note-taking application with account authentication, persistent note management, and DeepSeek-powered questions and answers grounded in the user’s notes.</p>
 <div class="tags"><span>Next.js</span><span>Supabase</span><span>DeepSeek</span></div>
 </article>
-<article class="project-card creative-card" data-category="creative">
-<div class="project-top"><span>09 / CREATIVE CODING</span><span>↗</span></div>
-<div class="project-mark" aria-hidden="true">✦ · ✧ · ✦</div>
-<h3><a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer">Starry-Eyes</a></h3>
+<article class="project-card creative-card" data-category="creative" data-live id="starry-eyes">
+<div class="project-top"><span>09 / CREATIVE CODING</span><span class="live-badge">Live website</span></div>
+<a class="project-mark live-preview starry-preview" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Starry-Eyes (opens in a new tab)"><span aria-hidden="true">✦ · ✧ · ✦</span><span class="preview-cta">Explore the experience <span aria-hidden="true">↗</span></span></a>
+<h3><a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Starry-Eyes live website (opens in a new tab)">Starry-Eyes</a></h3>
 <p>An interactive 3D artwork with PBR brush strokes, an audio-reactive starfield, cinematic camera movement, and responsive rendering. View the deployed experience.</p>
 <div class="tags"><span>Three.js</span><span>WebGL</span><span>Web Audio</span></div>
+<div class="project-actions"><a class="project-demo live-cta" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Explore Starry-Eyes (opens in a new tab)"><span>Open live website</span><span class="link-arrow" aria-hidden="true">↗</span></a></div>
+<p class="live-destination">starry-eyes.vercel.app · Opens in a new tab</p>
 </article>
-<article class="project-card creative-card" data-category="creative" id="balloonshooter">
+<article class="project-card creative-card" data-category="creative" data-live id="balloonshooter">
 <div class="project-top"><span>10 / GAME DEVELOPMENT</span><span>IN DEVELOPMENT</span></div>
-<div class="project-mark" aria-hidden="true">aim → pop</div>
-<h3><a class="project-link" href="https://github.com/lorendw7/BalloonBarrage" target="_blank" rel="noopener noreferrer">BalloonShooter / BalloonBarrage</a></h3>
+<a class="project-mark live-preview balloon-preview" href="https://lorendw7.github.io/BalloonBarrage/" target="_blank" rel="noopener noreferrer" aria-label="Open the BalloonBarrage project website (opens in a new tab)"><span aria-hidden="true">aim → pop</span><span class="preview-cta">Visit project website <span aria-hidden="true">↗</span></span></a>
+<h3><a class="project-link" href="https://lorendw7.github.io/BalloonBarrage/" target="_blank" rel="noopener noreferrer" aria-label="BalloonBarrage project website (opens in a new tab)">BalloonShooter / BalloonBarrage</a></h3>
 <p>A Unity / C# paint-blaster prototype implementing mouse aiming, moving projectiles with swept collision, balloon scoring, audio and particle feedback, and randomized single-target spawning.</p>
 <p class="project-evidence">In development under the public name BalloonBarrage. Waves, roguelite upgrades, and local co-op are planned.</p>
 <div class="tags"><span>Unity</span><span>C#</span><span>Input System</span></div>
-<div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/BalloonBarrage/" target="_blank" rel="noopener noreferrer"><span>Visit the game website ↗</span></a></div>
+<div class="project-actions"><a class="project-demo live-cta" href="https://lorendw7.github.io/BalloonBarrage/" target="_blank" rel="noopener noreferrer" aria-label="Visit the BalloonBarrage project website (opens in a new tab)"><span>Visit project website</span><span class="link-arrow" aria-hidden="true">↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/BalloonBarrage" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
+<p class="live-destination">lorendw7.github.io/BalloonBarrage · Opens in a new tab</p>
 </article>
 </div>
 </details>
