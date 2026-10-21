@@ -6,13 +6,13 @@ A dependency-free English-only research and engineering portfolio for GitHub Pag
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with flow illustrations or real deployed-website screenshots. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-only content; five featured software projects: PatientFlow Cloud, Life Preference, Gitlet, Agent Skills Manager, and Inkline. More projects follow in the archive: SkyEats, LLM Forge, Goat Notes, Starry-Eyes, and the BalloonBarrage prototype.
+- `index.html`: English-only content. A status-aware “On the workbench” section covers MiniKV, Labelforge, and PerfusionUDE.jl; five implemented projects remain featured below it: PatientFlow Cloud, Life Preference, Gitlet, Agent Skills Manager, and Inkline. More projects follow in the archive.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
 - `main.js`: mobile navigation, project filters, featured-project shortcuts, and active-section tracking.
 - `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the five featured projects.
 - Original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and displayed in full at their native aspect ratios.
 - `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; all variants use English-only content.
-- Current focus is PhD opportunities in reliable AI and AI for Science, with expected M.S. completion in March 2028. The hero, research CTA, contact section, and sharing metadata reflect this direction. Employer-specific interview preparation is private and outside this repository.
+- Current positioning is systems engineering, scientific computing, and reliable AI, with expected M.S. completion in March 2028. The hero and contact section emphasize research collaboration now and full-time software engineering opportunities in Japan after graduation. Employer-specific interview preparation is private and outside this repository.
 - GitHub profile source is maintained in the separate `lorendw7/lorendw7` repository.
 
 No runtime dependencies, external fonts, analytics, or build step. Essential content and mobile navigation remain usable without JavaScript. Run a static file server for local preview.
@@ -66,7 +66,7 @@ The Live websites filter gathers Inkline, Starry-Eyes, and the BalloonBarrage pr
 
 `navigation.js` preserves supported design and filter parameters between the portfolio and implementation notes. Return links point to the selected project. All links use native browser navigation, including modifier clicks and opening in new tabs. The old stretched title overlay was removed so card descriptions can be selected without accidentally opening a link.
 
-Supporting browsers use a short native cross-document view transition between the portfolio and notes. Other browsers navigate normally. Reduced-motion preferences disable transitions. Website previews and buttons provide hover, focus, and pressed feedback without delaying navigation. Additional regression checks are in `tests/project-navigation.cjs` and use the same browser/server configuration as the existing interaction suite.
+Portfolio and implementation-note links use normal browser navigation and preserve the selected design, project filter, and return target. Website previews and buttons provide hover, focus, and pressed feedback without delaying navigation. Additional regression checks are in `tests/project-navigation.cjs` and use the same browser/server configuration as the existing interaction suite.
 
 ## Website screenshots (2026-10-15)
 
@@ -75,3 +75,13 @@ The three deployed projects now use real local WebP captures with browser-style 
 ## PhD focus and artwork preview (2026-10-15)
 
 At the user’s request, the portfolio now states that Shandong He is seeking PhD opportunities. The primary introduction links to research; software projects remain accessible as implementation evidence. No doctoral admission, enrollment, supervisor, location restriction, or start date is claimed. Starry-Eyes now shows the actual artwork rendered from the local project source in an isolated preview, without publishing the access answer or personal closing message. The deployed site still requires its existing access check.
+
+## Workbench narrative refresh (2026-10-21)
+
+The portfolio now leads with a broader and more current engineering narrative: building systems from first principles across storage, backend services, scientific computing, and local-first applications. A dedicated workbench section separates active builds from implemented project evidence and records an explicit `Now` / `Next` boundary for each project.
+
+- MiniKV is presented as a foundation-stage learning project; the full WAL / memtable / SSTable / compaction loop is not claimed as complete.
+- Labelforge claims only its pinned Label Studio + PostgreSQL deployment and existing labeling configurations; provisioning, export automation, and validation webhooks remain roadmap items.
+- PerfusionUDE.jl is labeled pre-release. Its sourced reference-physiology layer and invariant tests exist; the broader transport, GPU ensemble, inference, and identifiability stack remains under development.
+
+The GitHub Profile README uses the same scope language so visitors see one consistent story across GitHub and the portfolio.
