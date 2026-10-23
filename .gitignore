@@ -1,2 +1,5 @@
 .preview/
 __pycache__/
+output/
+resume/
+tmp/

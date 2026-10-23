@@ -27,14 +27,14 @@ Paper 1 is an **accepted CANDAR 2026 / WANC short paper**, not an already-publis
 
 Sources checked on 2026-10-09:
 
-- Public `lorendw7/not-all-relations-are-equally-reliable` README: title, author order, acceptance and reproducibility scope.
+- Public `lorendw7/not-all-relations-are-equally-reliable` README: title, author order, acceptance and reproducibility scope. The 2026-10-23 WANC award notification supplied by the author is the source for the Best Paper Award selection; the site preserves the notification's presentation requirement.
 - Local `embodied-intelligence-data-assessment`: manuscript title/results, submission confirmation, and workshop-fit note.
 - Public/local PatientFlow-Cloud, Agent-Skills-Manager, Goat-Notes, Life-Preference, Starry-Eyes, and Inkline implementation and completion documentation.
 - Supplied Chinese/English resumes: education, GPA, work experience, dates and language scores.
 
 The original completed-project set is preserved alongside the newer work: PatientFlow Cloud, LLM Forge, Gitlet, Life Preference (the merchant-review project previously named LifeSelect), SkyEats, Starry-Eyes, Agent Skills Manager, Goat Notes, and Inkline's shipped PDF-signing MVP. Repository visibility is not a selection criterion; a deployed experience may be linked when source code is not public. Other ongoing and documentation-only projects are excluded. Inkline's future signature-library/date-stamp additions are not claimed as completed. The four awards from the original CV are restored. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
 
-The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated private resume sources are delivered separately.
+The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated bilingual LaTeX sources and compiled PDFs are maintained privately and excluded from website publishing.
 
 ## Publishing
 
