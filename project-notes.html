@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Project evidence — Shandong He</title>
-<meta name="description" content="Implementation notes and source evidence for five selected software projects by Shandong He.">
+<meta name="description" content="Implementation notes and source evidence for six selected software projects by Shandong He.">
 <meta name="theme-color" content="#f8f8f7">
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css?v=20261015-phd">
-<script src="navigation.js?v=20261015-phd" defer></script>
+<script src="navigation.js?v=20261024-gitlet" defer></script>
 <script src="project-notes.js?v=20261015-phd" defer></script>
 <link rel="stylesheet" href="simplefolio.css?v=20261015-phd">
 </head>
@@ -20,15 +20,16 @@
 </header>
 <main id="main" class="case-main">
 <section class="case-hero">
-<p class="eyebrow">PROJECT EVIDENCE / 01—05</p>
+<p class="eyebrow">PROJECT EVIDENCE / 01—06</p>
 <h1>Show the work.</h1>
-<p>Design choices, source code, and implementation notes for five featured projects. Follow each workflow from its entry point to storage, messaging, or export.</p>
+<p>Design choices, source evidence, and implementation notes for six featured projects. Follow each workflow from its entry point to storage, messaging, monitoring, or export.</p>
 <ul class="project-shortcuts" aria-label="Implementation notes">
 <li><a href="#patientflow">01 PatientFlow Cloud</a></li>
 <li><a href="#life-preference">02 Life Preference</a></li>
-<li><a href="#procmon">03 Procmon</a></li>
-<li><a href="#agent-skills">04 Agent Skills Manager</a></li>
-<li><a href="#inkline">05 Inkline</a></li>
+<li><a href="#gitlet">03 Gitlet</a></li>
+<li><a href="#procmon">04 Procmon</a></li>
+<li><a href="#agent-skills">05 Agent Skills Manager</a></li>
+<li><a href="#inkline">06 Inkline</a></li>
 </ul>
 </section>
 
@@ -52,8 +53,17 @@
 <div class="case-links"><a href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/lorendw7/Life-Preference/blob/main/backend/hm-dianping/src/main/java/com/hmdp/service/impl/VoucherOrderServiceImpl.java" target="_blank" rel="noopener noreferrer">Order processing ↗</a><a href="https://github.com/lorendw7/Life-Preference/blob/main/backend/hm-dianping/src/main/resources/seckill.lua" target="_blank" rel="noopener noreferrer">Flash-sale Lua script ↗</a></div>
 </section>
 
+<section class="case-study" id="gitlet" aria-labelledby="gitlet-title">
+<div class="case-heading"><span class="eyebrow">03 / VERSION CONTROL</span><h2 id="gitlet-title">Gitlet</h2><p>A CS61B-based Java learning project exploring object persistence, commit graphs, and branch state through version control.</p></div>
+<div class="case-facts">
+<article><span class="small-label">SNAPSHOTS &amp; STORAGE</span><p>Blobs hold file contents; commits map file names to blob IDs and store parent references. Serialized objects are persisted under SHA-1 IDs, with separate addition and removal staging areas.</p></article>
+<article><span class="small-label">GRAPHS &amp; STATE</span><p>Branch references locate commits. Graph traversal collects common ancestors; snapshot comparisons identify changes and produce conflict markers. Push, fetch, and pull work with another local repository directory, not Git network protocols.</p></article>
+<article><span class="small-label">VERIFICATION &amp; SCOPE</span><p>Local design notes and source were reviewed, then compiled in an isolated directory to check basic commit and branch flows. Known follow-up work includes branch-reference updates during merging and fast-forward behavior. The source repository is not currently public.</p></article>
+</div>
+</section>
+
 <section class="case-study" id="procmon" aria-labelledby="procmon-title">
-<div class="case-heading"><span class="eyebrow">03 / LINUX SYSTEMS</span><h2 id="procmon-title">Procmon</h2><p>A compact process monitor in C that turns Linux procfs counters into a live, sortable terminal view.</p></div>
+<div class="case-heading"><span class="eyebrow">04 / LINUX SYSTEMS</span><h2 id="procmon-title">Procmon</h2><p>A compact process monitor in C that turns Linux procfs counters into a live, sortable terminal view.</p></div>
 <div class="case-facts">
 <article><span class="small-label">PROCESS DATA</span><p>The program scans numeric directories in <code>/proc</code>, combines process state and CPU counters from <code>/proc/&lt;pid&gt;/stat</code> with resident memory and ownership from <code>/proc/&lt;pid&gt;/status</code>, and resolves user names locally.</p></article>
 <article><span class="small-label">SAMPLING &amp; DISPLAY</span><p>Two snapshots turn cumulative jiffies into per-process CPU percentages. Results can be sorted by CPU or resident memory and rendered as a continuously refreshed view or a single command-line snapshot.</p></article>
@@ -63,7 +73,7 @@
 </section>
 
 <section class="case-study" id="agent-skills" aria-labelledby="agent-title">
-<div class="case-heading"><span class="eyebrow">04 / FULL-STACK APPLICATION</span><h2 id="agent-title">Agent Skills Manager</h2><p>Create, manage, and publicly share Markdown-based agent skills.</p></div>
+<div class="case-heading"><span class="eyebrow">05 / FULL-STACK APPLICATION</span><h2 id="agent-title">Agent Skills Manager</h2><p>Create, manage, and publicly share Markdown-based agent skills.</p></div>
 <div class="case-facts">
 <article><span class="small-label">IMPLEMENTATION</span><p>Next.js pages and routes handle skill creation, editing, account management, and public display; Prisma persists data in PostgreSQL.</p></article>
 <article><span class="small-label">ENGINEERING CHOICE</span><p>The repository documents bcrypt password hashing, httpOnly-cookie authentication, and ISR for the public skills gallery.</p></article>
@@ -73,7 +83,7 @@
 </section>
 
 <section class="case-study" id="inkline" aria-labelledby="inkline-title">
-<div class="case-heading"><span class="eyebrow">05 / BROWSER PRODUCT</span><h2 id="inkline-title">Inkline</h2><p>Open a PDF, draw and place a signature, then export the document in the browser.</p></div>
+<div class="case-heading"><span class="eyebrow">06 / BROWSER PRODUCT</span><h2 id="inkline-title">Inkline</h2><p>Open a PDF, draw and place a signature, then export the document in the browser.</p></div>
 <div class="case-facts">
 <article><span class="small-label">IMPLEMENTATION</span><p>PDF.js renders pages to canvas; pdf-lib embeds signatures in PDF page coordinates. Placement survives viewport resizing.</p></article>
 <article><span class="small-label">ENGINEERING CHOICE</span><p>Files stay in the browser tab. The production Content Security Policy uses connect-src 'none' to block script-initiated network requests.</p></article>

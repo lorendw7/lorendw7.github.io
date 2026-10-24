@@ -6,10 +6,10 @@ A dependency-free English-only research and engineering portfolio for GitHub Pag
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with flow illustrations or real deployed-website screenshots. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-only content. A status-aware “On the workbench” section covers NodePulse, Tinyjson, and Deep Learning for Biology; five implemented projects are featured below it: PatientFlow Cloud, Life Preference, Procmon, Agent Skills Manager, and Inkline. More public work follows in the archive.
+- `index.html`: English-only content. A status-aware “On the workbench” section covers NodePulse, Tinyjson, and Deep Learning for Biology; six implemented projects are featured below it: PatientFlow Cloud, Life Preference, Gitlet, Procmon, Agent Skills Manager, and Inkline. More public work follows in the archive.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
 - `main.js`: mobile navigation, project filters, featured-project shortcuts, and active-section tracking.
-- `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the five featured projects.
+- `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the six featured projects.
 - Original `assets/hero-bg.jpg` and `assets/hero-bg-portrait.jpg` are unchanged and displayed in full at their native aspect ratios.
 - `design-preview.html` preserves the earlier comparison layouts, selectable with `?design=academic`, `?design=editorial`, or `?design=bento`. Default is `simplefolio`; all variants use English-only content.
 - Current positioning is systems engineering, scientific computing, and reliable AI, with expected M.S. completion in March 2028. The hero and contact section emphasize research collaboration now and full-time software engineering opportunities in Japan after graduation. Employer-specific interview preparation is private and outside this repository.
@@ -32,7 +32,7 @@ Sources checked on 2026-10-09:
 - Public/local PatientFlow-Cloud, Agent-Skills-Manager, Goat-Notes, Life-Preference, Procmon, Starry-Eyes, and Inkline implementation and completion documentation.
 - Supplied Chinese/English resumes: education, GPA, work experience, dates and language scores.
 
-The public project set is reconciled against the current GitHub account before publishing. Procmon replaced the removed Gitlet repository in the featured group, and MiniKV replaced the removed SkyEats repository in the archive. A deployed experience such as Starry-Eyes may remain linked when its source repository is no longer public, but the site does not imply public source availability. Inkline's future signature-library/date-stamp additions are not claimed as completed. The four awards from the original CV are restored. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
+The public project set is reconciled against the current GitHub account before publishing. Gitlet remains in the featured group based on reviewed local source and design evidence, but it has no repository link because its source is not currently public. Procmon is featured alongside it, and MiniKV replaced the removed SkyEats repository in the archive. A deployed experience such as Starry-Eyes may remain linked when its source repository is no longer public, but the site does not imply public source availability. Inkline's future signature-library/date-stamp additions are not claimed as completed. The four awards from the original CV are restored. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
 
 The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated bilingual LaTeX sources and compiled PDFs are maintained privately and excluded from website publishing.
 
@@ -44,9 +44,13 @@ GitHub Pages serves the `main` branch. Push changes only after checking English-
 
 Procmon is a featured project because its public repository contains a compact, implemented Linux process monitor rather than only a roadmap. The description is limited to the documented behavior: procfs enumeration, two-snapshot CPU calculation, RSS and user reporting, CPU or memory sorting, live refresh, and one-shot output. It is presented as an educational Linux/WSL tool, not a full replacement for `top` or `htop`.
 
+## Gitlet evidence review (2026-10-24)
+
+Gitlet is again a featured project at the user's request. Its description is based on previously reviewed local CS61B project source and design notes, not inferred from Git's capabilities. Basic initialization, staging, committing, branching, and checkout were exercised in an isolated copy. Ordinary merge and fast-forward behavior retain known limitations, and remote commands use local filesystem paths rather than Git network protocols. The website links only to its implementation notes because the repository is not currently public.
+
 ## Project order (2026-10-10)
 
-PatientFlow Cloud leads with microservice architecture, followed by Life Preference for Redis caching and asynchronous coupon orders, Procmon for Linux process sampling, Agent Skills Manager for full-stack development, and Inkline for a shipped browser application. Life Preference is explicitly described as a Heima Dianping course-based practice project, with a matching implementation-notes section based on its README and order-service source. Project numbering, English-only introductions, and evidence navigation follow the same order.
+PatientFlow Cloud leads with microservice architecture, followed by Life Preference for Redis caching and asynchronous coupon orders, Gitlet for Java persistence and commit graphs, Procmon for Linux process sampling, Agent Skills Manager for full-stack development, and Inkline for a shipped browser application. Life Preference is explicitly described as a Heima Dianping course-based practice project, with a matching implementation-notes section based on its README and order-service source. Project numbering, English-only introductions, and evidence navigation follow the same order.
 
 ## English-only release (2026-10-10)
 
@@ -78,7 +82,7 @@ At the user’s request, the portfolio now states that Shandong He is seeking Ph
 
 ## Public-repository reconciliation (2026-10-24)
 
-The portfolio was reconciled against the account's current public repository list after repositories were removed. All links to Labelforge, PerfusionUDE.jl, Gitlet, and SkyEats were removed from public pages and the GitHub Profile README. The workbench now reflects recently active public work and records an explicit `Built` / `Next` boundary for each project.
+The portfolio was reconciled against the account's current public repository list after repositories were removed. Links to Labelforge, PerfusionUDE.jl, SkyEats, and the removed Gitlet repository were removed. Gitlet itself was restored to the website on 2026-10-24 as a source-reviewed project without a public repository link. The workbench reflects recently active public work and records an explicit `Built` / `Next` boundary for each project.
 
 - NodePulse claims only process bootstrap, configuration, health checks, request logging, signal handling, and infrastructure tests; heartbeat delivery, registry state, and timeout classification remain next steps.
 - Tinyjson claims only its C++20 value model and project foundation; lexing, parsing, serialization, and broader tests remain roadmap work.

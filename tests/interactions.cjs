@@ -2,7 +2,7 @@
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const assert = require('node:assert/strict');
 const base = process.argv[2] || 'http://127.0.0.1:8765/';
-const expected = ['PatientFlow Cloud', 'Life Preference', 'Procmon', 'Agent Skills Manager', 'Inkline'];
+const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Procmon', 'Agent Skills Manager', 'Inkline'];
 
 (async () => {
   const browser = await chromium.launch({headless:true, channel:process.env.PLAYWRIGHT_CHANNEL || undefined});
@@ -13,7 +13,7 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Procmon', 'Agent Skil
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(base);
       assert.deepEqual(await page.locator('.featured-grid h3').allTextContents(), expected);
-      assert.equal(await page.locator('.project-card:visible').count(), 5);
+      assert.equal(await page.locator('.project-card:visible').count(), 6);
       await page.locator('[data-filter=creative]').click();
       assert.equal(new URL(page.url()).searchParams.get('filter'), 'creative');
       assert.equal(await page.locator('.project-card:visible').count(), 2);
@@ -21,9 +21,9 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Procmon', 'Agent Skil
       await page.locator('#more-projects summary').click();
       await page.locator('[data-filter=creative]').click();
       assert.equal(await page.locator('#more-projects').evaluate(el => el.open), false, 'Selecting the current filter must preserve collapse state');
-      assert.equal(await page.locator('#project-count').innerText(), 'Showing 0 of 10 projects');
+      assert.equal(await page.locator('#project-count').innerText(), 'Showing 0 of 11 projects');
       await page.locator('[data-filter=systems]').click();
-      assert.equal(await page.locator('.project-card:visible').count(), 4);
+      assert.equal(await page.locator('.project-card:visible').count(), 5);
       assert.match(await page.locator('#more-projects summary').innerText(), /\(1\)/);
       await page.goBack();
       await page.waitForFunction(() => document.querySelector('[data-filter=creative]').getAttribute('aria-pressed') === 'true');
@@ -84,9 +84,9 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Procmon', 'Agent Skil
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(`${base}?design=${design}&filter=ai`);
       assert.equal(await page.locator('.project-card:visible').count(), 2);
-      await page.locator('.project-shortcuts a[href="#procmon"]').click();
+      await page.locator('.project-shortcuts a[href="#gitlet"]').click();
       assert.equal(new URL(page.url()).searchParams.get('design'), design);
-      assert.equal(await page.locator('#procmon').isVisible(), true);
+      assert.equal(await page.locator('#gitlet').isVisible(), true);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       await page.close();
     }
@@ -96,7 +96,7 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Procmon', 'Agent Skil
     assert.equal(await noJS.locator('.filters').isVisible(), false);
     assert.equal(await noJS.locator('#menu').isVisible(), false);
     await noJS.locator('#more-projects summary').click();
-    assert.equal(await noJS.locator('.project-card:visible').count(), 10);
+    assert.equal(await noJS.locator('.project-card:visible').count(), 11);
     assert.equal(await noJS.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
     await noJS.close();
     assert.deepEqual(errors, []);

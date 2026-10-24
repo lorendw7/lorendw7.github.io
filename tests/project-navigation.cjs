@@ -21,7 +21,7 @@ const destinations = {
       await page.locator('[data-filter=live]').click();
       assert.equal(new URL(page.url()).searchParams.get('filter'), 'live');
       assert.deepEqual(await page.locator('.project-card:visible').evaluateAll(cards => cards.map(card => card.id)), Object.keys(destinations));
-      assert.equal(await page.locator('#project-count').innerText(), 'Showing 3 of 10 projects');
+      assert.equal(await page.locator('#project-count').innerText(), 'Showing 3 of 11 projects');
       assert.match(await page.locator('#more-projects summary').innerText(), /Hide additional projects \(2\)/);
       for (const [id,url] of Object.entries(destinations)) {
         const preview = page.locator(`#${id} .website-preview img`);
@@ -71,10 +71,10 @@ const destinations = {
       assert.equal(await page.locator('[data-filter=live]').getAttribute('aria-pressed'), 'true');
       // Returning from a different notes section reveals that project even when the original filter excludes it.
       await page.locator('#inkline a[href*="project-notes.html"]').click();
-      await page.locator('.project-shortcuts a[href="#procmon"]').click();
+      await page.locator('.project-shortcuts a[href="#gitlet"]').click();
       await page.locator('.case-back').click();
-      assert.equal(new URL(page.url()).hash, '#procmon');
-      assert.equal(await page.locator('#procmon').isVisible(), true);
+      assert.equal(new URL(page.url()).hash, '#gitlet');
+      assert.equal(await page.locator('#gitlet').isVisible(), true);
       assert.equal(await page.locator('[data-filter=all]').getAttribute('aria-pressed'), 'true');
       await page.locator('[data-filter=live]').click();
       for (const id of Object.keys(destinations)) {
