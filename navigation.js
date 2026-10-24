@@ -2,7 +2,7 @@
   'use strict';
   const designs = new Set(['academic', 'editorial', 'bento', 'simplefolio']);
   const filters = new Set(['systems', 'apps', 'ai', 'creative', 'live']);
-  const projects = new Set(['patientflow', 'life-preference', 'gitlet', 'agent-skills', 'inkline']);
+  const projects = new Set(['patientflow', 'life-preference', 'procmon', 'agent-skills', 'inkline']);
   const notes = Boolean(document.querySelector('.case-main'));
   const homeURL = new URL('index.html', location.href);
   const notesURL = new URL('project-notes.html', location.href);

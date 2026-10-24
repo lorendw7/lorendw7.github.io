@@ -2,7 +2,7 @@
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const assert = require('node:assert/strict');
 const base = process.argv[2] || 'http://127.0.0.1:8765/';
-const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Agent Skills Manager', 'Inkline'];
+const expected = ['PatientFlow Cloud', 'Life Preference', 'Procmon', 'Agent Skills Manager', 'Inkline'];
 
 (async () => {
   const browser = await chromium.launch({headless:true, channel:process.env.PLAYWRIGHT_CHANNEL || undefined});
@@ -84,9 +84,9 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Agent Skill
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(`${base}?design=${design}&filter=ai`);
       assert.equal(await page.locator('.project-card:visible').count(), 2);
-      await page.locator('.project-shortcuts a[href="#gitlet"]').click();
+      await page.locator('.project-shortcuts a[href="#procmon"]').click();
       assert.equal(new URL(page.url()).searchParams.get('design'), design);
-      assert.equal(await page.locator('#gitlet').isVisible(), true);
+      assert.equal(await page.locator('#procmon').isVisible(), true);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       await page.close();
     }
