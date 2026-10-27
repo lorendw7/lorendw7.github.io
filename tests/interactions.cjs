@@ -14,6 +14,8 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Procmon', '
       await page.goto(base);
       assert.deepEqual(await page.locator('.featured-grid h3').allTextContents(), expected);
       assert.equal(await page.locator('.project-card:visible').count(), 6);
+      assert.equal(await page.locator('#research .publication').count(), 1);
+      assert.equal((await page.locator('#research').innerText()).includes('Cross-Embodiment'), false);
       await page.locator('[data-filter=creative]').click();
       assert.equal(new URL(page.url()).searchParams.get('filter'), 'creative');
       assert.equal(await page.locator('.project-card:visible').count(), 2);

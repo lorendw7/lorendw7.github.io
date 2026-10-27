@@ -23,16 +23,15 @@ BalloonShooter is included at the user's request as an **in-development prototyp
 
 The RA appointment at Kyushu University's Research Institute for Information Technology is **selected, appointment processing**. The planned theme is knowledge graph construction and utilization under an AI for Science research training initiative. Do not claim an active appointment, start date, completed RA duties, or SRA classification until confirmed. This status was confirmed by the user on 2026-10-09.
 
-Paper 1 is an **accepted CANDAR 2026 / WANC short paper**, not an already-published proceedings article. The embodied-learning manuscript is **under review at the CoRL 2026 Pretrain to Adapt workshop**, not accepted. Keep these statuses distinct.
+The CANDAR 2026 / WANC paper is accepted but is not yet a published proceedings article. The rejected embodied-learning submission was removed from the public website, resumes, and GitHub Profile on 2026-10-27.
 
 Sources checked on 2026-10-09:
 
 - Public `lorendw7/not-all-relations-are-equally-reliable` README: title, author order, acceptance and reproducibility scope. The 2026-10-23 WANC award notification supplied by the author is the source for the Best Paper Award selection; the site preserves the notification's presentation requirement.
-- Local `embodied-intelligence-data-assessment`: manuscript title/results, submission confirmation, and workshop-fit note.
 - Public/local PatientFlow-Cloud, Agent-Skills-Manager, Goat-Notes, Life-Preference, Procmon, Starry-Eyes, and Inkline implementation and completion documentation.
 - Supplied Chinese/English resumes: education, GPA, work experience, dates and language scores.
 
-The public project set is reconciled against the current GitHub account before publishing. Gitlet remains in the featured group based on reviewed local source and design evidence, but it has no repository link because its source is not currently public. Procmon is featured alongside it, and MiniKV replaced the removed SkyEats repository in the archive. A deployed experience such as Starry-Eyes may remain linked when its source repository is no longer public, but the site does not imply public source availability. Inkline's future signature-library/date-stamp additions are not claimed as completed. The four awards from the original CV are restored. The available embodied manuscript is anonymous; no unverified author order or private repository link is published.
+The public project set is reconciled against the current GitHub account before publishing. Gitlet remains in the featured group based on reviewed local source and design evidence, but it has no repository link because its source is not currently public. Procmon is featured alongside it, and MiniKV replaced the removed SkyEats repository in the archive. A deployed experience such as Starry-Eyes may remain linked when its source repository is no longer public, but the site does not imply public source availability. Inkline's future signature-library/date-stamp additions are not claimed as completed. The four awards from the original CV are restored.
 
 The site retains the previous contact policy: GitHub contact and CV on request, with no public phone, email, or downloadable CV. Updated bilingual LaTeX sources and compiled PDFs are maintained privately and excluded from website publishing.
 
