@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css?v=20261106-cinema">
 <link rel="stylesheet" href="simplefolio.css?v=20261023-award">
-<link rel="stylesheet" href="ink.css?v=20261106-detail">
+<link rel="stylesheet" href="ink.css?v=20261106-project-art">
 <script src="navigation.js?v=20261106-detail" defer></script>
 <script src="main.js?v=20261106-night" defer>
 </script>
@@ -195,7 +195,17 @@
 <h3><a class="project-link" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">PatientFlow Cloud</a></h3>
 <p>Healthcare microservices with JWT gateway authentication, gRPC calls, and Kafka-driven analytics.</p>
 <div class="tags"><span>Java</span><span>Spring Boot</span><span>gRPC / Kafka</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">PATIENTFLOW / SERVICE MAP</span><span class="flow-node">API Gateway <small>JWT · request routing</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Patient service</span><span>Billing service</span></span><span class="flow-arrow">↓ &nbsp; gRPC / Kafka &nbsp; ↓</span><span class="flow-node">Analytics <small>event processing</small></span></div>
+<figure class="project-mark project-visual visual--services" role="img" aria-label="PatientFlow service architecture: an authenticated API gateway, patient and billing services communicating through gRPC, and Kafka events consumed by analytics.">
+<div class="visual-caption"><span>SERVICE ARCHITECTURE</span><span>01</span></div>
+<div class="service-map" aria-hidden="true">
+<div class="visual-node service-gateway"><span>API gateway</span><small>JWT · request routing</small></div>
+<div class="visual-connector"></div>
+<div class="service-pair"><div class="visual-node">Patient</div><span class="service-protocol">gRPC ↔</span><div class="visual-node">Billing</div></div>
+<div class="visual-connector"><span>Kafka events</span></div>
+<div class="visual-node service-analytics"><span>Analytics</span><small>Event processing</small></div>
+</div>
+<figcaption>Request routing <span>→</span> Service boundaries <span>→</span> Events</figcaption>
+</figure>
 <div class="project-actions"><a class="project-demo" href="project-notes.html#patientflow"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="life-preference">
@@ -203,7 +213,15 @@
 <h3><a class="project-link" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Life Preference</a></h3>
 <p>A Heima Dianping course project covering merchant caching, shared-session login, and asynchronous coupon orders.</p>
 <div class="tags"><span>Spring Boot</span><span>Redis</span><span>MySQL</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">LIFE PREFERENCE / COUPON ORDERS</span><span class="flow-node">Coupon request <small>Redis shared-session login</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Lua validation</span><span>Redis Stream</span></span><span class="flow-arrow">↓</span><span class="flow-node">Order worker <small>Redisson lock · MySQL transaction</small></span></div>
+<figure class="project-mark project-visual visual--orders" role="img" aria-label="Life Preference coupon order flow: validate purchases with Lua, queue orders through Redis Streams, then create orders using a Redisson lock and MySQL transaction.">
+<div class="visual-caption"><span>COUPON ORDER FLOW</span><span>02</span></div>
+<ol class="order-path" aria-hidden="true">
+<li><span class="order-step">01</span><div><strong>Validate</strong><small>Lua purchase validation</small></div><span class="order-kind">REQUEST</span></li>
+<li><span class="order-step">02</span><div><strong>Queue</strong><small>Redis Streams</small></div><span class="order-kind">ASYNC</span></li>
+<li><span class="order-step">03</span><div><strong>Persist</strong><small>Redisson lock · MySQL</small></div><span class="order-kind">WORKER</span></li>
+</ol>
+<figcaption>Validation at entry. Order creation in the worker.</figcaption>
+</figure>
 <div class="project-actions"><a class="project-demo" href="project-notes.html#life-preference"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="gitlet">
@@ -211,7 +229,18 @@
 <h3><a class="project-link" href="project-notes.html#gitlet">Gitlet</a></h3>
 <p>A CS61B-based version-control study with persistent snapshots, staging, commits, and branches. Merge behavior has known limits; source is not public.</p>
 <div class="tags"><span>Java</span><span>Data structures</span><span>File persistence</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">GITLET / SNAPSHOT STORAGE</span><span class="flow-node">Working directory <small>add · remove</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Staging area</span><span>SHA-1 blobs</span></span><span class="flow-arrow">↓</span><span class="flow-node">Commit graph <small>snapshots · parent links · branches</small></span></div>
+<figure class="project-mark project-visual visual--git" role="img" aria-label="Gitlet concept diagram: a commit history with a diverging branch, backed by staging, SHA-1 blobs, and persisted commit objects. The diagram does not depict a merge.">
+<div class="visual-caption"><span>COMMIT GRAPH</span><span>03</span></div>
+<div class="commit-map" aria-hidden="true">
+<svg viewBox="0 0 360 150" fill="none" focusable="false">
+<path class="commit-track" d="M28 48H332"/><path class="commit-branch" d="M114 48C154 48 139 112 185 112H300"/>
+<g class="commit-points"><circle cx="28" cy="48" r="7"/><circle cx="114" cy="48" r="7"/><circle cx="224" cy="48" r="7"/><circle cx="332" cy="48" r="7"/><circle cx="185" cy="112" r="7"/><circle cx="300" cy="112" r="7"/></g>
+<text x="28" y="22">main</text><text x="228" y="142">branch</text>
+</svg>
+<div class="object-store"><span><i>01</i>Stage</span><span><i>02</i>Blob</span><span><i>03</i>Commit</span></div>
+</div>
+<figcaption>Persistent snapshots <span>·</span> SHA-1 object storage</figcaption>
+</figure>
 <div class="project-actions"><a class="project-demo" href="project-notes.html#gitlet"><span>Implementation notes ↗</span></a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="procmon">
@@ -219,7 +248,15 @@
 <h3><a class="project-link" href="https://github.com/lorendw7/Procmon" target="_blank" rel="noopener noreferrer">Procmon</a></h3>
 <p>A Linux process monitor in C: sample <code>/proc</code>, calculate CPU usage, and sort a live terminal view by CPU or memory.</p>
 <div class="tags"><span>C</span><span>Linux / procfs</span><span>POSIX</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">PROCMON / PROCESS SAMPLING</span><span class="flow-node">/proc snapshot <small>PID · state · user · RSS</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>CPU deltas</span><span>Memory sort</span></span><span class="flow-arrow">↓</span><span class="flow-node">Terminal view <small>live refresh · one-shot mode</small></span></div>
+<figure class="project-mark project-visual visual--procmon" role="img" aria-label="Procmon sampling model: read Linux procfs counters at two points in time, calculate CPU usage from the difference, and show CPU, resident memory, and user information.">
+<div class="visual-caption"><span>LINUX / PROCESS SAMPLING</span><span>04</span></div>
+<div class="sampling-model" aria-hidden="true">
+<div class="proc-source"><span>READ</span><code>/proc/&lt;pid&gt;/stat<br>/proc/&lt;pid&gt;/status</code></div>
+<div class="sample-pair"><span><b>t₀</b><small>First snapshot</small></span><div class="sample-delta">Δ CPU<span>→</span></div><span><b>t₁</b><small>Next snapshot</small></span></div>
+<div class="sample-output"><span>CPU</span><span>RSS</span><span>USER</span></div>
+</div>
+<figcaption>Live refresh <span>·</span> One-shot output</figcaption>
+</figure>
 <div class="project-actions"><a class="project-demo" href="project-notes.html#procmon"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Procmon" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card apps-card" data-category="apps" id="agent-skills">
@@ -227,7 +264,14 @@
 <h3><a class="project-link" href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer">Agent Skills Manager</a></h3>
 <p>Create, edit, and share Markdown agent skills through an authenticated dashboard and a public gallery.</p>
 <div class="tags"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">AGENT SKILLS / APPLICATION FLOW</span><span class="flow-node">Create &amp; edit <small>Markdown skills</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Authentication</span><span>Prisma / SQL</span></span><span class="flow-arrow">↓</span><span class="flow-node">Public gallery <small>discover &amp; share</small></span></div>
+<figure class="project-mark project-visual visual--skills" role="img" aria-label="Agent Skills Manager: Markdown skill documents move from authenticated editing to a public gallery, with Prisma and PostgreSQL persistence.">
+<div class="visual-caption"><span>SKILL PUBLISHING</span><span>05</span></div>
+<div class="skill-model" aria-hidden="true">
+<div class="skill-document"><span class="document-format">.md</span><strong>Markdown skill</strong><span class="document-rule"></span><span class="document-rule"></span><span class="document-rule"></span></div>
+<div class="skill-destinations"><span>Authenticated editor</span><i>→</i><span>Public gallery</span></div>
+</div>
+<figcaption>Prisma <span>/</span> PostgreSQL</figcaption>
+</figure>
 <div class="project-actions"><a class="project-demo" href="project-notes.html#agent-skills"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card apps-card" data-category="apps" data-live id="inkline">

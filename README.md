@@ -36,6 +36,8 @@ node tests/project-navigation.cjs http://127.0.0.1:8765/
 
 Current-project limitations remain available in native expandable sections. Featured projects use a short overview with implementation notes and source links; the archive remains collapsed by default. Experience entries separate dates, roles, organizations, and responsibilities.
 
+Five engineering projects have original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. These illustrate implementation structure, not measured results or product screenshots; each has an accessible description and works without JavaScript.
+
 Before pushing, also inspect both pages on desktop and mobile, check local links and image loading, and verify factual claims.
 
 ## Content boundaries
