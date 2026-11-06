@@ -6,7 +6,7 @@ A dependency-free English-only research and engineering portfolio for GitHub Pag
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with flow illustrations or real deployed-website screenshots. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-only content. A status-aware “On the workbench” section leads with the Kyudai LLM Context Bridge RA project, followed by NodePulse, Tinyjson, and Deep Learning for Biology; six implemented projects are featured below it: PatientFlow Cloud, Life Preference, Gitlet, Procmon, Agent Skills Manager, and Inkline. More public work follows in the archive.
+- `index.html`: English-only content. A status-aware “On the workbench” section leads with the Kyudai LLM Context Bridge RA project and Cadence, followed by NodePulse, Tinyjson, and Deep Learning for Biology; six implemented projects are featured below it: PatientFlow Cloud, Life Preference, Gitlet, Procmon, Agent Skills Manager, and Inkline. More public work follows in the archive.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
 - `main.js`: mobile navigation, project filters, featured-project shortcuts, and active-section tracking.
 - `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the six featured projects.
@@ -18,6 +18,10 @@ The default is a customized **Simplefolio** layout: a direct introduction, origi
 No runtime dependencies, external fonts, analytics, or build step. Essential content and mobile navigation remain usable without JavaScript. Run a static file server for local preview.
 
 ## Content maintenance
+
+Cadence was added on 2026-11-06 at the user's request. Its public README and local `lib/main.dart` / `test/widget_test.dart` confirm a Flutter Today placeholder and widget test, with native platform scaffolding. It is a planned local desktop planner for courses and personal plans, targeting Windows, Linux, and macOS; Android is retained for later work. Course management, storage, and sharing are not implemented, and there is no feature-complete release. The portfolio links to its project website and source, not a working planner. Keep the implementation boundary explicit.
+
+The user's personal direction, confirmed on 2026-11-06, is restraint, clarity, self-reflection, and steady action. Public copy expresses their experience of pressure in an AI-driven competitive environment, the practical need to earn a living, and sustained work toward skill, reliability, and greater choice. Do not invent personal hardship, financial circumstances, or success guarantees. The planned monochrome redesign will carry this narrative through restrained typography, photography, and evidence of work; the full visual redesign remains at the planning stage. This update adds Cadence and the personal narrative to the current layout.
 
 BalloonShooter is included at the user's request as an **in-development prototype**, publicly named BalloonBarrage. The earlier local source review confirmed mouse aiming, moving projectiles with swept collision, single-hit scoring, and audio/particle feedback. The English project website checked on 2026-10-15 now describes a rhythm-shooter direction, chart-driven spawning, and rhythm judgement still in progress. No public Windows demo is available; do not present development targets as released features. The project archive therefore includes completed projects and this explicitly labeled prototype.
 

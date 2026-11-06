@@ -333,6 +333,10 @@ h1 em {
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px
 }
+.now-grid--secondary {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-top:16px
+}
 .now-card {
   min-width:0;
   display:flex;
