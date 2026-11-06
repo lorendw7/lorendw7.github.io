@@ -56,7 +56,7 @@ const destinations = {
       console.log(`${width}px: live filter, all website links, popups, reload, history and deep-link recovery passed`);
     }
 
-    for (const design of ['academic', 'editorial', 'bento', 'simplefolio']) {
+    for (const design of ['academic', 'editorial', 'bento', 'simplefolio', 'ink']) {
       const page = await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(`${base}?design=${design}&filter=live`, {waitUntil:'domcontentloaded'});

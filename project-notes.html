@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="en" data-design="simplefolio">
+<html lang="en" data-design="ink">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Project evidence — Shandong He</title>
 <meta name="description" content="Implementation notes and source evidence for six selected software projects by Shandong He.">
-<meta name="theme-color" content="#f8f8f7">
+<meta name="theme-color" content="#111111">
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css?v=20261015-phd">
-<script src="navigation.js?v=20261024-gitlet" defer></script>
+<script src="navigation.js?v=20261106-night" defer></script>
 <script src="project-notes.js?v=20261015-phd" defer></script>
 <link rel="stylesheet" href="simplefolio.css?v=20261015-phd">
+<link rel="stylesheet" href="ink.css?v=20261106-night">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -84,6 +85,7 @@
 
 <section class="case-study" id="inkline" aria-labelledby="inkline-title">
 <div class="case-heading"><span class="eyebrow">06 / BROWSER PRODUCT</span><h2 id="inkline-title">Inkline</h2><p>Open a PDF, draw and place a signature, then export the document in the browser.</p></div>
+<figure class="case-image"><img src="assets/projects/inkline-1280.webp" alt="Inkline's browser interface with a sample PDF and signature placement controls" width="1280" height="800" loading="lazy"><figcaption>Inkline · original-color interface capture with a synthetic sample document.</figcaption></figure>
 <div class="case-facts">
 <article><span class="small-label">IMPLEMENTATION</span><p>PDF.js renders pages to canvas; pdf-lib embeds signatures in PDF page coordinates. Placement survives viewport resizing.</p></article>
 <article><span class="small-label">ENGINEERING CHOICE</span><p>Files stay in the browser tab. The production Content Security Policy uses connect-src 'none' to block script-initiated network requests.</p></article>

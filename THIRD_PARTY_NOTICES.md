@@ -22,7 +22,16 @@ Checked on 2026-10-09. Star counts are snapshots, not a quality guarantee.
 - The depicted CS:APP third-edition cover uses the [authors' official cover image](https://csapp.cs.cmu.edu/3e/images/csapp3e-cover.jpg) as a visual reference; see the [book website](https://csapp.cs.cmu.edu/). The cover artwork is not original portfolio artwork.
 - The images illustrate a study setting and are not documentary photographs of the author's home or workplace.
 
-## Simplefolio license
+## Current design
+
+The current Night / Ink visual design replaces the default Simplefolio appearance while retaining the shared semantic structure and interaction behavior. `simplefolio.css` remains available as an archived layout.
+
+## Ink landscape (2026-11-06)
+
+- `assets/ink-landscape.jpg` is an original AI-generated decorative landscape following the user's request for Chinese xieyi painting: distant mountains, open space, restrained ink washes, and no lettering or seals.
+- It is rendered as white brushwork and gray mountain layers on the black background. It does not reproduce an identified painting or claim to be an antique work.
+
+## Retained Simplefolio MIT license
 
 MIT License
 

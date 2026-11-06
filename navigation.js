@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const designs = new Set(['academic', 'editorial', 'bento', 'simplefolio']);
+  const designs = new Set(['ink', 'academic', 'editorial', 'bento', 'simplefolio']);
   const filters = new Set(['systems', 'apps', 'ai', 'creative', 'live']);
   const projects = new Set(['patientflow', 'life-preference', 'gitlet', 'procmon', 'agent-skills', 'inkline']);
   const notes = Boolean(document.querySelector('.case-main'));

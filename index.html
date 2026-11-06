@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" data-design="simplefolio">
+<html lang="en" data-design="ink">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Shandong He — Systems, Software &amp; Scientific Computing</title>
 <meta name="description" content="Shandong He, master's student and Research Assistant at Kyushu University, studies LLM context continuity and reliable AI and builds software systems.">
-<meta name="theme-color" content="#f8f8f7">
+<meta name="theme-color" content="#111111">
 <link rel="canonical" href="https://lorendw7.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shandong He — Systems, Software &amp; Scientific Computing">
@@ -19,8 +19,9 @@
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css?v=20261106-cadence">
 <link rel="stylesheet" href="simplefolio.css?v=20261023-award">
-<script src="navigation.js?v=20261024-gitlet" defer></script>
-<script src="main.js?v=20261023-award" defer>
+<link rel="stylesheet" href="ink.css?v=20261106-night">
+<script src="navigation.js?v=20261106-night" defer></script>
+<script src="main.js?v=20261106-night" defer>
 </script>
 </head>
 <body>
@@ -30,21 +31,11 @@
 <span>Shandong He</span>
 </a>
 <nav aria-label="Main navigation" id="navigation">
-<a href="#projects">
-<span>Projects</span>
-</a>
-<a href="#research">
-<span>Research</span>
-</a>
-<a href="#awards">
-<span>Awards</span>
-</a>
-<a href="#about">
-<span>About</span>
-</a>
-<a href="#contact">
-<span>Contact</span>
-</a>
+<a href="#now"><span>Current</span></a>
+<a href="#research"><span>Research</span></a>
+<a href="#projects"><span>Work</span></a>
+<a href="#about"><span>About</span></a>
+<a href="#contact"><span>Contact</span></a>
 </nav>
 <div class="header-actions">
 <button id="menu" type="button" aria-controls="navigation" aria-expanded="false">
@@ -61,15 +52,15 @@
 <span>Kyushu University · Fukuoka, Japan</span>
 </p>
 <h1 id="hero-title">
-<span>Hi, I'm</span>
-<br>
-<em>Shandong He.</em>
+<span>Shandong</span>
+<em>He.</em>
 </h1>
-<p class="hero-role">Systems engineering · Scientific computing · Reliable AI</p>
-<p class="hero-intro">I'm a master's student and Research Assistant at Kyushu University. My current RA project explores how conversation context can carry across language models. I also build systems from first principles, with reproducible experiments and explicit implementation boundaries.</p>
+<p class="hero-role">RESEARCH &amp; ENGINEERING</p>
+<p class="hero-line">Stay clear. Keep going.</p>
+<p class="hero-intro">Master's student and Research Assistant at Kyushu University. I study reliable AI and build software from first principles. Learning a craft, earning a living, and finding a direction through the work.</p>
 <div class="hero-links">
 <a class="button primary cta-btn cta-btn--hero" href="#now">
-<span>See what I'm building</span> ↗</a>
+<span>Follow the work</span> ↗</a>
 <a class="text-link" href="#projects">Selected work ↗</a>
 <a class="text-link" href="https://github.com/lorendw7" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 </div>
@@ -83,37 +74,21 @@
 <source media="(max-width:650px)" srcset="assets/hero-seaside-portrait.jpg">
 <img src="assets/hero-seaside.jpg" alt="Illustrative seaside study scene with CS:APP, an open notebook, and a brass J.Y. nameplate" width="1672" height="941" fetchpriority="high">
 </picture>
+<figcaption><span>01 / A STUDY IN DAILY WORK</span><span>Room to think. Work to return to.</span></figcaption>
 </figure>
 </section>
-<div class="focus-strip">
-<span>Restraint</span>
-<span aria-hidden="true">✳</span>
-<span>Clarity</span>
-<span aria-hidden="true">✳</span>
-<span>Self-reflection</span>
-<span aria-hidden="true">✳</span>
-<span>Steady action</span>
-</div>
-<aside class="award-update" aria-labelledby="award-update-title">
-<div class="award-update__meta">
-<span class="small-label">AWARD UPDATE · CANDAR 2026 / WANC</span>
-<span class="award-update__year">2026</span>
-</div>
-<div class="award-update__body">
-<h2 id="award-update-title">Selected for the WANC Best Paper Award.</h2>
-<p><em>Per-Relation Reliability of LLM-Based Knowledge Graph Extraction</em>, with Kenji Ono, was selected for the award. The award remains contingent on presenting the paper at the symposium.</p>
-<div class="award-update__links">
-<a class="button primary" href="#research">Read the research ↗</a>
-<a class="text-link" href="https://github.com/lorendw7/not-all-relations-are-equally-reliable" target="_blank" rel="noopener noreferrer">Data &amp; reproduction code ↗</a>
-</div>
-</div>
-</aside>
+<section class="focus-strip principles" aria-label="Principles of practice">
+<article><span class="principle-number">01</span><h2>Restraint.</h2><p>Make only the claims the work can support.</p></article>
+<article><span class="principle-number">02</span><h2>Clarity.</h2><p>Keep a sense of direction under pressure.</p></article>
+<article><span class="principle-number">03</span><h2>Self-reflection.</h2><p>Look honestly at choices, limits, and mistakes.</p></article>
+<article><span class="principle-number">04</span><h2>Steady action.</h2><p>Return to the difficult work. Take the next step.</p></article>
+</section>
 <section class="section now-section" id="now" aria-labelledby="now-title">
 <div class="section-heading">
 <div>
 <p class="eyebrow">01 / NOW</p>
-<h2 id="now-title">On the workbench.</h2>
-<p class="section-intro">Current research and product work, alongside ongoing engineering and study projects. Each records what exists today and the next step forward.</p>
+<h2 id="now-title">Work, in progress.</h2>
+<p class="section-intro">Two current commitments: context continuity in research, and a useful tool for everyday study. What exists today, and what still needs work.</p>
 </div>
 <a class="text-link" href="https://github.com/lorendw7?tab=repositories" target="_blank" rel="noopener noreferrer"><span>Follow the build logs ↗</span></a>
 </div>
@@ -137,6 +112,8 @@
 <div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/Cadence/" target="_blank" rel="noopener noreferrer">Project website ↗</a><a class="project-demo secondary" href="https://github.com/lorendw7/Cadence" target="_blank" rel="noopener noreferrer">Source &amp; roadmap ↗</a></div>
 </article>
 </div>
+<details class="workbench-more">
+<summary>Also in progress <span>NodePulse · Tinyjson · Biology study</span></summary>
 <div class="now-grid now-grid--secondary">
 <article class="now-card now-card--systems">
 <div class="now-card__top"><span>03 / DISTRIBUTED SYSTEMS</span><span class="status-pill status-pill--ready">HTTP FOUNDATION</span></div>
@@ -163,13 +140,42 @@
 <a class="project-demo" href="https://github.com/lorendw7/Deep-Learning-For-Biology" target="_blank" rel="noopener noreferrer">Study repository ↗</a>
 </article>
 </div>
+</details>
+</section>
+<section class="section" id="research" aria-labelledby="research-title">
+<div class="section-heading">
+<div>
+<p class="eyebrow">02 / RESEARCH</p>
+<h2 id="research-title">Let the evidence speak.</h2>
+</div>
+<p>Research in reliable knowledge graph extraction and <a href="#context-bridge">context continuity across language models</a>.</p>
+</div>
+<article class="publication">
+<div class="publication-meta">
+<span class="badge accepted">Best Paper Award · Selected</span>
+<span>CANDAR 2026 / WANC</span>
+<span class="pub-year">2026</span>
+</div>
+<div class="publication-body">
+<h3>Per-Relation Reliability of LLM-Based Knowledge Graph Extraction: A Verification-First Study on Scientific Abstracts</h3>
+<p class="authors">
+<strong>Shandong He</strong>, Kenji Ono</p>
+<p>A relation-level study of extraction reliability across 200 scientific abstracts, combining 360 human judgments, two LLM judges, and self-consistency analysis.</p>
+<div class="publication-footer">
+<a class="text-link" href="https://github.com/lorendw7/not-all-relations-are-equally-reliable" target="_blank" rel="noopener noreferrer">
+<span>Data &amp; reproduction code ↗</span>
+</a>
+<span>Presentation required; proceedings forthcoming</span>
+</div>
+</div>
+</article>
 </section>
 <section class="section" id="projects" aria-labelledby="projects-title">
 <div class="section-heading">
 <div>
-<p class="eyebrow">02 / SELECTED WORK</p>
+<p class="eyebrow">03 / SELECTED WORK</p>
 <h2 id="projects-title">Selected engineering work.</h2>
-<p class="section-intro">Six highlighted builds across microservices, Redis, version control, Linux internals, and full-stack tools. Active work stays separate above so a roadmap is never mistaken for a finished system.</p>
+<p class="section-intro">Six implementations across services, storage, Linux, and browser tools. Follow the design choices, working code, and known limits.</p>
 </div>
 <a class="text-link" href="https://github.com/lorendw7?tab=repositories" target="_blank" rel="noopener noreferrer">
 <span>All public repositories ↗</span>
@@ -307,34 +313,7 @@
 </div>
 </details>
 </section>
-<section class="section" id="research" aria-labelledby="research-title">
-<div class="section-heading">
-<div>
-<p class="eyebrow">03 / RESEARCH</p>
-<h2 id="research-title">Questions worth testing.</h2>
-</div>
-<p>Research in reliable knowledge graph extraction and <a href="#context-bridge">context continuity across language models</a>.</p>
-</div>
-<article class="publication">
-<div class="publication-meta">
-<span class="badge accepted">Best Paper Award · Selected</span>
-<span>CANDAR 2026 / WANC</span>
-<span class="pub-year">2026</span>
-</div>
-<div class="publication-body">
-<h3>Per-Relation Reliability of LLM-Based Knowledge Graph Extraction: A Verification-First Study on Scientific Abstracts</h3>
-<p class="authors">
-<strong>Shandong He</strong>, Kenji Ono</p>
-<p>A relation-level study of extraction reliability across 200 scientific abstracts, combining 360 human judgments, two LLM judges, and self-consistency analysis.</p>
-<div class="publication-footer">
-<a class="text-link" href="https://github.com/lorendw7/not-all-relations-are-equally-reliable" target="_blank" rel="noopener noreferrer">
-<span>Data &amp; reproduction code ↗</span>
-</a>
-<span>Presentation required; proceedings forthcoming</span>
-</div>
-</div>
-</article>
-</section>
+
 <section class="section" id="awards" aria-labelledby="awards-title">
 <div class="section-heading">
 <div>
@@ -353,10 +332,10 @@
 <section class="section about-section" id="about" aria-labelledby="about-title">
 <div class="about-intro">
 <p class="eyebrow">05 / ABOUT</p>
-<h2 id="about-title">Stay clear. Keep going.</h2>
+<h2 id="about-title">A living.<br>A direction.</h2>
 <p>I&#x27;m pursuing an M.S. in Information Science and Electrical Engineering at Kyushu University. My work spans systems, scientific computing, and reliable AI, with a consistent method: build the mechanism, test it, then document where it stops.</p>
-<p>As AI changes how we learn and work, I feel the pressure to keep up. I keep studying and building to earn a living, become someone others can rely on, and create more choices for my future.</p>
-<p>Restraint keeps my promises realistic. Clarity means recognizing what I still need to learn. Self-reflection means revisiting mistakes. Steady action means returning to difficult, often repetitive work and making the next small improvement.</p>
+<p>As AI changes how we learn and work, I feel the pressure to keep up and the uncertainty of making a living. I keep studying and building to become someone others can rely on, and to create more choices for my future.</p>
+<p>The question I return to is what kind of person these daily choices are making me. That means holding on to my judgment under pressure, acknowledging the cost of a choice, and correcting my mistakes. Much of the work is difficult and repetitive. I try to meet it with patience, an honest account of my limits, and another small step forward.</p>
 <img class="portrait" src="assets/cv.png" alt="Illustrated portrait of Shandong He" width="96" height="96" loading="lazy">
 </div>
 <div class="experience-list">
@@ -398,7 +377,7 @@
 </section>
 <section class="contact-section" id="contact">
 <p class="eyebrow">06 / SAY HELLO</p>
-<h2>Let’s build something rigorous.</h2>
+<h2>Good work begins<br>with a conversation.</h2>
 <div>
 <p>I welcome conversations about systems engineering, scientific software, and reliable AI. I’m open to research collaboration now and full-time software engineering opportunities in Japan after my expected M.S. completion in March 2028. CV available on request.</p>
 <a class="button primary" href="https://github.com/lorendw7" target="_blank" rel="noopener noreferrer">
@@ -409,7 +388,7 @@
 </main>
 <footer>
 <span>© <span id="year">2026</span> Shandong He</span>
-<a href="https://github.com/cobiwave/simplefolio" target="_blank" rel="noopener noreferrer">Adapted from Simplefolio ↗</a>
+<a href="https://github.com/cobiwave/simplefolio" target="_blank" rel="noopener noreferrer">Template lineage ↗</a>
 <a href="#home">
 <span>Back to top ↑</span>
 </a>

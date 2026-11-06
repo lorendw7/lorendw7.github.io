@@ -53,7 +53,7 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Procmon', '
       if (width <= 650) {
         await page.locator('#menu').click();
         assert.equal(await page.locator('#menu').getAttribute('aria-expanded'), 'true');
-        assert.equal(await page.evaluate(() => document.activeElement.getAttribute('href')), '#projects');
+        assert.equal(await page.evaluate(() => document.activeElement.getAttribute('href')), '#now');
         await page.keyboard.press('Escape');
         assert.equal(await page.evaluate(() => document.activeElement.id), 'menu');
         assert.equal(await page.locator('#menu').getAttribute('aria-expanded'), 'false');
@@ -81,7 +81,7 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Procmon', '
       await page.close();
       console.log(`${width}px: filters, browser history, deep links, menu focus, and scroll navigation passed`);
     }
-    for (const design of ['academic', 'editorial', 'bento', 'simplefolio']) {
+    for (const design of ['academic', 'editorial', 'bento', 'simplefolio', 'ink']) {
       const page = await browser.newPage({viewport:{width:390, height:844}, reducedMotion:'reduce'});
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(`${base}?design=${design}&filter=ai`);

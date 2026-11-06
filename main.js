@@ -2,7 +2,7 @@
   'use strict';
   const root = document.documentElement;
   const params = new URLSearchParams(location.search);
-  if (['academic', 'editorial', 'bento', 'simplefolio'].includes(params.get('design'))) root.dataset.design = params.get('design');
+  if (['ink', 'academic', 'editorial', 'bento', 'simplefolio'].includes(params.get('design'))) root.dataset.design = params.get('design');
   root.classList.add('js');
   const cards = [...document.querySelectorAll('[data-category]')];
   const moreProjects = document.querySelector('#more-projects');
