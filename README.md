@@ -8,7 +8,7 @@ A static, English-language website with no build step, runtime dependencies, ext
 
 - `index.html`: biography, current research, selected projects, awards, and contact.
 - `project-notes.html`: implementation evidence and limitations for the six featured projects.
-- `ink.css`: default Night / Ink design, responsive layouts, rounded controls, print and reduced-motion support.
+- `ink.css`: default Night / Ink design with cool blue-gray surfaces, rounded controls, responsive project rows, an experience timeline, print and reduced-motion support.
 - `styles.css` and `simplefolio.css`: shared layout and retained alternative themes. Both still contain active shared styles.
 - `main.js`: project filters, mobile navigation, history and section tracking.
 - `navigation.js` and `project-notes.js`: navigation between the homepage and project notes.
@@ -33,6 +33,8 @@ node tests/project-navigation.cjs http://127.0.0.1:8765/
 ```
 
 `PLAYWRIGHT_MODULE` can point to an existing Playwright installation; `PLAYWRIGHT_CHANNEL` can select an installed browser such as `msedge`. The checks cover desktop and mobile layouts, filters, history, project links, keyboard navigation, reduced motion, and navigation without JavaScript. External project destinations are stubbed in the navigation suite.
+
+Current-project limitations remain available in native expandable sections. Featured projects use a short overview with implementation notes and source links; the archive remains collapsed by default. Experience entries separate dates, roles, organizations, and responsibilities.
 
 Before pushing, also inspect both pages on desktop and mobile, check local links and image loading, and verify factual claims.
 

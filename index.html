@@ -17,9 +17,9 @@
 <meta name="twitter:description" content="Kyushu University Research Assistant: LLM context continuity, reliable AI, and systems built from first principles.">
 <meta name="twitter:image" content="https://lorendw7.github.io/assets/hero-seaside.jpg">
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=20261106-cadence">
+<link rel="stylesheet" href="styles.css?v=20261106-cinema">
 <link rel="stylesheet" href="simplefolio.css?v=20261023-award">
-<link rel="stylesheet" href="ink.css?v=20261106-clean">
+<link rel="stylesheet" href="ink.css?v=20261106-cinema">
 <script src="navigation.js?v=20261106-night" defer></script>
 <script src="main.js?v=20261106-night" defer>
 </script>
@@ -79,28 +79,26 @@
 <div>
 <p class="eyebrow">01 / NOW</p>
 <h2 id="now-title">Work, in progress.</h2>
-<p class="section-intro">Two current commitments: context continuity in research, and a useful tool for everyday study. What exists today, and what still needs work.</p>
+<p class="section-intro">Research on language-model context, and a desktop planner for everyday study.</p>
 </div>
-<a class="text-link" href="https://github.com/lorendw7?tab=repositories" target="_blank" rel="noopener noreferrer"><span>Follow the build logs ↗</span></a>
+<a class="text-link" href="https://github.com/lorendw7?tab=repositories" target="_blank" rel="noopener noreferrer"><span>All repositories ↗</span></a>
 </div>
 <div class="now-grid">
 <article class="now-card now-card--science" id="context-bridge">
 <div class="now-card__top"><span>01 / RA RESEARCH</span><span class="status-pill">EARLY PROTOTYPE</span></div>
-<div class="now-card__mark" aria-hidden="true"><span>MODEL A</span><i>→</i><span>CONTEXT</span><i>→</i><span>MODEL B</span></div>
 <h3><a href="https://lorendw7.github.io/kyudai-llm-context-bridge/" target="_blank" rel="noopener noreferrer">Kyudai LLM Context Bridge</a></h3>
-<p>My RA research project on context continuity when switching language models. The selected design combines a Go bridge, Ollama inference, and a Python Mem0 OSS worker, with source-linked memory and separate user and laboratory scopes.</p>
-<div class="now-card__facts"><span><b>Built</b> Localhost Go health endpoint and test; architecture and evaluation plan documented</span><span><b>Next</b> Model switching, memory, persistence, authentication, and Genkai evaluation</span></div>
-<p>Project-site demo uses synthetic data. Token savings and model quality have not been measured. This is an independent project originating in RA work, not an official university service.</p>
-<div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/kyudai-llm-context-bridge/" target="_blank" rel="noopener noreferrer">Project website ↗</a><a class="project-demo secondary" href="https://github.com/lorendw7/kyudai-llm-context-bridge" target="_blank" rel="noopener noreferrer">Source &amp; research plan ↗</a></div>
+<p>RA research on preserving context when switching language models, with source-linked memory and separate user and laboratory scopes.</p>
+<div class="now-card__facts"><span><b>Built</b> Go health endpoint and test; architecture and evaluation plan</span><span><b>Next</b> Model switching, memory integration, and Genkai evaluation</span></div>
+<details class="scope-details"><summary>Architecture &amp; current limits</summary><p>Planned stack: Go, Ollama, and a Python Mem0 OSS worker. Persistence and authentication are not implemented. The website demo uses synthetic data; token savings and model quality have not been measured. This independent RA project is not an official university service.</p></details>
+<div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/kyudai-llm-context-bridge/" target="_blank" rel="noopener noreferrer">Project website ↗</a><a class="project-demo secondary" href="https://github.com/lorendw7/kyudai-llm-context-bridge" target="_blank" rel="noopener noreferrer">Source &amp; plan ↗</a></div>
 </article>
 <article class="now-card now-card--platform" id="cadence">
 <div class="now-card__top"><span>02 / PERSONAL SOFTWARE</span><span class="status-pill">IN DEVELOPMENT</span></div>
-<div class="now-card__mark" aria-hidden="true"><span>COURSES</span><i>+</i><span>PLANS</span><i>→</i><span>ONE WEEK</span></div>
 <h3><a href="https://lorendw7.github.io/Cadence/" target="_blank" rel="noopener noreferrer">Cadence</a></h3>
-<p>A local desktop planner I am building for students and classmates, designed to bring courses and personal plans into one schedule. The planned desktop targets are Windows, Linux, and macOS.</p>
-<div class="now-card__facts"><span><b>Built</b> Flutter Today placeholder, widget test, and native platform scaffolding</span><span><b>Next</b> Course and personal-plan management, local storage, and timetable import/export</span></div>
-<p>The project website presents the product design and roadmap. Scheduling, storage, and sharing are not implemented yet; a feature-complete release is not available.</p>
-<div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/Cadence/" target="_blank" rel="noopener noreferrer">Project website ↗</a><a class="project-demo secondary" href="https://github.com/lorendw7/Cadence" target="_blank" rel="noopener noreferrer">Source &amp; roadmap ↗</a></div>
+<p>A desktop planner for students, bringing courses and personal plans into one local schedule.</p>
+<div class="now-card__facts"><span><b>Built</b> Flutter Today placeholder, widget test, and native scaffolding</span><span><b>Next</b> Course planning, local storage, and timetable import/export</span></div>
+<details class="scope-details"><summary>Platforms &amp; current limits</summary><p>Planned for Windows, Linux, and macOS. Scheduling, storage, and sharing are not implemented, and no feature-complete release is available. The website presents the design and roadmap.</p></details>
+<div class="project-actions"><a class="project-demo" href="https://lorendw7.github.io/Cadence/" target="_blank" rel="noopener noreferrer">Project website ↗</a><a class="project-demo secondary" href="https://github.com/lorendw7/Cadence" target="_blank" rel="noopener noreferrer">Source &amp; plan ↗</a></div>
 </article>
 </div>
 <details class="workbench-more">
@@ -108,25 +106,22 @@
 <div class="now-grid now-grid--secondary">
 <article class="now-card now-card--systems">
 <div class="now-card__top"><span>03 / DISTRIBUTED SYSTEMS</span><span class="status-pill status-pill--ready">HTTP FOUNDATION</span></div>
-<div class="now-card__mark" aria-hidden="true"><span>AGENT</span><i>→</i><span>HEARTBEAT</span><i>→</i><span>REGISTRY</span></div>
 <h3><a href="https://github.com/lorendw7/nodepulse" target="_blank" rel="noopener noreferrer">NodePulse</a></h3>
-<p>A small distributed heartbeat monitor in Go. The monitor and agent processes boot with configuration, structured request logs, health checks, signal handling, and infrastructure tests; heartbeat tracking is the next layer.</p>
+<p>A Go heartbeat-monitor study with process startup, health checks, and infrastructure tests. Heartbeat tracking is next.</p>
 <div class="now-card__facts"><span><b>Built</b> Process bootstrap and health surface</span><span><b>Next</b> Heartbeat sender, registry, and timeouts</span></div>
 <a class="project-demo" href="https://github.com/lorendw7/nodepulse" target="_blank" rel="noopener noreferrer">Repository &amp; build status ↗</a>
 </article>
 <article class="now-card now-card--platform">
 <div class="now-card__top"><span>04 / MODERN C++</span><span class="status-pill">MODEL FIRST</span></div>
-<div class="now-card__mark" aria-hidden="true"><span>VALUE</span><i>→</i><span>PARSER</span><i>→</i><span>TESTS</span></div>
 <h3><a href="https://github.com/lorendw7/Tinyjson" target="_blank" rel="noopener noreferrer">Tinyjson</a></h3>
-<p>A C++20 JSON learning project built from first principles. Six JSON value types and an explicit value model exist today; tokenization, recursive-descent parsing, serialization, and broader tests remain staged work.</p>
+<p>A C++20 JSON study with six value types. Parsing, serialization, and broader tests remain planned.</p>
 <div class="now-card__facts"><span><b>Built</b> Value types and CMake foundation</span><span><b>Next</b> Lexer, parser, serializer, tests</span></div>
 <a class="project-demo" href="https://github.com/lorendw7/Tinyjson" target="_blank" rel="noopener noreferrer">Repository &amp; learning path ↗</a>
 </article>
 <article class="now-card now-card--science">
 <div class="now-card__top"><span>05 / SCIENTIFIC LEARNING</span><span class="status-pill status-pill--ready">REPRODUCIBLE SETUP</span></div>
-<div class="now-card__mark" aria-hidden="true"><span>DATA</span><i>→</i><span>MODEL</span><i>→</i><span>BIOLOGY</span></div>
 <h3><a href="https://github.com/lorendw7/Deep-Learning-For-Biology" target="_blank" rel="noopener noreferrer">Deep Learning for Biology</a></h3>
-<p>A reproducible study workspace for the book’s experiments. The Windows CPU environment, notebook preparation, dependency checks, and pretrained ResNet compatibility path are documented and repeatable.</p>
+<p>A reproducible workspace for biology experiments, with a pinned CPU environment and notebook preparation tools.</p>
 <div class="now-card__facts"><span><b>Built</b> Pinned environment and notebook tooling</span><span><b>Next</b> Run, compare, and document chapter experiments</span></div>
 <a class="project-demo" href="https://github.com/lorendw7/Deep-Learning-For-Biology" target="_blank" rel="noopener noreferrer">Study repository ↗</a>
 </article>
@@ -137,7 +132,7 @@
 <div class="section-heading">
 <div>
 <p class="eyebrow">02 / RESEARCH</p>
-<h2 id="research-title">Research and publications.</h2>
+<h2 id="research-title">Research.</h2>
 </div>
 <p>Research in reliable knowledge graph extraction and <a href="#context-bridge">context continuity across language models</a>.</p>
 </div>
@@ -165,8 +160,8 @@
 <div class="section-heading">
 <div>
 <p class="eyebrow">03 / SELECTED WORK</p>
-<h2 id="projects-title">Selected engineering work.</h2>
-<p class="section-intro">Six implementations across services, storage, Linux, and browser tools. Follow the design choices, working code, and known limits.</p>
+<h2 id="projects-title">Selected projects.</h2>
+<p class="section-intro">Six projects across backend services, systems, and browser tools.</p>
 </div>
 <a class="text-link" href="https://github.com/lorendw7?tab=repositories" target="_blank" rel="noopener noreferrer">
 <span>All public repositories ↗</span>
@@ -192,62 +187,55 @@
 <div class="project-grid featured-grid">
 <article class="project-card systems-card" data-category="systems" id="patientflow">
 <div class="project-top"><span>01 / BACKEND &amp; MICROSERVICES</span><span>↗</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">PATIENTFLOW / SERVICE MAP</span><span class="flow-node">API Gateway <small>JWT · request routing</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Patient service</span><span>Billing service</span></span><span class="flow-arrow">↓ &nbsp; gRPC / Kafka &nbsp; ↓</span><span class="flow-node">Analytics <small>event processing</small></span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">PatientFlow Cloud</a></h3>
-<p>Healthcare management services for patients, billing, analytics, and authentication, with gRPC communication, Kafka events, gateway routing, and container deployment configuration.</p>
-<p class="project-evidence">Engineering focus: service boundaries, JWT authentication, synchronous gRPC calls, asynchronous Kafka events, and integration tests.</p>
+<p>Healthcare microservices with JWT gateway authentication, gRPC calls, and Kafka-driven analytics.</p>
 <div class="tags"><span>Java</span><span>Spring Boot</span><span>gRPC / Kafka</span></div>
-<div class="project-actions"><a class="project-demo" href="project-notes.html#patientflow"><span>Explore the implementation ↗</span></a></div>
+<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">PATIENTFLOW / SERVICE MAP</span><span class="flow-node">API Gateway <small>JWT · request routing</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Patient service</span><span>Billing service</span></span><span class="flow-arrow">↓ &nbsp; gRPC / Kafka &nbsp; ↓</span><span class="flow-node">Analytics <small>event processing</small></span></div>
+<div class="project-actions"><a class="project-demo" href="project-notes.html#patientflow"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="life-preference">
 <div class="project-top"><span>02 / BACKEND APPLICATION</span><span>↗</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">LIFE PREFERENCE / COUPON ORDERS</span><span class="flow-node">Coupon request <small>Redis shared-session login</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Lua validation</span><span>Redis Stream</span></span><span class="flow-arrow">↓</span><span class="flow-node">Order worker <small>Redisson lock · MySQL transaction</small></span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Life Preference</a></h3>
-<p>A Spring Boot merchant-review learning project based on the Heima Dianping course, with Redis shared-session login, merchant caching, coupon flash sales, and follow feeds.</p>
-<p class="project-evidence">Engineering focus: Lua purchase validation, asynchronous order processing with Redis Streams, and Redisson locks with MySQL transactions.</p>
+<p>A Heima Dianping course project covering merchant caching, shared-session login, and asynchronous coupon orders.</p>
 <div class="tags"><span>Spring Boot</span><span>Redis</span><span>MySQL</span></div>
-<div class="project-actions"><a class="project-demo" href="project-notes.html#life-preference"><span>Caching &amp; order processing ↗</span></a></div>
+<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">LIFE PREFERENCE / COUPON ORDERS</span><span class="flow-node">Coupon request <small>Redis shared-session login</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Lua validation</span><span>Redis Stream</span></span><span class="flow-arrow">↓</span><span class="flow-node">Order worker <small>Redisson lock · MySQL transaction</small></span></div>
+<div class="project-actions"><a class="project-demo" href="project-notes.html#life-preference"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="gitlet">
 <div class="project-top"><span>03 / VERSION CONTROL</span><span>2025</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">GITLET / SNAPSHOT STORAGE</span><span class="flow-node">Working directory <small>add · remove</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Staging area</span><span>SHA-1 blobs</span></span><span class="flow-arrow">↓</span><span class="flow-node">Commit graph <small>snapshots · parent links · branches</small></span></div>
 <h3><a class="project-link" href="project-notes.html#gitlet">Gitlet</a></h3>
-<p>A Java version-control learning project based on CS61B: persistent file snapshots and commit objects, with staging, commits, history inspection, branch checkout, and merging.</p>
-<p class="project-evidence">Engineering focus: SHA-1 object IDs, file-to-snapshot mappings, commit-graph traversal, and directory-based push / fetch / pull. Source is not currently public.</p>
+<p>A CS61B-based version-control study with persistent snapshots, staging, commits, and branches. Merge behavior has known limits; source is not public.</p>
 <div class="tags"><span>Java</span><span>Data structures</span><span>File persistence</span></div>
-<div class="project-actions"><a class="project-demo" href="project-notes.html#gitlet"><span>Design &amp; implementation ↗</span></a></div>
+<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">GITLET / SNAPSHOT STORAGE</span><span class="flow-node">Working directory <small>add · remove</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Staging area</span><span>SHA-1 blobs</span></span><span class="flow-arrow">↓</span><span class="flow-node">Commit graph <small>snapshots · parent links · branches</small></span></div>
+<div class="project-actions"><a class="project-demo" href="project-notes.html#gitlet"><span>Implementation notes ↗</span></a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="procmon">
 <div class="project-top"><span>04 / LINUX SYSTEMS</span><span>↗</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">PROCMON / PROCESS SAMPLING</span><span class="flow-node">/proc snapshot <small>PID · state · user · RSS</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>CPU deltas</span><span>Memory sort</span></span><span class="flow-arrow">↓</span><span class="flow-node">Terminal view <small>live refresh · one-shot mode</small></span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Procmon" target="_blank" rel="noopener noreferrer">Procmon</a></h3>
-<p>A small <code>top</code>-like process monitor written in C. It reads Linux <code>/proc</code>, samples per-process CPU time, reports resident memory, and refreshes a sortable terminal view.</p>
-<p class="project-evidence">Engineering focus: procfs parsing, delta-based CPU calculation, POSIX process metadata, signal-safe shutdown, and a dependency-free Make build.</p>
+<p>A Linux process monitor in C: sample <code>/proc</code>, calculate CPU usage, and sort a live terminal view by CPU or memory.</p>
 <div class="tags"><span>C</span><span>Linux / procfs</span><span>POSIX</span></div>
-<div class="project-actions"><a class="project-demo" href="project-notes.html#procmon"><span>Sampling &amp; implementation ↗</span></a></div>
+<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">PROCMON / PROCESS SAMPLING</span><span class="flow-node">/proc snapshot <small>PID · state · user · RSS</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>CPU deltas</span><span>Memory sort</span></span><span class="flow-arrow">↓</span><span class="flow-node">Terminal view <small>live refresh · one-shot mode</small></span></div>
+<div class="project-actions"><a class="project-demo" href="project-notes.html#procmon"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Procmon" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card apps-card" data-category="apps" id="agent-skills">
 <div class="project-top"><span>05 / FULL-STACK APPLICATION</span><span>↗</span></div>
-<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">AGENT SKILLS / APPLICATION FLOW</span><span class="flow-node">Create &amp; edit <small>Markdown skills</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Authentication</span><span>Prisma / SQL</span></span><span class="flow-arrow">↓</span><span class="flow-node">Public gallery <small>discover &amp; share</small></span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer">Agent Skills Manager</a></h3>
-<p>A full-stack application for creating, editing, and sharing Markdown-based agent skills, with user authentication, a management dashboard, and a public gallery.</p>
-<p class="project-evidence">Engineering focus: Next.js routes, relational data modeling with Prisma, and authentication using bcrypt and httpOnly cookies.</p>
+<p>Create, edit, and share Markdown agent skills through an authenticated dashboard and a public gallery.</p>
 <div class="tags"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div>
-<div class="project-actions"><a class="project-demo" href="project-notes.html#agent-skills"><span>Explore the implementation ↗</span></a></div>
+<div class="project-mark flow-panel" aria-hidden="true"><span class="flow-label">AGENT SKILLS / APPLICATION FLOW</span><span class="flow-node">Create &amp; edit <small>Markdown skills</small></span><span class="flow-arrow">↓</span><span class="flow-pair"><span>Authentication</span><span>Prisma / SQL</span></span><span class="flow-arrow">↓</span><span class="flow-node">Public gallery <small>discover &amp; share</small></span></div>
+<div class="project-actions"><a class="project-demo" href="project-notes.html#agent-skills"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card apps-card" data-category="apps" data-live id="inkline">
 <div class="project-top"><span>06 / SHIPPED WEB APPLICATION</span><span class="live-badge">Live website</span></div>
+<h3><a class="project-link" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Inkline live app (opens in a new tab)">Inkline</a></h3>
+<p>Sign and export PDFs entirely in the browser. Files stay on the device; rotated and encrypted PDFs are outside the supported scope.</p>
+<div class="tags"><span>React</span><span>TypeScript</span><span>PDF.js / pdf-lib</span></div>
 <a class="project-mark live-preview website-preview" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Open Inkline website (opens in a new tab)">
 <span class="preview-address"><span class="preview-dots" aria-hidden="true">● ● ●</span><span>lorendw7.github.io/inkline</span><span aria-hidden="true">↗</span></span>
 <img src="assets/projects/inkline-1280.webp" srcset="assets/projects/inkline-640.webp 640w, assets/projects/inkline-1280.webp 1280w" sizes="(max-width:650px) calc(100vw - 48px), (max-width:1000px) 50vw, 600px" width="1280" height="800" loading="lazy" decoding="async" alt="Inkline signature dialog with a handwritten Demo signature over a sample PDF.">
 <span class="preview-caption"><span>Signing workspace · Demo document</span><span class="preview-cta">Open live app <span aria-hidden="true">↗</span></span></span>
 </a>
-<h3><a class="project-link" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Inkline live app (opens in a new tab)">Inkline</a></h3>
-<p>A deployed browser-based PDF signing tool: open a document, draw and position a signature, then export the signed PDF. Processing stays on the device.</p>
-<p class="project-evidence">Engineering focus: PDF coordinate mapping, browser-only export, and a no-network CSP. Known limits: rotated and encrypted PDFs.</p>
-<div class="tags"><span>React</span><span>TypeScript</span><span>PDF.js / pdf-lib</span></div>
-<div class="project-actions"><a class="project-demo live-cta" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Try Inkline (opens in a new tab)"><span>Try the live app</span><span class="link-arrow" aria-hidden="true">↗</span></a><a class="project-demo secondary" href="project-notes.html#inkline"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/inkline" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-<p class="live-destination">lorendw7.github.io/inkline · Opens in a new tab</p>
+<div class="project-actions"><a class="project-demo live-cta" href="https://lorendw7.github.io/inkline/" target="_blank" rel="noopener noreferrer" aria-label="Try Inkline (opens in a new tab)"><span>Try the live app</span><span class="link-arrow" aria-hidden="true">↗</span></a><a class="project-demo secondary" href="project-notes.html#inkline"><span>Implementation notes ↗</span></a></div>
 </article>
 </div>
 <details class="more-projects" id="more-projects">
@@ -255,51 +243,45 @@
 <div class="project-grid archive-grid">
 <article class="project-card systems-card" data-category="systems">
 <div class="project-top"><span>07 / STORAGE ENGINE STUDY</span><span>↗</span></div>
-<div class="project-mark" aria-hidden="true">memory → log → tables</div>
 <h3><a class="project-link" href="https://github.com/lorendw7/MiniKV" target="_blank" rel="noopener noreferrer">MiniKV</a></h3>
-<p>A learning-first C++20 key-value store project. Its current foundation covers CMake structure and ownership exercises; memtables, WAL, SSTables, and compaction remain roadmap milestones.</p>
+<p>A C++20 storage study with CMake and ownership exercises. WAL, memtables, SSTables, and compaction remain planned.</p>
 <div class="tags"><span>C++20</span><span>CMake</span><span>Storage systems</span></div>
 </article>
 <article class="project-card ai-card" data-category="ai">
 <div class="project-top"><span>08 / LANGUAGE MODEL</span><span>↗</span></div>
-<div class="project-mark" aria-hidden="true">tokens → model</div>
 <h3><a class="project-link" href="https://github.com/lorendw7/LLM-Forge" target="_blank" rel="noopener noreferrer">LLM Forge</a></h3>
-<p>A language-model learning project following Build a Large Language Model (From Scratch), with a Transformer implementation, data pipeline, pretraining, and downstream fine-tuning exercises.</p>
+<p>A study of Transformers, data pipelines, pretraining, and fine-tuning, following Build a Large Language Model (From Scratch).</p>
 <div class="tags"><span>Python</span><span>PyTorch</span><span>Transformer</span></div>
 </article>
 <article class="project-card ai-card" data-category="ai">
 <div class="project-top"><span>09 / AI APPLICATION</span><span>↗</span></div>
-<div class="project-mark" aria-hidden="true">notes ↔ answers</div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Goat-Notes" target="_blank" rel="noopener noreferrer">Goat Notes</a></h3>
-<p>A note-taking application with account authentication, persistent note management, and DeepSeek-powered questions and answers grounded in the user’s notes.</p>
+<p>Persistent notes with account authentication and DeepSeek-powered questions and answers grounded in those notes.</p>
 <div class="tags"><span>Next.js</span><span>Supabase</span><span>DeepSeek</span></div>
 </article>
 <article class="project-card creative-card" data-category="creative" data-live id="starry-eyes">
 <div class="project-top"><span>10 / CREATIVE CODING</span><span class="live-badge">Live website</span></div>
+<h3><a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Starry-Eyes live website (opens in a new tab)">Starry-Eyes</a></h3>
+<p>Interactive 3D artwork with an audio-reactive starfield and cinematic camera movement. Recipient access is required.</p>
+<div class="tags"><span>Three.js</span><span>WebGL</span><span>Web Audio</span></div>
 <a class="project-mark live-preview website-preview" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Starry-Eyes website (opens in a new tab)">
 <span class="preview-address"><span class="preview-dots" aria-hidden="true">● ● ●</span><span>starry-eyes.vercel.app</span><span aria-hidden="true">↗</span></span>
 <img src="assets/projects/starry-eyes-1280.webp?v=20261015-art" srcset="assets/projects/starry-eyes-640.webp?v=20261015-art 640w, assets/projects/starry-eyes-1280.webp?v=20261015-art 1280w" sizes="(max-width:650px) calc(100vw - 48px), (max-width:1000px) 50vw, 600px" width="1280" height="800" loading="lazy" decoding="async" alt="Starry-Eyes rendered artwork: a luminous painted eye floating among stars, with vertical calligraphy.">
 <span class="preview-caption"><span>Rendered starfield · Access required</span><span class="preview-cta">Visit website <span aria-hidden="true">↗</span></span></span>
 </a>
-<h3><a class="project-link" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Starry-Eyes live website (opens in a new tab)">Starry-Eyes</a></h3>
-<p>An interactive 3D artwork with PBR brush strokes, an audio-reactive starfield, cinematic camera movement, and responsive rendering. The deployed experience has a recipient access check.</p>
-<div class="tags"><span>Three.js</span><span>WebGL</span><span>Web Audio</span></div>
 <div class="project-actions"><a class="project-demo live-cta" href="https://starry-eyes.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Explore Starry-Eyes (opens in a new tab)"><span>Open live website</span><span class="link-arrow" aria-hidden="true">↗</span></a></div>
-<p class="live-destination">starry-eyes.vercel.app · Opens in a new tab</p>
 </article>
 <article class="project-card creative-card" data-category="creative" data-live id="balloonshooter">
 <div class="project-top"><span>11 / GAME DEVELOPMENT</span><span>IN DEVELOPMENT</span></div>
+<h3><a class="project-link" href="https://lorendw7.github.io/BalloonBarrage/en/" target="_blank" rel="noopener noreferrer" aria-label="BalloonBarrage project website (opens in a new tab)">BalloonShooter / BalloonBarrage</a></h3>
+<p>A Unity / C# rhythm-shooter prototype with aiming, scoring, and audiovisual feedback. Rhythm judgement is in progress; no public Windows demo is available.</p>
+<div class="tags"><span>Unity</span><span>C#</span><span>Input System</span></div>
 <a class="project-mark live-preview website-preview" href="https://lorendw7.github.io/BalloonBarrage/en/" target="_blank" rel="noopener noreferrer" aria-label="Open BalloonBarrage website (opens in a new tab)">
 <span class="preview-address"><span class="preview-dots" aria-hidden="true">● ● ●</span><span>lorendw7.github.io/BalloonBarrage</span><span aria-hidden="true">↗</span></span>
 <img src="assets/projects/balloonbarrage-1280.webp" srcset="assets/projects/balloonbarrage-640.webp 640w, assets/projects/balloonbarrage-1280.webp 1280w" sizes="(max-width:650px) calc(100vw - 48px), (max-width:1000px) 50vw, 600px" width="1280" height="800" loading="lazy" decoding="async" alt="BalloonBarrage English homepage with colorful balloons and a painted studio.">
 <span class="preview-caption"><span>Project website · In development</span><span class="preview-cta">Visit website <span aria-hidden="true">↗</span></span></span>
 </a>
-<h3><a class="project-link" href="https://lorendw7.github.io/BalloonBarrage/en/" target="_blank" rel="noopener noreferrer" aria-label="BalloonBarrage project website (opens in a new tab)">BalloonShooter / BalloonBarrage</a></h3>
-<p>A Unity / C# rhythm-shooter prototype with mouse aiming, paint projectiles, balloon scoring, and audio / particle feedback. The project website shares gameplay captures and development updates.</p>
-<p class="project-evidence">In development under the public name BalloonBarrage. Rhythm judgement is in progress; a public Windows demo is not yet available.</p>
-<div class="tags"><span>Unity</span><span>C#</span><span>Input System</span></div>
 <div class="project-actions"><a class="project-demo live-cta" href="https://lorendw7.github.io/BalloonBarrage/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit the BalloonBarrage project website (opens in a new tab)"><span>Visit project website</span><span class="link-arrow" aria-hidden="true">↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/BalloonBarrage" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-<p class="live-destination">lorendw7.github.io/BalloonBarrage/en · Opens in a new tab</p>
 </article>
 </div>
 </details>
@@ -313,7 +295,7 @@
 </div>
 </div>
 <div class="awards-grid">
-<article class="award-card award-card--featured"><span class="small-label">SELECTED · 2026</span><h3>WANC Best Paper Award</h3><p><em>Per-Relation Reliability of LLM-Based Knowledge Graph Extraction</em>, CANDAR 2026 / WANC. Award contingent on presentation at the symposium.</p></article>
+<article class="award-card award-card--featured"><span class="small-label">SELECTED · 2026</span><h3>WANC Best Paper Award</h3><p>CANDAR 2026 / WANC. Selected; presentation at the symposium required.</p></article>
 <article class="award-card"><span class="small-label">APR 2023</span><h3>Second Prize · 14th Lanqiao Cup</h3><p>Guangdong Provincial C++ Programming Contest, University Group A</p></article>
 <article class="award-card"><span class="small-label">MAY 2023</span><h3>Bronze Prize · CCPC Guangdong</h3><p>China Collegiate Programming Contest, Guangdong Provincial Contest</p></article>
 <article class="award-card"><span class="small-label">2021–2022</span><h3>Second-Class Scholarship</h3><p>Software Engineering Program, Beijing Normal University, Zhuhai</p></article>
@@ -327,28 +309,40 @@
 <p>I&#x27;m pursuing an M.S. in Information Science and Electrical Engineering at Kyushu University. My work spans software systems, scientific computing, and reliable AI.</p>
 <img class="portrait" src="assets/cv.png" alt="Illustrated portrait of Shandong He" width="96" height="96" loading="lazy">
 </div>
-<div class="experience-list">
-<article>
-<span class=small-label>CURRENT · RESEARCH ASSISTANT</span>
-<h3>Kyushu University · Research Institute for Information Technology</h3>
-<p>Research Assistant (RA), Ono Laboratory. My current work is <a href="#context-bridge">Kyudai LLM Context Bridge</a>: investigating context continuity across language models, source-linked memory, and user and laboratory isolation. The Go health-check scaffold is implemented; model and memory integration and comparative evaluation on Genkai are planned.</p>
-</article>
-<article>
-<span class=small-label>2026.04 — MAR 2028 (EXPECTED)</span>
-<h3>Kyushu University</h3>
-<p>M.S. · Information Science and Electrical Engineering</p>
-</article>
-<article>
-<span class=small-label>2020.09 — 2024.06</span>
-<h3>Beijing Normal University, Zhuhai</h3>
-<p>B.S. · Software Engineering · GPA 3.5 / 4.0</p>
-</article>
-<article>
-<span class=small-label>INDEPENDENT CONSULTING · MAY 2026 — PRESENT · REMOTE FROM JAPAN</span>
-<h3>GADE UNION</h3>
-<p>GADE UNION is the same organization as Singapore-based GADE INNOVATIONS PTE. LTD. As an independent consultant working remotely from Japan, I updated DatasetHunter / Build-From-Spec benchmark analyses and reproducibility materials, completed cross-embodiment evaluation and reproducibility materials, and organized research repositories.</p>
-</article>
+<ol class="experience-list" aria-label="Work and education timeline">
+<li>
+<div class="experience-date">CURRENT<span>Research</span></div>
+<div class="experience-entry">
+<h3>Research Assistant</h3>
+<p class="experience-place">Kyushu University · Ono Laboratory</p>
+<p>Research Institute for Information Technology. Investigating <a href="#context-bridge">context continuity across language models</a>.</p>
 </div>
+</li>
+<li>
+<div class="experience-date"><time datetime="2026-05">MAY 2026</time> — NOW<span>Work</span></div>
+<div class="experience-entry">
+<h3>Independent Consultant</h3>
+<p class="experience-place">GADE UNION · Remote from Japan</p>
+<p>Benchmark analysis, cross-embodiment evaluation, and research reproducibility materials.</p>
+<p class="experience-note">GADE INNOVATIONS PTE. LTD., Singapore.</p>
+</div>
+</li>
+<li>
+<div class="experience-date"><time datetime="2026-04">APR 2026</time> — <time datetime="2028-03">MAR 2028</time><span>Expected completion</span></div>
+<div class="experience-entry">
+<h3>M.S. in Information Science and Electrical Engineering</h3>
+<p class="experience-place">Kyushu University</p>
+</div>
+</li>
+<li>
+<div class="experience-date"><time datetime="2020-09">SEP 2020</time> — <time datetime="2024-06">JUN 2024</time><span>Education</span></div>
+<div class="experience-entry">
+<h3>B.S. in Software Engineering</h3>
+<p class="experience-place">Beijing Normal University, Zhuhai</p>
+<p>GPA 3.5 / 4.0</p>
+</div>
+</li>
+</ol>
 </section>
 <section class="skills-section" aria-label="Technical skills">
 <div>
@@ -365,10 +359,10 @@
 </div>
 </section>
 <section class="contact-section" id="contact">
-<p class="eyebrow">06 / SAY HELLO</p>
+<p class="eyebrow">06 / CONTACT</p>
 <h2>Contact</h2>
 <div>
-<p>I welcome conversations about systems engineering, scientific software, and reliable AI. I’m open to research collaboration now and full-time software engineering opportunities in Japan after my expected M.S. completion in March 2028. CV available on request.</p>
+<p>Open to research collaboration in systems and reliable AI, and software engineering roles in Japan after March 2028 (expected graduation). CV available on request.</p>
 <a class="button primary" href="https://github.com/lorendw7" target="_blank" rel="noopener noreferrer">
 <span>Find me on GitHub ↗</span>
 </a>

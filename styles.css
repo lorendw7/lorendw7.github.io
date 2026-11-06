@@ -780,7 +780,10 @@ h2 {
   margin-top:25px;
   object-fit:cover
 }
-.experience-list article {
+.experience-list { list-style:none; margin:0; padding:0; }
+.experience-date { font-size:11px; line-height:1.7; color:var(--muted); }
+.experience-date span { display:block; }
+.experience-list > li {
   border-top:1px solid var(--line);
   padding:24px 0
 }

@@ -40,6 +40,8 @@ Refresh captures at 1280 × 800 and regenerate both WebP sizes. Keep demo inputs
 
 The rounded controls and quieter visual hierarchy draw on the principles discussed in [Linear's interface refresh](https://linear.app/now/behind-the-latest-design-refresh) and [Vercel's button guidance](https://vercel.com/geist/button). No source code or artwork from those references is incorporated.
 
+The cool blue-gray palette and restrained lighting also reference the visual approach discussed in [Janus Films’ Infernal Affairs trilogy press notes](https://s3.amazonaws.com/criterion-production/janus_promo_packages/754-/Press%20Notes_Infernal%20Affairs%20Trilogy_web_original.pdf). The site uses original CSS and existing portfolio assets; no film stills, dialogue, or soundtrack are included.
+
 ## Retained Simplefolio MIT license
 
 MIT License
