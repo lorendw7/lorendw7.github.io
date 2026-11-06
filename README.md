@@ -8,7 +8,7 @@ A static, English-language website with no build step, runtime dependencies, ext
 
 - `index.html`: biography, current research, selected projects, awards, and contact.
 - `project-notes.html`: implementation evidence and limitations for the six featured projects.
-- `ink.css`: default Night / Ink design with cool blue-gray surfaces, rounded controls, responsive project rows, an experience timeline, print and reduced-motion support.
+- `ink.css`: default Night / Ink design with charcoal surfaces, steel-blue lighting, rounded controls, an editorial project layout, an experience timeline, print and reduced-motion support.
 - `styles.css` and `simplefolio.css`: shared layout and retained alternative themes. Both still contain active shared styles.
 - `main.js`: project filters, mobile navigation, history and section tracking.
 - `navigation.js` and `project-notes.js`: navigation between the homepage and project notes, with a decorative reading-progress indicator that follows layout changes.
@@ -36,7 +36,9 @@ node tests/project-navigation.cjs http://127.0.0.1:8765/
 
 Current-project limitations remain available in native expandable sections. Featured projects use a short overview with implementation notes and source links; the archive remains collapsed by default. Experience entries separate dates, roles, organizations, and responsibilities.
 
-Five engineering projects have original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. These illustrate implementation structure, not measured results or product screenshots; each has an accessible description and works without JavaScript.
+The default design gives PatientFlow and Inkline larger visual sections, with four quieter project summaries between them. The summaries become a single column on mobile. A decorative crop of the existing seaside illustration closes the page beside the contact information. No movie stills or additional image downloads are used.
+
+Five engineering projects retain original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. The default design shows only PatientFlow's diagram; alternative themes retain all five. These illustrate implementation structure, not measured results or product screenshots, and include accessible descriptions.
 
 Before pushing, also inspect both pages on desktop and mobile, check local links and image loading, and verify factual claims.
 
