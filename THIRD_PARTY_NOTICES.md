@@ -1,21 +1,14 @@
 # Template sources and adaptations
 
-Checked on 2026-10-09. Star counts are snapshots, not a quality guarantee.
+Source and asset attributions for this portfolio.
 
 ## Website: Simplefolio
 
-- Source: https://github.com/cobiwave/simplefolio (14,226 stars)
+- Source: https://github.com/cobiwave/simplefolio
 - Author: Jacobo Martínez
 - Source files: `src/index.html`, `src/sass/sections/_hero.scss`, `src/sass/sections/_projects.scss`, `src/sass/components/_buttons.scss`
 - Adaptation: introductory hero, paired project description/visual rows, and expanding call-to-action button. Sass converted to plain scoped CSS. Original site photography, English-language content, accessible navigation, filtering, and implementation notes retained. No Bootstrap, Parcel or animation dependency is required.
 - Original source remains under its MIT license below. New content describes Shandong He's own work.
-- Alternative reviewed: https://github.com/saadpasta/developerFolio (6,639 stars; GPL-3.0; README says no active maintenance). Not incorporated.
-
-## GitHub profile
-
-- Reference collection: https://github.com/abhisheknaiidu/awesome-github-profile-readme (31,295 stars; CC0-1.0).
-- Uses the collection's minimal profile pattern: introduction, selected work, skills, research, and contact links. Biography and project descriptions are original, based on existing verified portfolio content. No contributor's biography or artwork is copied.
-
 ## Seaside hero images (2026-11-06)
 
 - `assets/hero-seaside.jpg` and `assets/hero-seaside-portrait.jpg` are AI-generated illustrative study scenes, created from the user's composition instructions and original J.Y. nameplate reference.
@@ -30,6 +23,22 @@ The current Night / Ink visual design replaces the default Simplefolio appearanc
 
 - `assets/ink-landscape.jpg` is an original AI-generated decorative landscape following the user's request for Chinese xieyi painting: distant mountains, open space, restrained ink washes, and no lettering or seals.
 - It is rendered as white brushwork and gray mountain layers on the black background. It does not reproduce an identified painting or claim to be an antique work.
+
+## Project screenshots
+
+Browser-rendered captures from 2026-10-15, exported as WebP at 640 × 400 and 1280 × 800. These are static snapshots; links open the current websites.
+
+| Assets | Source | Captured state |
+| --- | --- | --- |
+| `assets/projects/inkline-*` | https://lorendw7.github.io/inkline/ | Signature dialog with a synthetic sample PDF and a “Demo” signature; no personal document or real signature. |
+| `assets/projects/starry-eyes-*` | https://starry-eyes.vercel.app/ | Starfield rendered from existing local source in an isolated preview. Asset imports were adapted and the local entry response stubbed; artwork and animation were unchanged. The personal closing message is excluded. |
+| `assets/projects/balloonbarrage-*` | https://lorendw7.github.io/BalloonBarrage/en/ | English project homepage for an in-development rhythm shooter, not a playable game build. |
+
+Refresh captures at 1280 × 800 and regenerate both WebP sizes. Keep demo inputs synthetic and retain actual interface screenshots rather than generated mockups.
+
+## Interface references
+
+The rounded controls and quieter visual hierarchy draw on the principles discussed in [Linear's interface refresh](https://linear.app/now/behind-the-latest-design-refresh) and [Vercel's button guidance](https://vercel.com/geist/button). No source code or artwork from those references is incorporated.
 
 ## Retained Simplefolio MIT license
 
