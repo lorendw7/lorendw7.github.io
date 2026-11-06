@@ -36,9 +36,9 @@ node tests/project-navigation.cjs http://127.0.0.1:8765/
 
 Current-project limitations remain available in native expandable sections. Featured projects use a short overview with implementation notes and source links; the archive remains collapsed by default. Experience entries separate dates, roles, organizations, and responsibilities.
 
-The default design gives PatientFlow and Inkline larger visual sections, with four quieter project summaries between them. The summaries become a single column on mobile. A decorative crop of the existing seaside illustration closes the page beside the contact information. No movie stills or additional image downloads are used.
+The default design gives PatientFlow and Inkline larger visual sections, with four quieter project summaries between them. The summaries become a single column on mobile. Honors and experience use aligned date and description columns, inspired by film credits. A wide decorative crop of the existing seaside illustration introduces the closing contact section. No movie stills or additional image downloads are used.
 
-The mobile hero preserves the complete portrait illustration, including the brass nameplate. Low-contrast white-ink landscape accents sit behind the hero and experience sections. Contact information states the search for PhD positions in systems and reliable AI, with expected M.S. completion in March 2028.
+The mobile hero preserves the complete portrait illustration, including the brass nameplate. Low-contrast white-ink landscape accents appear behind the hero and in a short transition between projects and honors. The PhD contact section separates research interests, expected M.S. completion in March 2028, and links to GitHub and the publication.
 
 Five engineering projects retain original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. The default design shows only PatientFlow's diagram; alternative themes retain all five. These illustrate implementation structure, not measured results or product screenshots, and include accessible descriptions.
 

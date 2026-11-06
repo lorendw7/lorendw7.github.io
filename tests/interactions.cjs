@@ -12,6 +12,16 @@ const expected = ['PatientFlow Cloud', 'Life Preference', 'Gitlet', 'Procmon', '
       const page = await browser.newPage({viewport:{width, height:844}, reducedMotion:'reduce'});
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(base);
+      // Keep the entire hero photograph visible, including the nameplate at its foot.
+      const heroImage = page.locator('.hero-image img');
+      await heroImage.evaluate(image => image.decode());
+      assert.equal(await heroImage.evaluate(image => {
+        const photo = image.getBoundingClientRect();
+        const frame = image.closest('figure').getBoundingClientRect();
+        const picture = image.parentElement.getBoundingClientRect();
+        return Math.abs(photo.width / photo.height - image.naturalWidth / image.naturalHeight) < .01
+          && photo.bottom <= frame.bottom + 1 && photo.bottom <= picture.bottom + 1;
+      }), true, `${width}px: the complete hero image must fit without clipping`);
       assert.deepEqual(await page.locator('.featured-grid h3').allTextContents(), expected);
       assert.equal(await page.locator('.project-card:visible').count(), 6);
       assert.equal(await page.locator('#research .publication').count(), 1);
