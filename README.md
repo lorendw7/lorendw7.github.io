@@ -6,7 +6,7 @@ A dependency-free English-only research and engineering portfolio for GitHub Pag
 
 The default is a customized **Simplefolio** layout: a direct introduction, original coffee/CFD photography, generous whitespace, and project rows pairing implementation descriptions with flow illustrations or real deployed-website screenshots. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source references and the preserved MIT license.
 
-- `index.html`: English-only content. A status-aware “On the workbench” section covers NodePulse, Tinyjson, and Deep Learning for Biology; six implemented projects are featured below it: PatientFlow Cloud, Life Preference, Gitlet, Procmon, Agent Skills Manager, and Inkline. More public work follows in the archive.
+- `index.html`: English-only content. A status-aware “On the workbench” section leads with the Kyudai LLM Context Bridge RA project, followed by NodePulse, Tinyjson, and Deep Learning for Biology; six implemented projects are featured below it: PatientFlow Cloud, Life Preference, Gitlet, Procmon, Agent Skills Manager, and Inkline. More public work follows in the archive.
 - `styles.css` and `simplefolio.css`: shared styles and the scoped template adaptation, including desktop/mobile, keyboard focus, print, and reduced-motion support.
 - `main.js`: mobile navigation, project filters, featured-project shortcuts, and active-section tracking.
 - `project-notes.html` and `project-notes.js`: English-only implementation evidence and limitations for the six featured projects.
@@ -21,7 +21,9 @@ No runtime dependencies, external fonts, analytics, or build step. Essential con
 
 BalloonShooter is included at the user's request as an **in-development prototype**, publicly named BalloonBarrage. The earlier local source review confirmed mouse aiming, moving projectiles with swept collision, single-hit scoring, and audio/particle feedback. The English project website checked on 2026-10-15 now describes a rhythm-shooter direction, chart-driven spawning, and rhythm judgement still in progress. No public Windows demo is available; do not present development targets as released features. The project archive therefore includes completed projects and this explicitly labeled prototype.
 
-The RA appointment at Kyushu University's Research Institute for Information Technology is **selected, appointment processing**. The planned theme is knowledge graph construction and utilization under an AI for Science research training initiative. Do not claim an active appointment, start date, completed RA duties, or SRA classification until confirmed. This status was confirmed by the user on 2026-10-09.
+The user confirmed on 2026-11-06 that **Kyudai LLM Context Bridge is their current RA work** at Kyushu University. This supersedes the 2026-10-09 incoming / appointment-processing description. The website, bilingual resumes, and GitHub Profile now describe current RA work in Ono Laboratory at the Research Institute for Information Technology. No appointment start date or SRA classification is inferred.
+
+The [project README](https://github.com/lorendw7/kyudai-llm-context-bridge) checked on 2026-11-06 documents the selected Go + Ollama + Python Mem0 OSS architecture and a planned full-history / rolling-summary / retrieved-memory comparison on Genkai. Implemented code is limited to a localhost Go health endpoint and test; model switching, memory, persistence, and authentication are planned. Token savings and model quality have not been measured. The [project website](https://lorendw7.github.io/kyudai-llm-context-bridge/) uses synthetic demonstration data and is not an official university service. Keep these boundaries explicit when updating the portfolio.
 
 The CANDAR 2026 / WANC paper is accepted but is not yet a published proceedings article. The rejected embodied-learning submission was removed from the public website, resumes, and GitHub Profile on 2026-10-27.
 
