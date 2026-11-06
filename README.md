@@ -2,7 +2,7 @@
 
 Personal research and engineering portfolio: https://lorendw7.github.io/
 
-A static, English-language website with no build step, runtime dependencies, external fonts, or analytics. GitHub Pages publishes the `main` branch.
+A static, English-language website with no application build step, runtime dependencies, external fonts, or analytics. The `Publish portfolio` workflow packages public files from `main` and deploys to GitHub Pages.
 
 ## Structure
 
@@ -14,6 +14,7 @@ A static, English-language website with no build step, runtime dependencies, ext
 - `navigation.js` and `project-notes.js`: navigation between the homepage and project notes, with a decorative reading-progress indicator that follows layout changes.
 - `assets/`: illustrations, portrait and responsive project screenshots. See [asset provenance and licenses](THIRD_PARTY_NOTICES.md).
 - `tests/`: browser checks for interaction and project navigation.
+- `.github/workflows/pages.yml` and `scripts/`: static packaging, deployment, and verification of the public revision.
 
 The older themes remain accessible through `?design=academic`, `editorial`, `bento`, and `simplefolio`. The standalone comparison page has been retired.
 
@@ -43,6 +44,14 @@ The mobile hero preserves the complete portrait illustration, including the bras
 Five engineering projects retain original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. The default design shows only PatientFlow's diagram; alternative themes retain all five. These illustrate implementation structure, not measured results or product screenshots, and include accessible descriptions.
 
 Before pushing, also inspect both pages on desktop and mobile, check local links and image loading, and verify factual claims.
+
+## Publishing
+
+GitHub Pages must use **GitHub Actions** as its publishing source (`build_type: workflow`). The workflow runs on pushes to `main` and supports a manual **Run workflow**. It serializes deployments without cancelling an active deployment; a newer queued run replaces an older queued run.
+
+`scripts/package_site.py --revision <full-commit-sha>` creates a fresh `_site/` containing only the public HTML, CSS, JavaScript, asset directory, and attribution notice. It adds `.nojekyll` and `version.json`; local previews, private folders, tests, and repository metadata are not published. Run `python -m unittest discover -s tests -p 'test_deployment.py'` to check packaging and stale-content detection.
+
+The final workflow step verifies the deployed commit and hashes of the public homepage, notes, styles, and scripts. To check manually, run `python scripts/verify_deployment.py --url https://lorendw7.github.io/ --revision <full-commit-sha>`. A push or successful package upload alone is not evidence that the live site has updated.
 
 ## Content boundaries
 
