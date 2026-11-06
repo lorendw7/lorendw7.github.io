@@ -23,6 +23,7 @@ The current Night / Ink visual design replaces the default Simplefolio appearanc
 
 - `assets/ink-landscape.jpg` is an original AI-generated decorative landscape following the user's request for Chinese xieyi painting: distant mountains, open space, restrained ink washes, and no lettering or seals.
 - It is rendered as white brushwork and gray mountain layers on the black background. It does not reproduce an identified painting or claim to be an antique work.
+- `assets/paper-grain.svg` is an original procedural SVG texture. Decorative chapter numerals, the landscape label, and the SH mark are styled in HTML/CSS; they are not historical seals or an artist's signature. These ornaments are hidden from assistive technology.
 
 ## Project screenshots
 

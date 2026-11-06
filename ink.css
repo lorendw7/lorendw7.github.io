@@ -1,7 +1,8 @@
 /* Night / Ink. Cool, cinematic surfaces with a restrained editorial layout. */
 html[data-design=ink] {
-  --paper:#111314; --white:#1a1d1f; --ink:#f0efeb; --muted:#a9aeaf;
-  --line:#343a3e; --accent:#bdd4e7; --green:#bdd4e7; --max:1440px;
+  --paper:#121515; --white:#1b1f1e; --ink:#ece6d9; --muted:#adb1ab;
+  --line:#383f3d; --accent:#bfceca; --green:#bfceca; --max:1440px;
+  --seal:#ca9380; --paper-light:#e9e2d5; --book:Georgia,"Songti SC","SimSun",serif;
   --surface:#191d20; --surface-raised:#22292e; --cool-muted:#aab3ba; --brass:#d0b68a;
   --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-pill:999px;
   --mono:"Cascadia Code",Consolas,"SFMono-Regular",monospace;
@@ -43,7 +44,8 @@ html[data-design=ink] .hero {
 }
 html[data-design=ink] .hero::before {
   content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
-  background:linear-gradient(118deg,transparent 30%,#a6bdcc09 50%,transparent 67%),radial-gradient(ellipse at 95% 20%,#2f414e33,transparent 65%);
+  background:url("assets/paper-grain.svg") repeat,linear-gradient(118deg,transparent 30%,#b9c8ba0a 50%,transparent 67%),radial-gradient(ellipse at 95% 20%,#34484033,transparent 65%);
+  background-size:240px 240px,auto,auto;
 }
 html[data-design=ink] .hero::after {
   content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
@@ -462,15 +464,23 @@ html[data-design=ink] .scope-details[open] summary { color:#e1edf7; }
 /* Editorial rhythm: two visual anchors, quiet supporting work, an open ending. */
 .contact-frame { display:none; }
 .ink-interlude { display:none; }
+.chapter-seal { display:none; }
 .phd-facts { margin:0; }
 .phd-facts>div+div { margin-top:16px; }
 .phd-facts dt { font-size:11px; color:var(--muted); }
 .phd-facts dd { margin:5px 0 0; font-size:14px; }
 .contact-actions { display:flex; align-items:center; flex-wrap:wrap; gap:16px 24px; }
 .contact-actions .text-link { display:inline-flex; align-items:center; min-height:44px; }
-html[data-design=ink] .hero-image img { border-radius:8px; }
-html[data-design=ink] .hero h1 { font-weight:500; letter-spacing:-.065em; }
-html[data-design=ink] .section-heading h2 { font-weight:500; }
+html[data-design=ink] .hero-image picture { padding:10px; border:1px solid #a4b2a933; background:#d4d6c605; border-radius:4px; }
+html[data-design=ink] .hero-image img { border-radius:2px; box-shadow:none; }
+html[data-design=ink] .hero h1 { font-family:var(--book); font-weight:400; letter-spacing:-.055em; }
+html[data-design=ink] .hero h1 span,html[data-design=ink] .hero h1 em { color:var(--paper-light); }
+html[data-design=ink] .section-heading h2,html[data-design=ink] .about-intro h2,html[data-design=ink] .contact-section h2,html[data-design=ink] .case-hero h1 { font-family:var(--book); font-weight:400; letter-spacing:-.035em; color:var(--paper-light); }
+html[data-design=ink] .eyebrow:has(>.chapter-seal)::before { display:none; }
+html[data-design=ink] .chapter-seal { display:inline-grid; place-items:center; flex:0 0 28px; width:28px; height:31px; border:1px solid #b6735b99; border-radius:2px 1px 3px 1px; color:var(--seal); background:#aa5b4209; font:17px/1 "SimSun","Songti SC",serif; letter-spacing:0; }
+html[data-design=ink] .button.primary,html[data-design=ink] .contact-section .button { background:var(--paper-light); border-color:var(--paper-light); color:#19201e; }
+html[data-design=ink] .button.primary:hover,html[data-design=ink] .contact-section .button:hover { background:#f4eee2; border-color:#f4eee2; color:#19201e; }
+html[data-design=ink] .reading-progress { height:1px; background:linear-gradient(90deg,#81928a,#ccb69a); }
 html[data-design=ink] .section-intro { font-family:Inter,"Segoe UI",Arial,sans-serif; }
 html[data-design=ink] .tags { font-family:Inter,"Segoe UI",Arial,sans-serif; letter-spacing:0; }
 html[data-design=ink] .tags span { border:0; border-radius:0; padding:0; background:none; }
@@ -500,15 +510,25 @@ html[data-design=ink] .featured-grid .project-spotlight--reverse>.project-mark {
 html[data-design=ink] .project-card .project-mark.website-preview { border-radius:8px; background:#1b2024; border-color:#404a51; }
 html[data-design=ink] .website-preview img { filter:saturate(.55); }
 html[data-design=ink] .more-projects summary { border-inline:0; border-radius:0; padding:24px 0; }
-html[data-design=ink] #research .publication h3 { max-width:920px; font-size:clamp(26px,2.55vw,36px); font-weight:500; line-height:1.35; text-wrap:pretty; }
-html[data-design=ink] .ink-interlude { display:block; position:relative; isolation:isolate; height:190px; margin:52px 0 0; pointer-events:none; }
+html[data-design=ink] #research { background:linear-gradient(110deg,#252d2a,#1a201e 75%); border-block-color:#77786566; }
+html[data-design=ink] #research .publication h3 { max-width:920px; font-family:var(--book); font-size:clamp(26px,2.55vw,36px); font-weight:400; letter-spacing:-.02em; line-height:1.4; color:var(--paper-light); text-wrap:pretty; }
+html[data-design=ink] .publication-meta .badge.accepted { border-radius:2px; background:#bca78608; }
+html[data-design=ink] .ink-interlude { display:block; position:relative; isolation:isolate; height:280px; margin:60px 0 24px; pointer-events:none; background:url("assets/paper-grain.svg") repeat; }
 html[data-design=ink] .ink-interlude::before {
   content:""; position:absolute; inset:0;
   background:url("assets/ink-landscape.jpg") no-repeat center 65% / cover;
-  filter:grayscale(1) invert(1) contrast(1.15) brightness(1.5); mix-blend-mode:screen; opacity:.19;
+  filter:grayscale(1) invert(1) contrast(1.15) brightness(1.5); mix-blend-mode:screen; opacity:.29;
   mask-image:linear-gradient(transparent,#000 45%,#000 60%,transparent),linear-gradient(90deg,transparent,#000 30%,#000 75%,transparent);
   mask-composite:intersect;
 }
+html[data-design=ink] .ink-interlude::after {
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:url("assets/ink-landscape.jpg") no-repeat 0 35% / 120% auto;
+  filter:grayscale(1) invert(1) blur(1px); mix-blend-mode:screen; opacity:.08;
+  mask-image:linear-gradient(transparent,#000 40%,transparent 90%);
+}
+html[data-design=ink] .landscape-title { position:absolute; top:52px; right:64px; writing-mode:vertical-rl; color:#d7d3c5; font:26px/1.8 "SimSun","Songti SC",serif; letter-spacing:.28em; }
+html[data-design=ink] .landscape-seal { position:absolute; top:142px; right:72px; display:grid; place-items:center; width:28px; height:30px; border:1px solid #b5766199; background:#a8564212; color:var(--seal); font:12px/1 var(--book); }
 html[data-design=ink] #awards { display:grid; grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr); gap:64px; padding-top:32px; }
 html[data-design=ink] #awards .section-heading { align-self:start; margin-bottom:0; }
 html[data-design=ink] #awards h2 { max-width:330px; }
@@ -519,7 +539,7 @@ html[data-design=ink] .award-card h3 { font-weight:500; font-size:18px; line-hei
 html[data-design=ink] .award-card p { max-width:470px; line-height:1.7; }
 html[data-design=ink] .award-card--featured { background:none; }
 html[data-design=ink] .about-section { padding-top:112px; padding-bottom:88px; gap:64px; }
-html[data-design=ink] .about-intro h2 { font-weight:500; font-size:clamp(36px,3.8vw,50px); max-width:360px; }
+html[data-design=ink] .about-intro h2 { font-weight:400; font-size:clamp(36px,3.8vw,50px); max-width:360px; }
 html[data-design=ink] .experience-list li { padding:26px 0 30px; border-top:1px solid var(--line); }
 html[data-design=ink] .experience-entry { padding:0; }
 html[data-design=ink] .experience-entry::before,html[data-design=ink] .experience-entry::after { display:none; }
@@ -531,7 +551,7 @@ html[data-design=ink] .contact-section .contact-frame { display:block; position:
 html[data-design=ink] .contact-frame img { position:absolute; width:100%; height:100%; object-fit:cover; object-position:50% 42%; filter:saturate(.45) brightness(.8); transform:scale(1.08); }
 html[data-design=ink] .contact-frame::after { content:""; position:absolute; inset:0; background:linear-gradient(135deg,#9bb6c018,transparent 55%,#10171d33); pointer-events:none; }
 html[data-design=ink] .contact-section .eyebrow { grid-column:1; grid-row:2; margin:8px 0 20px; font-size:10px; }
-html[data-design=ink] .contact-section h2 { grid-row:2; font-size:clamp(40px,3.8vw,54px); font-weight:500; text-wrap:balance; }
+html[data-design=ink] .contact-section h2 { grid-row:2; font-size:clamp(40px,3.8vw,54px); font-weight:400; text-wrap:balance; }
 html[data-design=ink] .contact-section .contact-location { grid-column:1; grid-row:3; align-content:start; margin-top:30px; font-size:11px; }
 html[data-design=ink] .contact-section>div { grid-row:3; flex-direction:column; justify-content:flex-start; margin-top:30px; gap:24px; }
 html[data-design=ink] .contact-section>div>p { font-size:13px; max-width:400px; }
@@ -561,10 +581,12 @@ html[data-design=ink] footer { padding-block:28px; border-color:#31383c; }
 }
 @media(max-width:650px) {
   html[data-design=ink] .hero { padding-top:48px; padding-bottom:56px; }
-  html[data-design=ink] .hero::before { opacity:1; }
+  html[data-design=ink] .hero::before { opacity:1; background-size:180px 180px,auto,auto; }
   html[data-design=ink] .hero::after { background-size:auto 180px; opacity:.13; mask-image:linear-gradient(transparent 80%,#000); }
-  html[data-design=ink] .hero-image picture { border-radius:6px; }
-  html[data-design=ink] .hero-image img { height:auto; object-fit:contain; border-radius:6px; }
+  html[data-design=ink] .hero h1 { font-size:clamp(34px,10vw,60px); }
+  html[data-design=ink] .hero-image picture { padding:7px; border-radius:3px; }
+  html[data-design=ink] .hero-image img { height:auto; object-fit:contain; border-radius:1px; }
+  html[data-design=ink] .chapter-seal { flex-basis:24px; width:24px; height:27px; font-size:15px; }
   html[data-design=ink] .now-card { padding:24px 20px; }
   html[data-design=ink] #research { margin-top:64px; padding:32px 0; background:transparent; }
   html[data-design=ink] #research .publication h3 { font-size:22px; }
@@ -578,8 +600,11 @@ html[data-design=ink] footer { padding-block:28px; border-color:#31383c; }
   html[data-design=ink] .featured-grid .project-card:not(.project-spotlight) { padding:26px 0 28px; }
   html[data-design=ink] .featured-grid .project-card:not(.project-spotlight) h3 { font-size:25px; margin-top:18px; }
   html[data-design=ink] .featured-grid .project-card:not(.project-spotlight) .project-actions { gap:20px; padding-top:12px; }
-  html[data-design=ink] .ink-interlude { height:110px; margin-top:28px; }
-  html[data-design=ink] .ink-interlude::before { background-size:auto 160px; opacity:.14; }
+  html[data-design=ink] .ink-interlude { height:170px; margin:32px 0 12px; }
+  html[data-design=ink] .ink-interlude::before { background-size:auto 220px; background-position:60% 65%; opacity:.24; }
+  html[data-design=ink] .ink-interlude::after { background-size:auto 220px; }
+  html[data-design=ink] .landscape-title { top:30px; right:24px; font-size:21px; }
+  html[data-design=ink] .landscape-seal { top:104px; right:30px; width:24px; height:26px; font-size:10px; }
   html[data-design=ink] #awards { grid-template-columns:1fr; gap:28px; padding-top:24px; }
   html[data-design=ink] .award-card { grid-template-columns:1fr; padding-block:22px; }
   html[data-design=ink] .award-card .small-label,html[data-design=ink] .award-card h3,html[data-design=ink] .award-card p { grid-column:1; grid-row:auto; }
@@ -607,7 +632,7 @@ html[data-design=ink] footer { padding-block:28px; border-color:#31383c; }
   html[data-design=ink] body { background:white; }
   html[data-design=ink] main *,html[data-design=ink] footer * { color:#111!important; background:transparent!important; border-color:#aaa!important; }
   html[data-design=ink] .hero::before,html[data-design=ink] .contact-section::before,html[data-design=ink] .case-hero::before { display:none; }
-  html[data-design=ink] .hero::after,html[data-design=ink] .ink-interlude { display:none; }
+  html[data-design=ink] .hero::after,html[data-design=ink] .ink-interlude,html[data-design=ink] .chapter-seal { display:none; }
   html[data-design=ink] .hero,html[data-design=ink] .section { padding:20px 0; }
   html[data-design=ink] #research { margin:20px 0; padding:15px; background:#fff; color:#111; }
   html[data-design=ink] .featured-grid .project-card { display:block; padding:15px 0; }

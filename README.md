@@ -38,7 +38,7 @@ Current-project limitations remain available in native expandable sections. Feat
 
 The default design gives PatientFlow and Inkline larger visual sections, with four quieter project summaries between them. The summaries become a single column on mobile. Honors and experience use aligned date and description columns, inspired by film credits. A wide decorative crop of the existing seaside illustration introduces the closing contact section. No movie stills or additional image downloads are used.
 
-The mobile hero preserves the complete portrait illustration, including the brass nameplate. Low-contrast white-ink landscape accents appear behind the hero and in a short transition between projects and honors. The PhD contact section separates research interests, expected M.S. completion in March 2028, and links to GitHub and the publication.
+The mobile hero preserves the complete portrait illustration, including the brass nameplate. The ink theme pairs paper-colored serif headings with readable sans-serif body text, small decorative chapter seals, and restrained vermilion accents. Low-contrast white-ink landscape layers appear behind the hero and between projects and honors, with a lightweight SVG paper texture. The PhD contact section separates research interests, expected M.S. completion in March 2028, and links to GitHub and the publication.
 
 Five engineering projects retain original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. The default design shows only PatientFlow's diagram; alternative themes retain all five. These illustrate implementation structure, not measured results or product screenshots, and include accessible descriptions.
 
