@@ -16,6 +16,12 @@ Checked on 2026-10-09. Star counts are snapshots, not a quality guarantee.
 - Reference collection: https://github.com/abhisheknaiidu/awesome-github-profile-readme (31,295 stars; CC0-1.0).
 - Uses the collection's minimal profile pattern: introduction, selected work, skills, research, and contact links. Biography and project descriptions are original, based on existing verified portfolio content. No contributor's biography or artwork is copied.
 
+## Seaside hero images (2026-11-06)
+
+- `assets/hero-seaside.jpg` and `assets/hero-seaside-portrait.jpg` are AI-generated illustrative study scenes, created from the user's composition instructions and original J.Y. nameplate reference.
+- The depicted CS:APP third-edition cover uses the [authors' official cover image](https://csapp.cs.cmu.edu/3e/images/csapp3e-cover.jpg) as a visual reference; see the [book website](https://csapp.cs.cmu.edu/). The cover artwork is not original portfolio artwork.
+- The images illustrate a study setting and are not documentary photographs of the author's home or workplace.
+
 ## Simplefolio license
 
 MIT License
