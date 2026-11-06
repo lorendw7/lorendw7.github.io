@@ -11,7 +11,7 @@ A static, English-language website with no build step, runtime dependencies, ext
 - `ink.css`: default Night / Ink design with cool blue-gray surfaces, rounded controls, responsive project rows, an experience timeline, print and reduced-motion support.
 - `styles.css` and `simplefolio.css`: shared layout and retained alternative themes. Both still contain active shared styles.
 - `main.js`: project filters, mobile navigation, history and section tracking.
-- `navigation.js` and `project-notes.js`: navigation between the homepage and project notes.
+- `navigation.js` and `project-notes.js`: navigation between the homepage and project notes, with a decorative reading-progress indicator that follows layout changes.
 - `assets/`: illustrations, portrait and responsive project screenshots. See [asset provenance and licenses](THIRD_PARTY_NOTICES.md).
 - `tests/`: browser checks for interaction and project navigation.
 

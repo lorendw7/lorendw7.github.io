@@ -34,4 +34,29 @@
   // Refresh before activation as a safeguard when another script changes the URL.
   for (const event of ['click', 'auxclick', 'contextmenu']) document.addEventListener(event, syncLinks, {capture:true});
   syncLinks();
+
+  // A decorative reading indicator follows content height, including disclosures.
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const progress = document.createElement('span');
+    progress.className = 'reading-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    header.append(progress);
+    let frame = 0;
+    function updateProgress() {
+      frame = 0;
+      const range = document.documentElement.scrollHeight - window.innerHeight;
+      const fraction = range > 0 ? Math.min(1, Math.max(0, window.scrollY / range)) : 0;
+      progress.style.transform = `scaleX(${fraction})`;
+    }
+    function scheduleProgress() {
+      if (!frame) frame = requestAnimationFrame(updateProgress);
+    }
+    for (const event of ['scroll', 'resize', 'pageshow', 'portfolio:navigation']) {
+      window.addEventListener(event, scheduleProgress, {passive:true});
+    }
+    document.addEventListener('toggle', scheduleProgress, true);
+    if ('ResizeObserver' in window) new ResizeObserver(scheduleProgress).observe(document.body);
+    scheduleProgress();
+  }
 })();

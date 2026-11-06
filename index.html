@@ -19,8 +19,8 @@
 <link rel="icon" href="assets/favicon.svg?v=monochrome-20261009" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css?v=20261106-cinema">
 <link rel="stylesheet" href="simplefolio.css?v=20261023-award">
-<link rel="stylesheet" href="ink.css?v=20261106-mobile">
-<script src="navigation.js?v=20261106-night" defer></script>
+<link rel="stylesheet" href="ink.css?v=20261106-detail">
+<script src="navigation.js?v=20261106-detail" defer></script>
 <script src="main.js?v=20261106-night" defer>
 </script>
 </head>
@@ -146,7 +146,12 @@
 <h3>Per-Relation Reliability of LLM-Based Knowledge Graph Extraction: A Verification-First Study on Scientific Abstracts</h3>
 <p class="authors">
 <strong>Shandong He</strong>, Kenji Ono</p>
-<p>A relation-level study of extraction reliability across 200 scientific abstracts, combining 360 human judgments, two LLM judges, and self-consistency analysis.</p>
+<p>A relation-level study of extraction reliability, evaluated through human judgments, model judgments, and self-consistency analysis.</p>
+<dl class="research-metrics" aria-label="Study scope">
+<div><dt>Scientific abstracts</dt><dd>200</dd></div>
+<div><dt>Human judgments</dt><dd>360</dd></div>
+<div><dt>LLM judges</dt><dd>2</dd></div>
+</dl>
 <div class="publication-footer">
 <a class="text-link" href="https://github.com/lorendw7/not-all-relations-are-equally-reliable" target="_blank" rel="noopener noreferrer">
 <span>Data &amp; reproduction code ↗</span>
@@ -186,7 +191,7 @@
 <p id="project-count" aria-live="polite">Showing 6 of 11 projects</p>
 <div class="project-grid featured-grid">
 <article class="project-card systems-card" data-category="systems" id="patientflow">
-<div class="project-top"><span>01 / BACKEND &amp; MICROSERVICES</span><span>↗</span></div>
+<div class="project-top"><span>01 / BACKEND &amp; MICROSERVICES</span><span class="source-badge">Public source</span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">PatientFlow Cloud</a></h3>
 <p>Healthcare microservices with JWT gateway authentication, gRPC calls, and Kafka-driven analytics.</p>
 <div class="tags"><span>Java</span><span>Spring Boot</span><span>gRPC / Kafka</span></div>
@@ -194,7 +199,7 @@
 <div class="project-actions"><a class="project-demo" href="project-notes.html#patientflow"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/PatientFlow-Cloud" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="life-preference">
-<div class="project-top"><span>02 / BACKEND APPLICATION</span><span>↗</span></div>
+<div class="project-top"><span>02 / BACKEND APPLICATION</span><span class="source-badge">Public source</span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Life Preference</a></h3>
 <p>A Heima Dianping course project covering merchant caching, shared-session login, and asynchronous coupon orders.</p>
 <div class="tags"><span>Spring Boot</span><span>Redis</span><span>MySQL</span></div>
@@ -202,7 +207,7 @@
 <div class="project-actions"><a class="project-demo" href="project-notes.html#life-preference"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Life-Preference" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="gitlet">
-<div class="project-top"><span>03 / VERSION CONTROL</span><span>2025</span></div>
+<div class="project-top"><span>03 / VERSION CONTROL</span><span class="source-badge">Local study · 2025</span></div>
 <h3><a class="project-link" href="project-notes.html#gitlet">Gitlet</a></h3>
 <p>A CS61B-based version-control study with persistent snapshots, staging, commits, and branches. Merge behavior has known limits; source is not public.</p>
 <div class="tags"><span>Java</span><span>Data structures</span><span>File persistence</span></div>
@@ -210,7 +215,7 @@
 <div class="project-actions"><a class="project-demo" href="project-notes.html#gitlet"><span>Implementation notes ↗</span></a></div>
 </article>
 <article class="project-card systems-card" data-category="systems" id="procmon">
-<div class="project-top"><span>04 / LINUX SYSTEMS</span><span>↗</span></div>
+<div class="project-top"><span>04 / LINUX SYSTEMS</span><span class="source-badge">Public source</span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Procmon" target="_blank" rel="noopener noreferrer">Procmon</a></h3>
 <p>A Linux process monitor in C: sample <code>/proc</code>, calculate CPU usage, and sort a live terminal view by CPU or memory.</p>
 <div class="tags"><span>C</span><span>Linux / procfs</span><span>POSIX</span></div>
@@ -218,7 +223,7 @@
 <div class="project-actions"><a class="project-demo" href="project-notes.html#procmon"><span>Implementation notes ↗</span></a><a class="project-demo secondary" href="https://github.com/lorendw7/Procmon" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
 </article>
 <article class="project-card apps-card" data-category="apps" id="agent-skills">
-<div class="project-top"><span>05 / FULL-STACK APPLICATION</span><span>↗</span></div>
+<div class="project-top"><span>05 / FULL-STACK APPLICATION</span><span class="source-badge">Public source</span></div>
 <h3><a class="project-link" href="https://github.com/lorendw7/Agent-Skills-Manager" target="_blank" rel="noopener noreferrer">Agent Skills Manager</a></h3>
 <p>Create, edit, and share Markdown agent skills through an authenticated dashboard and a public gallery.</p>
 <div class="tags"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div>
@@ -347,7 +352,7 @@
 <section class="skills-section" aria-label="Technical skills">
 <div>
 <span class=small-label>LANGUAGES</span>
-<ul class="skill-list"><li>Python</li><li>Go</li><li>Java</li><li>C/C++</li><li>JavaScript</li><li>TypeScript</li></ul>
+<ul class="skill-list"><li>Python</li><li>Go</li><li><a href="#patientflow">Java<span aria-hidden="true"> ↗</span></a></li><li>C/C++</li><li>JavaScript</li><li>TypeScript</li></ul>
 </div>
 <div>
 <span class=small-label>MODELS &amp; EXPERIMENTS</span>
@@ -355,12 +360,13 @@
 </div>
 <div>
 <span class=small-label>APPLICATIONS &amp; SYSTEMS</span>
-<ul class="skill-list"><li>Spring Boot</li><li>React</li><li>Vue</li><li>Redis</li><li>Docker</li><li>Linux</li></ul>
+<ul class="skill-list"><li><a href="#patientflow">Spring Boot<span aria-hidden="true"> ↗</span></a></li><li><a href="#inkline">React<span aria-hidden="true"> ↗</span></a></li><li>Vue</li><li><a href="#life-preference">Redis<span aria-hidden="true"> ↗</span></a></li><li>Docker</li><li><a href="#procmon">Linux<span aria-hidden="true"> ↗</span></a></li></ul>
 </div>
 </section>
 <section class="contact-section" id="contact">
 <p class="eyebrow">06 / CONTACT</p>
 <h2>Contact</h2>
+<p class="contact-location"><span aria-hidden="true">◷</span> Fukuoka, Japan <span class="contact-timezone">JST · UTC+9</span></p>
 <div>
 <p>Open to research collaboration in systems and reliable AI, and software engineering roles in Japan after March 2028 (expected graduation). CV available on request.</p>
 <a class="button primary" href="https://github.com/lorendw7" target="_blank" rel="noopener noreferrer">
