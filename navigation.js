@@ -49,15 +49,34 @@
     let pointerFrame = 0;
     let pointerX = 0;
     let pointerY = 0;
+    let lightX = 0;
+    let lightY = 0;
+    let trackingPointer = false;
+    let lastFrameTime = null;
     function hideAura() {
       cancelAnimationFrame(pointerFrame);
       pointerFrame = 0;
+      trackingPointer = false;
+      lastFrameTime = null;
       aura.classList.remove('is-visible');
     }
-    function paintAura() {
+    function paintAura(time) {
       pointerFrame = 0;
-      light.style.transform = `translate3d(${Math.round(pointerX) - 360}px, ${Math.round(pointerY) - 360}px, 0)`;
+      // Time-based easing feels consistent at different refresh rates. Settle
+      // without overshoot or a trailing animation loop after the mouse stops.
+      const elapsed = lastFrameTime === null ? 1000 / 60 : Math.min(time - lastFrameTime, 64);
+      const blend = 1 - Math.exp(-elapsed / 70);
+      lightX += (pointerX - lightX) * blend;
+      lightY += (pointerY - lightY) * blend;
+      const settled = Math.hypot(pointerX - lightX, pointerY - lightY) < .2;
+      if (settled) {
+        lightX = pointerX;
+        lightY = pointerY;
+      }
+      light.style.transform = `translate3d(${(lightX - 360).toFixed(2)}px, ${(lightY - 360).toFixed(2)}px, 0)`;
       aura.classList.add('is-visible');
+      lastFrameTime = settled ? null : time;
+      if (!settled) pointerFrame = requestAnimationFrame(paintAura);
     }
     document.addEventListener('pointermove', event => {
       if (!pointerEffects.matches || event.pointerType !== 'mouse') {
@@ -66,6 +85,12 @@
       }
       pointerX = event.clientX;
       pointerY = event.clientY;
+      // Re-enter at the mouse rather than flying in from an old position.
+      if (!trackingPointer) {
+        lightX = pointerX;
+        lightY = pointerY;
+        trackingPointer = true;
+      }
       if (!pointerFrame) pointerFrame = requestAnimationFrame(paintAura);
     }, {passive:true});
     document.addEventListener('pointerdown', event => {

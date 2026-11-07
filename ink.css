@@ -858,12 +858,12 @@ html[data-design=ink] .reading-progress { background:#8fa89c; }
   html[data-design=ink] .pointer-aura {
     display:block; position:fixed; inset:0; z-index:1000;
     overflow:hidden; contain:strict; pointer-events:none;
-    opacity:0; transition:opacity 200ms ease;
+    opacity:0; transition:opacity 280ms ease-out;
   }
   html[data-design=ink] .pointer-aura__light {
     display:block; position:absolute; top:0; left:0; width:720px; height:720px;
     pointer-events:none; border-radius:50%;
-    background:radial-gradient(circle,#a6c8b912 0%,#8cb5a509 32%,transparent 70%);
+    background:radial-gradient(circle,#a6c8b91c 0%,#9cbdaf12 22%,#8cb5a509 44%,#8cb5a503 62%,transparent 78%);
   }
   html[data-design=ink] .pointer-aura.is-visible { opacity:1; }
 }
