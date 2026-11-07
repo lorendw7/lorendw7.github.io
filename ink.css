@@ -838,14 +838,33 @@ html[data-design=ink] .learning-map li a { display:grid; grid-template-columns:2
 html[data-design=ink] .learning-map__number { padding:0; font-size:11px; }
 html[data-design=ink] .learning-log__bar { gap:12px 20px; }
 html[data-design=ink] .learning-log__footer { font-size:11px; }
-html[data-design=ink] .ink-interlude { height:180px; margin:56px 0 24px; background:none; }
-html[data-design=ink] .ink-interlude::before { opacity:.12; filter:grayscale(1); mix-blend-mode:normal; mask-image:radial-gradient(ellipse at center,#000,transparent 72%); }
+html[data-design=ink] .ink-interlude { height:180px; margin:32px 0 8px; background:none; }
+html[data-design=ink] .ink-interlude::before {
+  opacity:.64; filter:grayscale(.65); mix-blend-mode:normal;
+  background-size:cover; background-position:center 72%;
+  mask-image:linear-gradient(transparent,#000 24%,#000 70%,transparent),linear-gradient(90deg,transparent,#000 14%,#000 78%,transparent);
+  mask-composite:intersect;
+}
 html[data-design=ink] .landscape-title { top:36px; font-size:22px; color:#8c9894; font-family:"Songti SC","SimSun",serif; }
 html[data-design=ink] .landscape-seal { top:110px; }
 html[data-design=ink] .contact-section .contact-frame { display:none; }
-html[data-design=ink] .contact-section { border-top:1px solid var(--line); padding-top:44px; }
+html[data-design=ink] .contact-section { border-top:1px solid var(--line); padding-top:44px; margin-top:64px; }
+html[data-design=ink] .about-section { padding-top:88px; padding-bottom:64px; }
 html[data-design=ink] .case-hero::before,html[data-design=ink] .contact-section::before { background:none; }
 html[data-design=ink] .reading-progress { background:#8fa89c; }
+/* A quiet, card-local pool of light. The artwork and text never move. */
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  html[data-design=ink] .pointer-surface { position:relative; isolation:isolate; }
+  html[data-design=ink] .pointer-surface::after {
+    content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+    border-radius:inherit; opacity:0; transition:opacity 180ms ease;
+    background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),#afcbbf12,transparent 100%);
+  }
+  html[data-design=ink] .learning-log.pointer-surface::after {
+    background:radial-gradient(340px circle at var(--pointer-x,50%) var(--pointer-y,50%),#95cdb91c,transparent 100%);
+  }
+  html[data-design=ink] .pointer-surface.is-pointer-active::after { opacity:1; }
+}
 @media(hover:hover) {
   html[data-design=ink] :is(.featured-grid,.archive-grid) .project-card:hover { background:#192225; border-color:#61746d; transform:none; }
   html[data-design=ink] .now-card:hover { border-color:#61746d; }
@@ -869,10 +888,12 @@ html[data-design=ink] .reading-progress { background:#8fa89c; }
   html[data-design=ink] .learning-map li a { font-size:12px; gap:8px; padding-inline:4px; }
   html[data-design=ink] .learning-log__label { font-size:11px; }
   html[data-design=ink] .learning-log__footer { font-size:10px; }
-  html[data-design=ink] .ink-interlude { height:140px; margin-block:32px 16px; }
+  html[data-design=ink] .ink-interlude { height:132px; margin-block:24px 0; }
+  html[data-design=ink] .ink-interlude::before { background-size:auto 200px; background-position:40% 76%; }
   html[data-design=ink] .landscape-title { top:20px; font-size:18px; }
   html[data-design=ink] .landscape-seal { top:84px; }
-  html[data-design=ink] .contact-section { padding-top:32px; }
+  html[data-design=ink] .about-section { padding-top:64px; padding-bottom:44px; }
+  html[data-design=ink] .contact-section { padding-top:32px; margin-top:40px; }
 }
 @media print {
   html[data-design=ink] :is(.site-header,main,footer) { width:100%; }

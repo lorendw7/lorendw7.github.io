@@ -48,6 +48,51 @@
     }
   }
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  // Only mouse-capable, motion-friendly devices get a local highlight.
+  // One frame is scheduled per pointer update; nothing runs while idle.
+  if (root.dataset.design === 'ink') {
+    const pointerEffects = matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const surfaces = [...document.querySelectorAll('.now-card, .project-card, .learning-log')];
+    let activeSurface = null;
+    let pointerFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    function clearPointerLight() {
+      cancelAnimationFrame(pointerFrame);
+      pointerFrame = 0;
+      activeSurface?.classList.remove('is-pointer-active');
+      activeSurface = null;
+    }
+    function paintPointerLight() {
+      pointerFrame = 0;
+      if (!activeSurface) return;
+      const bounds = activeSurface.getBoundingClientRect();
+      activeSurface.style.setProperty('--pointer-x', `${Math.round(pointerX - bounds.left)}px`);
+      activeSurface.style.setProperty('--pointer-y', `${Math.round(pointerY - bounds.top)}px`);
+      activeSurface.classList.add('is-pointer-active');
+    }
+    surfaces.forEach(surface => {
+      surface.classList.add('pointer-surface');
+      surface.addEventListener('pointermove', event => {
+        if (!pointerEffects.matches || event.pointerType !== 'mouse') return;
+        if (activeSurface !== surface) {
+          clearPointerLight();
+          activeSurface = surface;
+        }
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        if (!pointerFrame) pointerFrame = requestAnimationFrame(paintPointerLight);
+      }, {passive:true});
+      surface.addEventListener('pointerleave', clearPointerLight);
+      surface.addEventListener('pointercancel', clearPointerLight);
+    });
+    pointerEffects.addEventListener('change', clearPointerLight);
+    window.addEventListener('blur', clearPointerLight);
+    window.addEventListener('scroll', clearPointerLight, {passive:true});
+    window.addEventListener('resize', clearPointerLight, {passive:true});
+    document.addEventListener('visibilitychange', clearPointerLight);
+    document.addEventListener('keydown', clearPointerLight);
+  }
   function focusTarget(target) {
     const destination = target.matches('main') ? target : target.querySelector('h1, h2, h3') || target;
     if (!destination.hasAttribute('tabindex')) destination.setAttribute('tabindex', '-1');
