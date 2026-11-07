@@ -17,12 +17,20 @@ Source and asset attributions for this portfolio.
 
 ## Current design
 
-The current Ink / Cinema visual design combines calligraphic page margins, cool cinematic surfaces, and restrained terminal typography while retaining the shared semantic structure and interaction behavior. `simplefolio.css` remains available as an archived layout.
+The current Ink / Cinema visual design combines quiet charcoal surfaces, local ink accents, and restrained terminal typography while retaining the shared semantic structure and interaction behavior. Fixed decorative page margins have been removed. `simplefolio.css` remains available as an archived layout.
+
+## Typography and name mark (2026-11-07)
+
+- Inter, by Rasmus Andersson: downloaded from https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1 and subset for Latin, punctuation, arrows, and symbols. Used as a locally hosted variable web font. License: `assets/fonts/Inter-OFL.txt`.
+- IBM Plex Mono, by IBM: regular and medium files obtained through the official Google Fonts CSS endpoint, converted from TTF to WOFF2 without changing glyphs. Source: https://github.com/IBM/plex. License: `assets/fonts/IBM-Plex-OFL.txt`.
+- `assets/he-shandong-shoujin.svg` is an original, hand-authored three-character vector name mark reading “何单东”, inspired by Slender Gold calligraphy. It is not a redistributed commercial font or a historical calligraphy reproduction. The mark is used only for the author's Chinese name.
+- Reading hierarchy and restrained interaction feedback reference https://brittanychiang.com/, https://paco.me/, and https://mitchellh.com/. No source code or visual assets from those sites are included.
+- The cybersecurity learning panel links to the official pwn.college foundations roadmap at https://pwn.college/dojos. Listed courses describe the curriculum, not completed modules or a verified progress percentage.
 
 ## Ink / Cinema textures (2026-11-07)
 
-- `assets/ink-calligraphy-margin.jpg`: original AI-generated dry-brush ink on cool-gray paper, used only in decorative desktop margins.
-- `assets/ink-nocturne-landscape.jpg`: original AI-generated misty mountain panorama on charcoal, used for chapter transitions and the mobile hero background.
+- `assets/ink-calligraphy-margin.jpg`: original AI-generated dry-brush ink on cool-gray paper, now used as one low-opacity accent in the hero corner.
+- `assets/ink-nocturne-landscape.jpg`: original AI-generated misty mountain panorama on charcoal, now used for one subdued chapter transition.
 - Created with the built-in image generation tool. Neither asset contains actual calligraphy, code, film imagery, or a historical artist's work. Prompts are recorded in `assets/ink-cinema-prompts.md`.
 - The seaside hero images and their J.Y. nameplate are unchanged; the hero uses the complete image at its natural aspect ratio on desktop and mobile.
 

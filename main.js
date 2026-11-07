@@ -124,7 +124,11 @@
     if (url.href !== location.href) history.pushState(null, '', url);
     window.dispatchEvent(new Event('portfolio:navigation'));
     setMenu(false);
-    target.scrollIntoView({block:'start', behavior:reducedMotion.matches ? 'instant' : 'smooth'});
+    // Long animated trips across the portfolio can be disorienting. Animate
+    // only nearby destinations, and always honour the reduced-motion setting.
+    const distance = Math.abs(target.getBoundingClientRect().top - header.getBoundingClientRect().bottom);
+    const animate = !reducedMotion.matches && distance < window.innerHeight * .75;
+    target.scrollIntoView({block:'start', behavior:animate ? 'smooth' : 'instant'});
     focusTarget(target);
     scheduleScrollUpdate();
   }));

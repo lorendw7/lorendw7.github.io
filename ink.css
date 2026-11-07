@@ -1,13 +1,17 @@
-/* Ink / Cinema. Cool charcoal, paper margins, and calligraphic dry brush. */
+/* Ink / Cinema. Quiet charcoal, local ink accents, and readable typography. */
+@font-face { font-family:Inter; src:url("assets/fonts/InterVariable.woff2") format("woff2"); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/fonts/IBMPlexMono-Regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/fonts/IBMPlexMono-Medium.woff2") format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
 html[data-design=ink] {
   --paper:#111719; --white:#1b2326; --ink:#ece9e0; --muted:#adb5b5;
   --line:#3b4649; --accent:#bfceca; --green:#bfceca; --max:1280px;
-  --gutter:clamp(0px,calc(25vw - 250px),112px);
+  --gutter:0px;
   --seal:#ca9380; --paper-light:#e9e2d5; --book:Georgia,"Songti SC","SimSun",serif;
   --surface:#191d20; --surface-raised:#22292e; --cool-muted:#aab3ba; --brass:#d0b68a;
   --radius-sm:10px; --radius-md:16px; --radius-lg:20px; --radius-pill:999px;
   --frame-inset:32px; --frame-inset-compact:24px;
-  --mono:"Cascadia Code",Consolas,"SFMono-Regular",monospace;
+  --mono:"IBM Plex Mono","Cascadia Code",Consolas,monospace;
+  --sans:Inter,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
   color-scheme:dark; background:var(--paper); color:var(--ink); scroll-padding-top:100px;
   font-family:Inter,"Segoe UI",Arial,sans-serif;
 }
@@ -628,8 +632,10 @@ html[data-design=ink] footer { padding-block:28px; border-color:#31383c; }
   html[data-design=ink] *,html[data-design=ink] *::before,html[data-design=ink] *::after { transition:none!important; animation:none!important; }
 }
 
-/* Paper lives outside the reading column; ink never covers links or the photograph. */
-.ink-margins,.hero-caption { display:none; }
+/* Decoration stays local to the hero and one chapter break. */
+.hero-caption { display:none; }
+.hero-signature { margin:0 0 24px; }
+.hero-signature img { width:150px; height:auto; }
 .hero>.hero-note { grid-column:1 / -1; width:100%; }
 .hero-image-link { display:block; }
 .terminal-prompt { font-family:var(--mono,monospace); color:var(--accent); }
@@ -659,25 +665,6 @@ html[data-design=ink] :is(.site-header,main,footer) {
 html[data-design=ink] main { position:relative; }
 html[data-design=ink] .site-header { background:rgba(17,23,25,.96); padding-inline:56px; }
 html[data-design=ink] footer { position:relative; }
-html[data-design=ink] .ink-margins {
-  display:block; position:fixed; inset:0; z-index:-1;
-  overflow:hidden; pointer-events:none; user-select:none;
-  background:var(--paper); contain:strict;
-}
-html[data-design=ink] .ink-margin {
-  position:absolute; inset-block:0; width:max(var(--gutter),calc((100% - var(--max)) / 2));
-  background-color:#c4c8c6;
-  background-image:linear-gradient(180deg,#11171944,transparent 24%,#11171912 70%,#11171977),url("assets/ink-calligraphy-margin.jpg");
-  background-repeat:no-repeat;
-  background-size:100% 100%,auto 110%;
-  background-position:center,48% center;
-}
-html[data-design=ink] .ink-margin::after {
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(90deg,#11171933,transparent 45%,#111719a6 90%,#111719);
-}
-html[data-design=ink] .ink-margin--left { left:0; }
-html[data-design=ink] .ink-margin--right { right:0; transform:rotate(180deg); background-position:center,72% center; }
 html[data-design=ink] .hero::before {
   background:url("assets/paper-grain.svg") repeat,radial-gradient(ellipse at 90% 15%,#63828b18,transparent 65%);
   background-size:240px 240px,auto;
@@ -745,8 +732,6 @@ html[data-design=ink] .ink-interlude::before {
 html[data-design=ink] .ink-interlude::after { display:none; }
 html[data-design=ink] .landscape-title { font-family:"KaiTi","STKaiti","SimSun",serif; }
 html[data-design=ink] .case-hero::before { background:radial-gradient(ellipse at top right,#597d8830,transparent 65%); }
-html[data-design=ink] .ink-margin { opacity:.62; }
-html[data-design=ink] .ink-margin::after { background:linear-gradient(90deg,#11171926,transparent 25%,#1117198c 60%,#111719); }
 html[data-design=ink] .contact-section .contact-frame { height:clamp(190px,20vw,260px); border-radius:var(--radius-lg); background:var(--paper); }
 /* Keep navigation highlights rounded without doubling the card's divider. */
 html[data-design=ink] .project-card:focus-within { border-color:transparent; outline:2px solid var(--accent); outline-offset:5px; }
@@ -770,9 +755,6 @@ html[data-design=ink] .contact-frame::after { background:linear-gradient(var(--p
 @media(min-width:651px) and (max-width:900px) {
   html[data-design=ink] .hero { padding-block:56px 40px; gap:32px; }
   html[data-design=ink] .hero-image { max-width:660px; }
-}
-@media(max-width:1000px) {
-  html[data-design=ink] .ink-margins { display:none; }
 }
 @media(max-width:650px) {
   html[data-design=ink] .site-header { padding-inline:22px; }
@@ -804,9 +786,96 @@ html[data-design=ink] .contact-frame::after { background:linear-gradient(var(--p
     background-size:auto 230px; filter:none; mix-blend-mode:normal; opacity:.7;
   }
 }
+/* Reading-first refinement. Keep the image and name mark independent of decoration. */
+html[data-design=ink] { --line:#303c3f; --cool-muted:#b6bfc0; scroll-behavior:auto; font-family:var(--sans); }
+html[data-design=ink] .hero::before { background:none; }
+html[data-design=ink] .hero::after {
+  inset:0 auto auto 0; width:min(420px,55%); height:280px;
+  background:url("assets/ink-calligraphy-margin.jpg") no-repeat 45% 38% / cover;
+  opacity:.09; filter:grayscale(1);
+  mask-image:radial-gradient(ellipse closest-side at center,#000 10%,transparent 100%);
+}
+html[data-design=ink] .hero-copy { animation:none; }
+html[data-design=ink] .hero h1 { font-family:var(--sans); font-weight:550; font-size:clamp(44px,4.8vw,68px); letter-spacing:-.055em; }
+html[data-design=ink] :is(.section-heading h2,.about-intro h2,.contact-section h2,.case-hero h1) { font-family:var(--sans); font-weight:500; line-height:1.15; letter-spacing:-.045em; }
+html[data-design=ink] #research .publication h3 { font-family:var(--sans); font-weight:450; font-size:clamp(24px,2.4vw,32px); line-height:1.45; }
+html[data-design=ink] :is(.hero-intro,.section-intro,.about-intro>p:not(.eyebrow),.case-hero>p:not(.eyebrow)) { font-size:16px; line-height:1.75; color:var(--cool-muted); }
+html[data-design=ink] .project-card p,html[data-design=ink] .now-card>p,
+html[data-design=ink] .case-facts p,html[data-design=ink] .experience-entry p,
+html[data-design=ink] .contact-section>div>p { font-size:16px; line-height:1.75; color:var(--cool-muted); }
+html[data-design=ink] :is(.project-top,.now-card__top,.tags,.text-link,.hero .eyebrow,.hero-note .small-label,.now-card__facts,.scope-details summary,.scope-details p,.case-links a,.project-demo,.filters button,.award-card p,.phd-facts dt,#project-count) { font-size:12px; line-height:1.7; }
+html[data-design=ink] .hero-current a { font-size:12px; }
+html[data-design=ink] :is(.status-pill,.learning-log__status,.award-card .small-label) { font-size:11px; }
+html[data-design=ink] :is(.preview-address,.preview-caption,.hero-caption) { font-size:12px; }
+html[data-design=ink] nav { font-size:13px; }
+html[data-design=ink] :is(.now-card,#research) { background:#182023; border:1px solid var(--line); }
+html[data-design=ink] .featured-grid .project-card,html[data-design=ink] .archive-grid .project-card { background:#141c1e; border:1px solid var(--line); transition:background-color 160ms ease,border-color 160ms ease; }
+html[data-design=ink] .featured-grid { gap:28px; }
+html[data-design=ink] .archive-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:20px; }
+html[data-design=ink] .featured-grid .project-spotlight { padding-block:40px; }
+html[data-design=ink] .featured-grid .project-spotlight--reverse { margin-top:0; }
+html[data-design=ink] .project-card:focus-within { border-color:var(--line); outline:none; }
+html[data-design=ink] .project-card:has(:focus-visible) { outline:2px solid #a5c5b9; outline-offset:4px; }
+html[data-design=ink] :is(.now-card,.project-card,.case-study) { scroll-margin-top:24px; }
+html[data-design=ink] :is(.project-demo,.case-links a,.filters button) { min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:10px; }
+html[data-design=ink] .featured-grid .project-card:not(.project-spotlight) .project-demo { padding-inline:0; }
+html[data-design=ink] :is(a,button,summary) { -webkit-tap-highlight-color:#a5c5b926; }
+html[data-design=ink] :is(a,button,summary):focus-visible { outline:2px solid #a5c5b9; outline-offset:4px; }
+html[data-design=ink] .filters button[aria-pressed=true] { background:#b6c9c019; color:#e4ede8; border-color:#91afa2; }
+html[data-design=ink] .scope-details summary { padding-right:12px; }
+html[data-design=ink] :is(.scope-details summary,.workbench-more summary,.more-projects summary) { transition:background-color 160ms ease,color 160ms ease; }
+html[data-design=ink] .scope-details[open] { padding-bottom:12px; }
+html[data-design=ink] .learning-log { background:#131e20; }
+html[data-design=ink] .learning-log__body { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); }
+html[data-design=ink] .learning-log h3 { font-family:var(--sans); font-weight:500; font-size:clamp(26px,2.4vw,32px); letter-spacing:-.035em; line-height:1.4; }
+html[data-design=ink] .learning-platform { color:#b4d1c3; font:400 18px/1.8 var(--mono); letter-spacing:-.02em; }
+html[data-design=ink] .learning-log p { font-family:var(--sans); font-size:15px; }
+html[data-design=ink] .learning-log__actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin-top:24px; }
+html[data-design=ink] .learning-log__link { margin:0; font-size:12px; }
+html[data-design=ink] .learning-map h4 { font-size:11px; line-height:1.7; color:#acbdb7; }
+html[data-design=ink] .learning-map li { display:block; padding:0; }
+html[data-design=ink] .learning-map li a { display:grid; grid-template-columns:24px minmax(0,1fr) 16px; gap:12px; align-items:center; min-height:64px; padding:14px 10px; border-radius:10px; font:400 13px/1.7 var(--mono); color:#d1deda; transition:background-color 160ms ease,color 160ms ease; }
+html[data-design=ink] .learning-map__number { padding:0; font-size:11px; }
+html[data-design=ink] .learning-log__bar { gap:12px 20px; }
+html[data-design=ink] .learning-log__footer { font-size:11px; }
+html[data-design=ink] .ink-interlude { height:180px; margin:56px 0 24px; background:none; }
+html[data-design=ink] .ink-interlude::before { opacity:.12; filter:grayscale(1); mix-blend-mode:normal; mask-image:radial-gradient(ellipse at center,#000,transparent 72%); }
+html[data-design=ink] .landscape-title { top:36px; font-size:22px; color:#8c9894; font-family:"Songti SC","SimSun",serif; }
+html[data-design=ink] .landscape-seal { top:110px; }
+html[data-design=ink] .contact-section .contact-frame { display:none; }
+html[data-design=ink] .contact-section { border-top:1px solid var(--line); padding-top:44px; }
+html[data-design=ink] .case-hero::before,html[data-design=ink] .contact-section::before { background:none; }
+html[data-design=ink] .reading-progress { background:#8fa89c; }
+@media(hover:hover) {
+  html[data-design=ink] :is(.featured-grid,.archive-grid) .project-card:hover { background:#192225; border-color:#61746d; transform:none; }
+  html[data-design=ink] .now-card:hover { border-color:#61746d; }
+  html[data-design=ink] .learning-map li a:hover { background:#a8c9bc0c; color:#e5efe9; }
+  html[data-design=ink] :is(.scope-details summary,.workbench-more summary,.more-projects summary):hover { background:#a8c9bc08; color:#e5efe9; }
+  html[data-design=ink] :is(.text-link,.project-demo.secondary,.hero-caption a):hover { color:#dce9e2; text-decoration:underline; text-underline-offset:5px; }
+  html[data-design=ink] nav a:hover { color:#e5efe9; background:#a8c9bc0c; }
+}
+@media(max-width:900px) {
+  html[data-design=ink] .learning-log__body { grid-template-columns:minmax(0,1fr); }
+  html[data-design=ink] .learning-map { padding-left:0; border-left:0; }
+}
+@media(max-width:650px) {
+  html[data-design=ink] .hero h1 { font-size:clamp(40px,11vw,58px); }
+  html[data-design=ink] .hero-signature img { width:132px; }
+  html[data-design=ink] .hero-signature { margin-bottom:20px; }
+  html[data-design=ink] :is(.hero-intro,.section-intro,.about-intro>p:not(.eyebrow),.case-hero>p:not(.eyebrow)) { font-size:15px; }
+  html[data-design=ink] .project-card p,html[data-design=ink] .now-card>p,html[data-design=ink] .case-facts p,html[data-design=ink] .experience-entry p,html[data-design=ink] .contact-section>div>p { font-size:15px; }
+  html[data-design=ink] .now-card .project-demo { font-size:12px; padding:10px 14px; }
+  html[data-design=ink] .featured-grid .project-spotlight { padding-block:30px; }
+  html[data-design=ink] .learning-map li a { font-size:12px; gap:8px; padding-inline:4px; }
+  html[data-design=ink] .learning-log__label { font-size:11px; }
+  html[data-design=ink] .learning-log__footer { font-size:10px; }
+  html[data-design=ink] .ink-interlude { height:140px; margin-block:32px 16px; }
+  html[data-design=ink] .landscape-title { top:20px; font-size:18px; }
+  html[data-design=ink] .landscape-seal { top:84px; }
+  html[data-design=ink] .contact-section { padding-top:32px; }
+}
 @media print {
   html[data-design=ink] :is(.site-header,main,footer) { width:100%; }
-  html[data-design=ink] .ink-margins { display:none; }
   html[data-design=ink] .reading-progress { display:none; }
   html[data-design=ink] { color-scheme:light; --paper:#fff; --ink:#111; --muted:#555; --line:#aaa; }
   html[data-design=ink] body { background:white; }
