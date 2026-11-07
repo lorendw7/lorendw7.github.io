@@ -852,18 +852,20 @@ html[data-design=ink] .contact-section { border-top:1px solid var(--line); paddi
 html[data-design=ink] .about-section { padding-top:88px; padding-bottom:64px; }
 html[data-design=ink] .case-hero::before,html[data-design=ink] .contact-section::before { background:none; }
 html[data-design=ink] .reading-progress { background:#8fa89c; }
-/* A quiet, card-local pool of light. The artwork and text never move. */
-@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
-  html[data-design=ink] .pointer-surface { position:relative; isolation:isolate; }
-  html[data-design=ink] .pointer-surface::after {
-    content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
-    border-radius:inherit; opacity:0; transition:opacity 180ms ease;
-    background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),#afcbbf12,transparent 100%);
+/* A single soft pool of light crosses sections without clipping at cards. */
+.pointer-aura { display:none; }
+@media screen and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  html[data-design=ink] .pointer-aura {
+    display:block; position:fixed; inset:0; z-index:1000;
+    overflow:hidden; contain:strict; pointer-events:none;
+    opacity:0; transition:opacity 200ms ease;
   }
-  html[data-design=ink] .learning-log.pointer-surface::after {
-    background:radial-gradient(340px circle at var(--pointer-x,50%) var(--pointer-y,50%),#95cdb91c,transparent 100%);
+  html[data-design=ink] .pointer-aura__light {
+    display:block; position:absolute; top:0; left:0; width:720px; height:720px;
+    pointer-events:none; border-radius:50%;
+    background:radial-gradient(circle,#a6c8b912 0%,#8cb5a509 32%,transparent 70%);
   }
-  html[data-design=ink] .pointer-surface.is-pointer-active::after { opacity:1; }
+  html[data-design=ink] .pointer-aura.is-visible { opacity:1; }
 }
 @media(hover:hover) {
   html[data-design=ink] :is(.featured-grid,.archive-grid) .project-card:hover { background:#192225; border-color:#61746d; transform:none; }

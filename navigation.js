@@ -35,6 +35,52 @@
   for (const event of ['click', 'auxclick', 'contextmenu']) document.addEventListener(event, syncLinks, {capture:true});
   syncLinks();
 
+  // One shared viewport light for the homepage and project notes. It never
+  // captures input or moves content, and schedules no frames while idle.
+  if (document.documentElement.dataset.design === 'ink') {
+    const pointerEffects = matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const aura = document.createElement('div');
+    const light = document.createElement('span');
+    aura.className = 'pointer-aura';
+    aura.setAttribute('aria-hidden', 'true');
+    light.className = 'pointer-aura__light';
+    aura.append(light);
+    document.body.append(aura);
+    let pointerFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    function hideAura() {
+      cancelAnimationFrame(pointerFrame);
+      pointerFrame = 0;
+      aura.classList.remove('is-visible');
+    }
+    function paintAura() {
+      pointerFrame = 0;
+      light.style.transform = `translate3d(${Math.round(pointerX) - 360}px, ${Math.round(pointerY) - 360}px, 0)`;
+      aura.classList.add('is-visible');
+    }
+    document.addEventListener('pointermove', event => {
+      if (!pointerEffects.matches || event.pointerType !== 'mouse') {
+        hideAura();
+        return;
+      }
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (!pointerFrame) pointerFrame = requestAnimationFrame(paintAura);
+    }, {passive:true});
+    document.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'mouse') hideAura();
+    }, {passive:true});
+    document.documentElement.addEventListener('pointerleave', hideAura);
+    document.addEventListener('pointercancel', hideAura);
+    document.addEventListener('visibilitychange', hideAura);
+    document.addEventListener('keydown', hideAura);
+    pointerEffects.addEventListener('change', hideAura);
+    for (const event of ['blur', 'resize', 'pagehide', 'pageshow', 'portfolio:navigation']) {
+      window.addEventListener(event, hideAura);
+    }
+  }
+
   // A decorative reading indicator follows content height, including disclosures.
   const header = document.querySelector('.site-header');
   if (header) {
