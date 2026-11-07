@@ -43,6 +43,8 @@ The hero uses the complete landscape illustration on desktop and mobile, includi
 
 Five engineering projects retain original HTML/CSS and SVG concept diagrams for service architecture, order processing, commit history, process sampling, and skill publishing. The default design shows only PatientFlow's diagram; alternative themes retain all five. These illustrate implementation structure, not measured results or product screenshots, and include accessible descriptions.
 
+The cybersecurity learning log uses a quiet terminal-style frame, numbered study questions, and a link to existing systems work. The questions are exploratory prompts, not claims of completed security training or projects. The path label and static cursor are decorative; the panel does not emulate an executable shell or introduce animation.
+
 Before pushing, also inspect both pages on desktop and mobile, check local links and image loading, and verify factual claims.
 
 ## Publishing
