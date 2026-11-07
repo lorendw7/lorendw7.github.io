@@ -8,7 +8,7 @@ A static, English-language website with no application build step, runtime depen
 
 - `index.html`: biography, current research, selected projects, awards, and contact.
 - `project-notes.html`: implementation evidence and limitations for the six featured projects.
-- `ink.css`: default Night / Ink design with charcoal surfaces, steel-blue lighting, rounded controls, an editorial project layout, an experience timeline, print and reduced-motion support.
+- `ink.css`: default Ink / Cinema design with calligraphic paper margins, cool charcoal surfaces, steel-blue lighting, restrained terminal typography, an editorial project layout, print and reduced-motion support. Wide screens use two decorative margins; screens at 1000px and below keep the reading column full width.
 - `styles.css` and `simplefolio.css`: shared layout and retained alternative themes. Both still contain active shared styles.
 - `main.js`: project filters, mobile navigation, history and section tracking.
 - `navigation.js` and `project-notes.js`: navigation between the homepage and project notes, with a decorative reading-progress indicator that follows layout changes.

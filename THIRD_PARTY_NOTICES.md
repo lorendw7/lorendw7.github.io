@@ -17,7 +17,14 @@ Source and asset attributions for this portfolio.
 
 ## Current design
 
-The current Night / Ink visual design replaces the default Simplefolio appearance while retaining the shared semantic structure and interaction behavior. `simplefolio.css` remains available as an archived layout.
+The current Ink / Cinema visual design combines calligraphic page margins, cool cinematic surfaces, and restrained terminal typography while retaining the shared semantic structure and interaction behavior. `simplefolio.css` remains available as an archived layout.
+
+## Ink / Cinema textures (2026-11-07)
+
+- `assets/ink-calligraphy-margin.jpg`: original AI-generated dry-brush ink on cool-gray paper, used only in decorative desktop margins.
+- `assets/ink-nocturne-landscape.jpg`: original AI-generated misty mountain panorama on charcoal, used for chapter transitions and the mobile hero background.
+- Created with the built-in image generation tool. Neither asset contains actual calligraphy, code, film imagery, or a historical artist's work. Prompts are recorded in `assets/ink-cinema-prompts.md`.
+- The seaside hero images and their J.Y. nameplate are unchanged; the hero uses the complete image at its natural aspect ratio on desktop and mobile.
 
 ## Ink landscape (2026-11-06)
 
